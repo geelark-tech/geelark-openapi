@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Enable or disable team application auto-start

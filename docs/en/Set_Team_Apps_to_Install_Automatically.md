@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Set up automatic installation for team applications. Once automatic installation is enabled, the applications will be installed after the cloud phone starts up.

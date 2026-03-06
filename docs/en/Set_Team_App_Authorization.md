@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Grant team application permissions, including all permissions such as location permissions, which only apply to newly installed applications.

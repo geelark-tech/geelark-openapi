@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 Query the status of cloud phone screenshot task
 After requesting a screenshot, you can actively obtain the result through this interface within 30 minutes. If it expires, the retrieval will fail

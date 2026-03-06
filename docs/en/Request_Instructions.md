@@ -1,5 +1,3 @@
-[TOC]
-
 ## Overview
 
 - Support local API functions

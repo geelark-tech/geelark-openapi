@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Add the app to the team Applications and it will be automatically installed after the cloud phone is started

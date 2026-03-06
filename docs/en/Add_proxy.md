@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Duplicate proxies will not be added.

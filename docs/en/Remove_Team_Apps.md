@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Remove the application from the team applications.

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 Execute shell commands on cloud phones.
 

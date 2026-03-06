@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 - Set/update the GPS information of cloud phones, including longitude and latitude.
 - Longitude range: `[-180.0, 180.0]`

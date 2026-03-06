@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Delete the corresponding groups.

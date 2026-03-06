@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Retrieve the list of cloud phones.

@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Batch operation of applications on opened cloud phone

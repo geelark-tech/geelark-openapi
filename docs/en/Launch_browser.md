@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Used to start the browser, you need to specify the environment ID.

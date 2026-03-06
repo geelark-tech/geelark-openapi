@@ -1,5 +1,3 @@
-[TOC]
-
 **Create Account Management Task:** Directly call the [Add Task API](https://open.geelark.com/api/task-add).
 
 **Create Video or Image Collection Posting Task:** First, upload the materials, then call the [Add Task API](https://open.geelark.com/api/task-add).

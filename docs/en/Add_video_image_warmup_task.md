@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 * Create a warmup task by directly calling the add task interface.

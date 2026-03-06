@@ -1,5 +1,3 @@
-[TOC]
-
 ## Request URL
 
 - `https://openapi.geelark.com/open/v1/analytics/accounts/update`

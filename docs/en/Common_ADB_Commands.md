@@ -1,5 +1,3 @@
-[TOC]
-
 
 Common Commands
 ---------------

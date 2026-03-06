@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get the list of apps available for installation on the cloud phone.

@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get Team Application List

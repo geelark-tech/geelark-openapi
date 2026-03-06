@@ -1,5 +1,3 @@
-[TOC]
-
 API Documentation
 -----------------
 

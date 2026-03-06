@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 - Hide the cloud phone accessibility in app.

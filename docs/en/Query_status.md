@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Retrieve the status of cloud phones.

@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 - The Basic plan supports the creation of only one cloud phone at a time, while the Pro plan supports batch creation.

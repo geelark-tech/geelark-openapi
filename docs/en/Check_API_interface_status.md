@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Used to check the availability of the current device's API interface.

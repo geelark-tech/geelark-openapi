@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Start an app.

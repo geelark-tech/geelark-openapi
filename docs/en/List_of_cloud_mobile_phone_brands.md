@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 - Get a list of cloud phone brands

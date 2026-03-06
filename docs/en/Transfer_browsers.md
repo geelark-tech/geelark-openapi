@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Transfer the browser to another team.

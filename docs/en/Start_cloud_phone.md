@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Batch start cloud phones.

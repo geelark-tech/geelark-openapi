@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Get browser task list

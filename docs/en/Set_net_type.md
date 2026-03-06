@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Set up the cloud phone network connection mode

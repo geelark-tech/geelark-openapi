@@ -1,5 +1,3 @@
-[TOC]
-
 
 - GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](https://open.geelark.com/api/callback-type "Callback Type")
 

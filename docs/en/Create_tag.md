@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Create tags with specified **name and color (optional)**.

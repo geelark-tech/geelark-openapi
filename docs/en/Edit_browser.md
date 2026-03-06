@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Modify environment information, support updating account passwords and cookies, proxy information, fingerprint information, etc.

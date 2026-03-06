@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 上传Keybox文件，通过Google完整性验证，目前仅支持Android 12/13/15系统版本。Android 12/13只需上传Keybox文件即可，Android 15需要以下额外步骤：

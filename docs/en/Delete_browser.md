@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Delete unnecessary environments. Batch deletion is supported, but the number of environments that can be deleted at one time cannot exceed 100.

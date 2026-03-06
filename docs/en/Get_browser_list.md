@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Query the created environment information, including agent information, agent ID, etc.

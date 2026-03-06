@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 The first request for searchAfter does not need to be passed. If the response's logContinue is true, it indicates that the log needs to be returned in pages. At this point, the response's searchAfter can be passed as a parameter.

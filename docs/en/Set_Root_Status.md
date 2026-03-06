@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 Set root status, please start the cloud phone before setting root status.
 

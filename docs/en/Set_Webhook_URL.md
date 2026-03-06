@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 After the user requests the API, they can process relevant information in the callback interface they have set up.
 

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 Retrieve the callback interface URL set by the user.
 

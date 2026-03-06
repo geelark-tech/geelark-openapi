@@ -1,5 +1,3 @@
-[TOC]
-
 #1. Obtain a temporary upload URL "uploadUrl" for the file.
 
 API Description

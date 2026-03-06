@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Batch shut down cloud phones.

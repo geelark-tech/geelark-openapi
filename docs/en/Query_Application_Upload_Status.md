@@ -1,5 +1,3 @@
-[TOC]
-
 ##  API Description
 
 Query Application Upload Status

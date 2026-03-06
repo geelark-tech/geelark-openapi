@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Used to close the corresponding browser. You need to specify the environment ID.

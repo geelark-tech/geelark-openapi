@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Query the GPS information of cloud phones, including latitude and longitude.

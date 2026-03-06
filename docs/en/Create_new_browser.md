@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Create a new browser, support configuration of platform account password and cookies, proxy ID and proxy information, fingerprint information, etc. After successful creation, the browser environment ID is returned.

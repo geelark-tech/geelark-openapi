@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 set material tag
 

@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Query all tasks scheduled within the past 7 days.

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Modify group information including name and remark.

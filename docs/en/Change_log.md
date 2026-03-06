@@ -1,4 +1,3 @@
-[TOC]
 ### 2026.02.27
 - Add response parameters to the Get the current subscription plan information API: availableMonthlyRentals
 
