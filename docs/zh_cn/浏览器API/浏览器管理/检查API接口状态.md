@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 用于检查当前设备API接口的可用性
@@ -24,8 +22,8 @@
 
 ```json
 {
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "code": 0,
+    "msg": "success"
 }
 ```
 

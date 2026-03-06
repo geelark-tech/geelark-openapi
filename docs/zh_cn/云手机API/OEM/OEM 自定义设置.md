@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## 接口说明
 自定义设置云手机左上角品牌名、品牌Logo、侧边栏入口、二维码域名等。
@@ -26,7 +24,7 @@
 | title | 否 | string | 标题，限制64字节，不填或者填空保持原值不变 | 参考请求示例 |
 | logo | 否 | string | logo链接，限制255字节，不填或者填空保持原值不变 | 参考请求示例 |
 | hideHeader | 否 | bool | 是否隐藏云机顶部的header，不填默认false | true |
-|mirrorUrl|否|string|接力入口内二维码和手机打开的链接地址，限制255字节，不填或者填空保持原值不变，设置后GeeLark将在接力入口内显示该地址（如红框所示）![示例](https://material.geelark.cn/mirror_url_demo.jpg.jpg &quot;示例&quot;)用户访问此地址时请将带上所有参数重定向到(建议使用iframe) https://mobile.geelark.cn/mobile.html|参考请求示例|
+|mirrorUrl|否|string|接力入口内二维码和手机打开的链接地址，限制255字节，不填或者填空保持原值不变，设置后GeeLark将在接力入口内显示该地址（如红框所示）![示例](https://material.geelark.cn/mirror_url_demo.jpg.jpg "示例")用户访问此地址时请将带上所有参数重定向到(建议使用iframe) https://mobile.geelark.cn/mobile.html|参考请求示例|
 | toolBarSettings | 否 | array[ToolBarSettings] | 控制云手机侧边工具栏入口是否显示，未设置则默认全部显示 | 参考请求示例 |
 
 ### ToolBarSettings
@@ -57,34 +55,34 @@
 ## 请求示例
 ```json
 {
-    &quot;logo&quot;: &quot;https://material.geelark.cn/user-upload/banner0903_cn.jpg&quot;,
-    &quot;title&quot;: &quot;GeeLark&quot;,
-    &quot;hideHeader&quot;: false,
-    &quot;mirrorUrl&quot;: &quot;https://www.abcd.com/mirror/url&quot;,
-	&quot;toolBarSettings&quot;: [
+    "logo": "https://material.geelark.cn/user-upload/banner0903_cn.jpg",
+    "title": "GeeLark",
+    "hideHeader": false,
+    "mirrorUrl": "https://www.abcd.com/mirror/url",
+	"toolBarSettings": [
         {
-            &quot;toolBar&quot;: &quot;networkQuality&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "networkQuality",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;rotate&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "rotate",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;screenshot&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "screenshot",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;upload&quot;,
-            &quot;visible&quot;: true
+            "toolBar": "upload",
+            "visible": true
         },
 		 {
-            &quot;toolBar&quot;: &quot;library&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "library",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;volumeUp&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "volumeUp",
+            "visible": false
         }
     ]
 }
@@ -97,9 +95,9 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;ADD9A7489BB2198DBC0FB37082684CB0&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "ADD9A7489BB2198DBC0FB37082684CB0",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Create a new browser, support configuration of platform account password and cookies, proxy ID and proxy information, fingerprint information, etc. After successful creation, the browser environment ID is returned.
@@ -22,9 +20,9 @@ Create a new browser, support configuration of platform account password and coo
 | --- | --- | --- | --- | --- |
 | serialName | Yes | string | Environment name, up to 100 characters | myBrowser |
 | groupId | No | string | Environment group ID | 497548067550006541 |
-| tagIds | No | array[string] | Environment tag IDs | [&quot;497548067550006541&quot;] |
+| tagIds | No | array[string] | Environment tag IDs | ["497548067550006541"] |
 | remark | No | string | Environment remark, up to 1500 characters | myRemark |
-| cookie | No | string | Cookie, supports JSON and Netscape formats | [{&quot;domain&quot;:&quot;.example.com&quot;,&quot;expires&quot;:&quot;2025-12-31T23:59:59Z&quot;,&quot;httpOnly&quot;:true,&quot;name&quot;:&quot;SESSION_ID&quot;,&quot;path&quot;:&quot;/&quot;,&quot;sameSite&quot;:&quot;Lax&quot;,&quot;secure&quot;:true,&quot;value&quot;:&quot;a1b2c3d4e5f67890abcdef1234567890&quot;}] |
+| cookie | No | string | Cookie, supports JSON and Netscape formats | [{"domain":".example.com","expires":"2025-12-31T23:59:59Z","httpOnly":true,"name":"SESSION_ID","path":"/","sameSite":"Lax","secure":true,"value":"a1b2c3d4e5f67890abcdef1234567890"}] |
 | accountPlatform | No | string | Account platform. Only supports https://www.tiktok.com/ and https://www.facebook.com/ | https://www.tiktok.com/ |
 | accountUsername | No | string | Account username | myUser |
 | accountPassword | No | string | Account password | myPass |
@@ -105,55 +103,55 @@ Create a new browser, support configuration of platform account password and coo
 
 ```json
 {
-	&quot;serialName&quot;:&quot;myBrowserName&quot;,
-	&quot;browserOs&quot;:1,
-	&quot;proxyConfig&quot;:{
-		&quot;typeId&quot;:-1
+	"serialName":"myBrowserName",
+	"browserOs":1,
+	"proxyConfig":{
+		"typeId":-1
 	},
-	&quot;simulateConfig&quot;:{
-		&quot;webRtc&quot;:{
-			&quot;switcher&quot;:1
+	"simulateConfig":{
+		"webRtc":{
+			"switcher":1
 		},
-		&quot;geoLocation&quot;:{
-			&quot;switcher&quot;:1,
-			&quot;baseOnIp&quot;:true,
-			&quot;longitude&quot;:20,
-			&quot;latitude&quot;:10,
-			&quot;accuracy&quot;:1
+		"geoLocation":{
+			"switcher":1,
+			"baseOnIp":true,
+			"longitude":20,
+			"latitude":10,
+			"accuracy":1
 		},
-		&quot;canvas&quot;:{
-			&quot;switcher&quot;:1
+		"canvas":{
+			"switcher":1
 		},
-		&quot;webglImage&quot;:{
-			&quot;switcher&quot;:1
+		"webglImage":{
+			"switcher":1
 		},
-		&quot;hardware&quot;:{
-			&quot;switcher&quot;:1
+		"hardware":{
+			"switcher":1
 		},
-		&quot;audioContext&quot;:{
-			&quot;switcher&quot;:1
+		"audioContext":{
+			"switcher":1
 		},
-		&quot;mediaDevice&quot;:{
-			&quot;switcher&quot;:1
+		"mediaDevice":{
+			"switcher":1
 		},
-		&quot;clientRects&quot;:{
-			&quot;switcher&quot;:1
+		"clientRects":{
+			"switcher":1
 		},
-		&quot;speechVoise&quot;:{
-			&quot;switcher&quot;:1
+		"speechVoise":{
+			"switcher":1
 		},
-		&quot;hardwareConcurrency&quot;:26,
-		&quot;memeryDevice&quot;:8,
-		&quot;doNotTrack&quot;:2,
-		&quot;bluetooth&quot;:{
-			&quot;switcher&quot;:1
+		"hardwareConcurrency":26,
+		"memeryDevice":8,
+		"doNotTrack":2,
+		"bluetooth":{
+			"switcher":1
 		},
-		&quot;battery&quot;:{
-			&quot;switcher&quot;:1
+		"battery":{
+			"switcher":1
 		},
-		&quot;portScanProtection&quot;:{
-			&quot;switcher&quot;:1,
-			&quot;value&quot;:&quot;80&quot;
+		"portScanProtection":{
+			"switcher":1,
+			"value":"80"
 		}
 	}
 }
@@ -165,11 +163,11 @@ Create a new browser, support configuration of platform account password and coo
 
 ```json
 {
-	&quot;traceId&quot;:&quot;123456ABCDEF&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;data&quot;:{
-		&quot;id&quot;:&quot;497548067550006541&quot;
+	"traceId":"123456ABCDEF",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"id":"497548067550006541"
 	}
 }
 ```

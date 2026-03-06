@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 create material tag
 
@@ -22,8 +20,8 @@ create material tag
 ## Request Example
 ```json
 {
-    &quot;name&quot; : &quot;test&quot;,
-    &quot;color&quot; : 1
+    "name" : "test",
+    "color" : 1
 }
 ```
 
@@ -32,11 +30,11 @@ create material tag
 
 ```json
 {
-    &quot;traceId&quot;: &quot;95D85F2085A6C847B2D68ABAAD591997&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;id&quot;: &quot;570461738663674391&quot;
+    "traceId": "95D85F2085A6C847B2D68ABAAD591997",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "id": "570461738663674391"
     }
 }
 ```

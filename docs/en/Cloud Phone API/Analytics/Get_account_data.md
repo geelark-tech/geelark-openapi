@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get account data
@@ -28,12 +26,12 @@ Get account data
 ## Request Example
 ```json
 {
-	&quot;account&quot; : &quot;tk_acc&quot;,
-	&quot;dataDate&quot; : 1764137986,
-	&quot;createdId&quot; : &quot;497521349330210656&quot;,
-	&quot;channel&quot; : 1,
-	&quot;page&quot; : 1,
-	&quot;pageSize&quot; : 10
+	"account" : "tk_acc",
+	"dataDate" : 1764137986,
+	"createdId" : "497521349330210656",
+	"channel" : 1,
+	"page" : 1,
+	"pageSize" : 10
 }
 ```
 
@@ -70,29 +68,29 @@ Get account data
 
 ```json
 {
-	&quot;traceId&quot;: &quot;B8899554AA90BB168406A5CB8A089AB2&quot;,
-	&quot;code&quot;: 0,
-	&quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-		&quot;total&quot;: 2,
-		&quot;page&quot;: 1,
-		&quot;pageSize&quot;: 10,
-		&quot;items&quot;: [
+	"traceId": "B8899554AA90BB168406A5CB8A089AB2",
+	"code": 0,
+	"msg": "success",
+	"data": {
+		"total": 2,
+		"page": 1,
+		"pageSize": 10,
+		"items": [
 			 {
-				 &quot;id&quot;: &quot;581465531480044822&quot;,
-				 &quot;channel&quot;: 0,
-				 &quot;account&quot;: &quot;khian.kb&quot;,
-				 &quot;playCount&quot;: -1,
-				 &quot;followerCount&quot;: -1,
-				 &quot;diggCount&quot;: -1,
-				 &quot;commentCount&quot;: -1,
-				 &quot;collectCount&quot;: -1,
-				 &quot;shareCount&quot;: -1,
-				 &quot;dataDate&quot;: -1,
-				 &quot;addAccDate&quot;: 1756110064,
-				 &quot;remark&quot;: &quot;&quot;,
-				 &quot;createdId&quot;: &quot;497521349330210656&quot;,
-				 &quot;username&quot;: &quot;exlrhoo@foxmail.com&quot;
+				 "id": "581465531480044822",
+				 "channel": 0,
+				 "account": "khian.kb",
+				 "playCount": -1,
+				 "followerCount": -1,
+				 "diggCount": -1,
+				 "commentCount": -1,
+				 "collectCount": -1,
+				 "shareCount": -1,
+				 "dataDate": -1,
+				 "addAccDate": 1756110064,
+				 "remark": "",
+				 "createdId": "497521349330210656",
+				 "username": "exlrhoo@foxmail.com"
 			 }
 		 ]
 	}

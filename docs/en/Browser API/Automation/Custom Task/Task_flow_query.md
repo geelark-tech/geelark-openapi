@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## Interface Description
 
@@ -32,8 +30,8 @@ Get browser custom task flow list
 
 ```json
 {
-    &quot;page&quot;: 1,
-	&quot;pageSize&quot;: 10
+    "page": 1,
+	"pageSize": 10
 }
 ```
 
@@ -60,19 +58,19 @@ Get browser custom task flow list
 
 ```json
 {
-	&quot;traceId&quot;:&quot;2XsBK1HDR&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;data&quot;:{
-		&quot;total&quot;:1,
-		&quot;page&quot;:1,
-		&quot;pageSize&quot;:10,
-		&quot;list&quot;:[
+	"traceId":"2XsBK1HDR",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"total":1,
+		"page":1,
+		"pageSize":10,
+		"list":[
 			{
-				&quot;id&quot;:&quot;497652752864775437&quot;,
-				&quot;title&quot;: &quot;video flow&quot;,
-				&quot;desc&quot;: &quot;this is a video flow&quot;,
-				&quot;params&quot;: [&quot;Title&quot;,&quot;Desc&quot;]
+				"id":"497652752864775437",
+				"title": "video flow",
+				"desc": "this is a video flow",
+				"params": ["Title","Desc"]
 			}
 		]
 	}

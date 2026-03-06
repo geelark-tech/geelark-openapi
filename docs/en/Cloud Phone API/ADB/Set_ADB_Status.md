@@ -1,5 +1,3 @@
-[TOC]
-
 API Description
 ---------------
 * Currently, ADB only supports Android 9,11,12,13 ,14, 15 devices.
@@ -28,10 +26,10 @@ Request Parameters
 
 ```json
 {
- 	&quot;ids&quot; : [
-		 &quot;526209711930868736&quot;
+ 	"ids" : [
+		 "526209711930868736"
 	 ],
- 	&quot;open&quot; : true
+ 	"open" : true
 }
 ```
 
@@ -40,9 +38,9 @@ Request Parameters
 
 ```json
 {
- &quot;traceId&quot;: &quot;A24A3089958A4BC28E8B89B3AE1A61AC&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "A24A3089958A4BC28E8B89B3AE1A61AC",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

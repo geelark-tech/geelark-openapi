@@ -1,5 +1,3 @@
-[TOC]
-
 Request URL
 -----------
 
@@ -24,7 +22,7 @@ Request Example
 
 ```json
 {
-    &quot;taskId&quot;: &quot;528715748189668352&quot;
+    "taskId": "528715748189668352"
 }
 ```
 Response Example
@@ -32,11 +30,11 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A62BBBF3A294487F9B49B9FFA0F84CA8&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-        &quot;status&quot;: 2
+    "traceId": "A62BBBF3A294487F9B49B9FFA0F84CA8",
+    "code": 0,
+    "msg": "success",
+	"data": {
+        "status": 2
     }
 }
 ```

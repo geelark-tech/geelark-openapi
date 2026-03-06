@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 search material tag
 
@@ -24,9 +22,9 @@ search material tag
 ## Request Example
 ```json
 {
-    &quot;page&quot; : 1,
-    &quot;pageSize&quot; : 50 ,
-    &quot;name&quot; : &quot;&quot;
+    "page" : 1,
+    "pageSize" : 50 ,
+    "name" : ""
 }
 ```
 
@@ -35,18 +33,18 @@ search material tag
 
 ```json
 {
-    &quot;traceId&quot;: &quot;8B6AC3809AAAE8099E94B124A7181BB9&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;total&quot;: 2,
-        &quot;page&quot;: 1,
-        &quot;pageSize&quot;: 50,
-        &quot;list&quot;: [
+    "traceId": "8B6AC3809AAAE8099E94B124A7181BB9",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "total": 2,
+        "page": 1,
+        "pageSize": 50,
+        "list": [
             {
-                &quot;id&quot;: &quot;569577514586891738&quot;,
-                &quot;name&quot;: &quot;2&quot;,
-                &quot;color&quot;: 4
+                "id": "569577514586891738",
+                "name": "2",
+                "color": 4
             }
         ]
     }

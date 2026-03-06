@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Batch operation of applications on opened cloud phone
@@ -22,7 +20,7 @@ Batch operation of applications on opened cloud phone
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | action | Yes | interger | Operation type 1 Startup; 2. Close; 3. Restart; 4 Installation; 5 Uninstalling | 1 |
-| groupIds | No | array[string] | Group ID, operate on the opened cloud phone under the specified group, default to all | [&quot;595681312937911830&quot;] |
+| groupIds | No | array[string] | Group ID, operate on the opened cloud phone under the specified group, default to all | ["595681312937911830"] |
 | packageName | No | string | Application package name, startup/close/restart/uninstall, choose between packageName/versionId , recommended to use package name | io.tm.k.drama |
 | versionId | No| string | Application version ID, required for installation, can be obtained through the/app/teamApp/list interface |1793552962140770305 |
 
@@ -33,18 +31,18 @@ Batch operation of applications on opened cloud phone
 Startup
 ```json
 {
-    &quot;action&quot; : 1,
-    &quot;groupIds&quot; : [&quot;595681312937911830&quot;],
-    &quot;packageName&quot;: &quot;io.tm.k.drama&quot;
+    "action" : 1,
+    "groupIds" : ["595681312937911830"],
+    "packageName": "io.tm.k.drama"
 }
 ```
 
 Installation
 ```json
 {
-    &quot;action&quot; : 1,
-    &quot;groupIds&quot; : [&quot;595681312937911830&quot;],
-    &quot;versionId&quot;: &quot;1793552962140770305&quot;
+    "action" : 1,
+    "groupIds" : ["595681312937911830"],
+    "versionId": "1793552962140770305"
 }
 ```
 
@@ -61,14 +59,14 @@ Installation
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A0598A2CA0802A98957B9E1F87EB9289&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "A0598A2CA0802A98957B9E1F87EB9289",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "items": [
             {
-                &quot;id&quot;: &quot;583502967211075086&quot;,
-                &quot;errCode&quot;: 2
+                "id": "583502967211075086",
+                "errCode": 2
             }
         ]
     }

@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## 接口说明
 
@@ -32,8 +30,8 @@
 
 ```json
 {
-    &quot;ids&quot;: [
-        &quot;528086321789535232&quot;
+    "ids": [
+        "528086321789535232"
     ]
 }
 ```
@@ -44,18 +42,18 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;81CA3BD0B7BBB924A1C6B836B298ADA7&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;totalAmount&quot;: 1,
-        &quot;successAmount&quot;: 1,
-        &quot;failAmount&quot;: 0,
-        &quot;list&quot;: [
+    "traceId": "81CA3BD0B7BBB924A1C6B836B298ADA7",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "totalAmount": 1,
+        "successAmount": 1,
+        "failAmount": 0,
+        "list": [
             {
-                &quot;id&quot;: &quot;528086321789535232&quot;,
-                &quot;latitude&quot;: 1.3024300336837769,
-                &quot;longitude&quot;: 103.87545776367188
+                "id": "528086321789535232",
+                "latitude": 1.3024300336837769,
+                "longitude": 103.87545776367188
             }
         ]
     }

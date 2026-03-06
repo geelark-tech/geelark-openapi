@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## 接口说明
  - 设置/更新云手机GPS信息，包括经度以及纬度
@@ -37,16 +35,16 @@
 ## 请求示例
 ```json
 {
-    &quot;list&quot;: [
+    "list": [
         {
-            &quot;id&quot;: &quot;528086321789535232&quot;,
-            &quot;latitude&quot;: 1.30243,
-            &quot;longitude&quot;: 103.87546
+            "id": "528086321789535232",
+            "latitude": 1.30243,
+            "longitude": 103.87546
         },
         {
-            &quot;id&quot;: &quot;530011895768286208&quot;,
-            &quot;latitude&quot;: 11.30243,
-            &quot;longitude&quot;: 104.87546
+            "id": "530011895768286208",
+            "latitude": 11.30243,
+            "longitude": 104.87546
         }
     ]
 }
@@ -59,13 +57,13 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;870AE3259C965B45A0D09C92A4EA8F81&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;totalAmount&quot;: 2,
-        &quot;successAmount&quot;: 2,
-        &quot;failAmount&quot;: 0
+    "traceId": "870AE3259C965B45A0D09C92A4EA8F81",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "totalAmount": 2,
+        "successAmount": 2,
+        "failAmount": 0
     }
 }
 ```

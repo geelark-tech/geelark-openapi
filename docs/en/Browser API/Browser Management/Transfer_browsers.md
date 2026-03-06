@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Transfer the browser to another team.
@@ -22,8 +20,8 @@ Transfer the browser to another team.
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | username | yes | string | Target user account | Anna@geelark.com |
-| envIds | yes | array[string] | Environment IDs to transfer. The maximum length of the array is 200. Entries exceeding 200 will be ignored. |[&quot;539893235657500146&quot;]|
-| transferOption | no | array[string] | Optional transfer option parameters: name: environment name, proxy: proxy, tag: tag, remark: remark, files: files | [ &quot;name&quot;,&quot;proxy&quot;, &quot;tag&quot;,&quot;remark&quot; ] |
+| envIds | yes | array[string] | Environment IDs to transfer. The maximum length of the array is 200. Entries exceeding 200 will be ignored. |["539893235657500146"]|
+| transferOption | no | array[string] | Optional transfer option parameters: name: environment name, proxy: proxy, tag: tag, remark: remark, files: files | [ "name","proxy", "tag","remark" ] |
 
 
 ## Request Example
@@ -31,8 +29,8 @@ Transfer the browser to another team.
 
 ```json
 {
-  &quot;envIds&quot;: [&quot;539893235657500146&quot;],
-  &quot;username&quot;: &quot;Anna@geelark.com&quot;
+  "envIds": ["539893235657500146"],
+  "username": "Anna@geelark.com"
 }
 ```
 
@@ -42,13 +40,13 @@ Transfer the browser to another team.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-		&quot;successCount&quot;: 10,
-		&quot;failCount&quot;: 2,
-		&quot;failEnvIds&quot;: [&quot;539893235657500146&quot;]
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+		"successCount": 10,
+		"failCount": 2,
+		"failEnvIds": ["539893235657500146"]
     }
 }
 ```

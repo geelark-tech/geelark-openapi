@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 Retrieve the callback interface URL set by the user.
 
@@ -15,11 +13,11 @@ Retrieve the callback interface URL set by the user.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;9CEA6CC9B5BB68BBAE4ABDF9BE5AC89D&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;url&quot;: &quot;http://example.geelark.com/phone/callback/test&quot;
+    "traceId": "9CEA6CC9B5BB68BBAE4ABDF9BE5AC89D",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "url": "http://example.geelark.com/phone/callback/test"
     }
 }
 ```

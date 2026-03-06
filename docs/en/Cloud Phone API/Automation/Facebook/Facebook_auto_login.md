@@ -1,5 +1,3 @@
-[TOC]
-
 Request URL
 -----------
 
@@ -27,12 +25,12 @@ Request Example
 
 ```json
 {
- &quot;name&quot;:&quot;test&quot;,
- &quot;remark&quot;:&quot;test remark&quot;,
- &quot;scheduleAt&quot;: 1741846843,
- &quot;id&quot;:&quot;557536075321468390&quot;,
- &quot;email&quot;:&quot;test@gmail.com&quot;,
- &quot;password&quot;: &quot;123456&quot;
+ "name":"test",
+ "remark":"test remark",
+ "scheduleAt": 1741846843,
+ "id":"557536075321468390",
+ "email":"test@gmail.com",
+ "password": "123456"
 }
 ```
 
@@ -41,11 +39,11 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A4D8BCF69B878A71AC589F5CB1D80EAB&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;taskId&quot;: &quot;558017255909123564&quot;
+    "traceId": "A4D8BCF69B878A71AC589F5CB1D80EAB",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "taskId": "558017255909123564"
     }
 }
 ```

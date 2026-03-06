@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Remove the application from the team applications.
@@ -29,7 +27,7 @@ Remove the application from the team applications.
 
 ```json
 {
- &quot;id&quot;: &quot;497652752864775437&quot;
+ "id": "497652752864775437"
 }
 ```
 
@@ -39,9 +37,9 @@ Remove the application from the team applications.
 
 ```json
 {
- &quot;traceId&quot;: &quot;886A92FCBE9B7A52A7F583FCBD2BF6A8&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "886A92FCBE9B7A52A7F583FCBD2BF6A8",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

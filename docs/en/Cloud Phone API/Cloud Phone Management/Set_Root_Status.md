@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 Set root status, please start the cloud phone before setting root status.
 
@@ -22,10 +20,10 @@ Set root status, please start the cloud phone before setting root status.
 ## Request Example
 ```json
 {
-    &quot;ids&quot; : [
-        &quot;526209711930868736&quot;
+    "ids" : [
+        "526209711930868736"
     ],
-    &quot;open&quot; : true
+    "open" : true
 }
 ```
 
@@ -35,20 +33,20 @@ Set root status, please start the cloud phone before setting root status.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A24A3089958A4BC28E8B89B3AE1A61AC&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "A24A3089958A4BC28E8B89B3AE1A61AC",
+    "code": 0,
+    "msg": "success",
+	"data": {
+        "items": [
             {
-                &quot;code&quot;: 42002,
-                &quot;msg&quot;: &quot;phone is not running&quot;,
-                &quot;id&quot;: &quot;543483007558772199&quot;
+                "code": 42002,
+                "msg": "phone is not running",
+                "id": "543483007558772199"
             },
             {
-                &quot;code&quot;: 0,
-                &quot;msg&quot;: &quot;success&quot;,
-                &quot;id&quot;: &quot;543483063829554663&quot;
+                "code": 0,
+                "msg": "success",
+                "id": "543483063829554663"
             }
         ]
     }

@@ -1,5 +1,3 @@
-[TOC]
-
 API Documentation
 -----------------
 
@@ -30,19 +28,19 @@ Request Example
 
 ```json
 {
- &quot;id&quot;: &quot;526209711930868736&quot;,
- &quot;phoneNumber&quot;: &quot;+17723504471&quot;,
- &quot;text&quot;: &quot;your tk code: 6666&quot;
+ "id": "526209711930868736",
+ "phoneNumber": "+17723504471",
+ "text": "your tk code: 6666"
 }
 ```
 ----------------
 
 ```json
 {
- &quot;traceId&quot;: &quot;9E681400B2983A5390F4B7C8BF1BF2B7&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;,
- &quot;data&quot;: {}
+ "traceId": "9E681400B2983A5390F4B7C8BF1BF2B7",
+ "code": 0,
+ "msg": "success",
+ "data": {}
 }
 ```
 

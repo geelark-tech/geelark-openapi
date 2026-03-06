@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Batch start cloud phones.
@@ -29,11 +27,11 @@ Batch start cloud phones.
 
 ```json
 {
-    &quot;ids&quot;:[
-        &quot;123456ABCDEF&quot;,
-        &quot;123456ABCDEF&quot;,
-        &quot;123456ABCDEF&quot;,
-        &quot;123456ABCDEF&quot;
+    "ids":[
+        "123456ABCDEF",
+        "123456ABCDEF",
+        "123456ABCDEF",
+        "123456ABCDEF"
     ]
 }
 ```
@@ -42,30 +40,30 @@ Batch start cloud phones.
 
 ```json
 {
-    &quot;code&quot;: 0, 
-    &quot;msg&quot;: &quot;success&quot;, 
-    &quot;traceId&quot;: &quot;12345678ABCDEF&quot;, 
-    &quot;data&quot;: {
-        &quot;totalAmount&quot;: 3, 
-        &quot;successAmount&quot;: 1, 
-        &quot;failAmount&quot;: 2, 
-        &quot;failDetails&quot;: [
+    "code": 0, 
+    "msg": "success", 
+    "traceId": "12345678ABCDEF", 
+    "data": {
+        "totalAmount": 3, 
+        "successAmount": 1, 
+        "failAmount": 2, 
+        "failDetails": [
             {
-                &quot;code&quot;: 43004, 
-                &quot;id&quot;: &quot;12345678ABCDEFG&quot;, 
-                &quot;msg&quot;: &quot;env is expired&quot;
+                "code": 43004, 
+                "id": "12345678ABCDEFG", 
+                "msg": "env is expired"
             }, 
             {
-                &quot;code&quot;: 42001, 
-                &quot;id&quot;: &quot;12345678ABCDEFG&quot;, 
-                &quot;msg&quot;: &quot;env not found&quot;
+                "code": 42001, 
+                "id": "12345678ABCDEFG", 
+                "msg": "env not found"
             }
         ], 
-        &quot;successDetails&quot;: [
+        "successDetails": [
             {
-                &quot;id&quot;: &quot;12345678ABCDEFG&quot;, 
-                &quot;url&quot;: &quot;https://speedup.geelark.com/phone-api&quot;, 
-                &quot;chargingMethod&quot;: &quot;Per-minute usage&quot;
+                "id": "12345678ABCDEFG", 
+                "url": "https://speedup.geelark.com/phone-api", 
+                "chargingMethod": "Per-minute usage"
             }
         ]
     }

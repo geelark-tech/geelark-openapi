@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Query all tasks scheduled within the past 7 days.
@@ -19,15 +17,15 @@ Query all tasks scheduled within the past 7 days.
 | Parameter   | Required | Type   | Description                       | Example               |
 | --- | --- | --- | --- | --- |
 | size         | No       | int     | Number of records per page, maximum is 100 | 100                   |
-| lastId       | No       | string | The `id` of the last item from the previous page’s `data.items` array | &quot;574376043897425896&quot; |
-| ids | No | array[string] | Task IDs, maximum 100 | [&quot;574376043897425896&quot;] |
+| lastId       | No       | string | The `id` of the last item from the previous page’s `data.items` array | "574376043897425896" |
+| ids | No | array[string] | Task IDs, maximum 100 | ["574376043897425896"] |
 
 ## Request Example
 
 ```json
 {
- &quot;size&quot;: 10,
- &quot;lastId&quot;: &quot;574376043897425896&quot;
+ "size": 10,
+ "lastId": "574376043897425896"
 }
 ```
 
@@ -266,20 +264,20 @@ Query all tasks scheduled within the past 7 days.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;total&quot;: 1,
-        &quot;items&quot;: [
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "total": 1,
+        "items": [
             {
-                &quot;id&quot;: &quot;123456ABCDEF&quot;,
-                &quot;planName&quot;: &quot;plan123456ABCDEF&quot;,
-                &quot;taskType&quot;: 2,
-                &quot;serialName&quot;: &quot;test&quot;,
-                &quot;envId&quot;: &quot;123456654321&quot;,
-                &quot;scheduleAt&quot;: 1718744459,
-                &quot;status&quot;: 3
+                "id": "123456ABCDEF",
+                "planName": "plan123456ABCDEF",
+                "taskType": 2,
+                "serialName": "test",
+                "envId": "123456654321",
+                "scheduleAt": 1718744459,
+                "status": 3
             }
         ]
     }

@@ -1,4 +1,3 @@
-[TOC]
 ### 2026.02.27
 - Add response parameters to the Get the current subscription plan information API: availableMonthlyRentals
 
@@ -47,7 +46,7 @@
 - Add cloud phone move group API
 
 ### 2026.01.12
-- Cloud phone Custom Settings add &quot;toolBarSettings&quot; parameter
+- Cloud phone Custom Settings add "toolBarSettings" parameter
 
 ### 2026.01.08
 - The one-click new phone interface supports retaining the phone number, region, language, and network type.
@@ -58,11 +57,11 @@
 - Add Hide Accessibility API
 
 ### 2026.01.04
-- Support custom phone number on &quot;Modify cloud phone information&quot; API
+- Support custom phone number on "Modify cloud phone information" API
 - Creating a cloud phone supports custom languages
 
 ### 2025.12.29
-- Cloud phone Custom Settings add &quot;mirrorUrl&quot; parameter
+- Cloud phone Custom Settings add "mirrorUrl" parameter
 
 ### 2025.12.25
 - New cloud phones support setting regions
@@ -85,7 +84,7 @@
 - Add cloud phone delete and serial name change callback
 
 ### 2025.12.16
-- Add /open/v1/phone/list &quot;openStatus&quot; parameter
+- Add /open/v1/phone/list "openStatus" parameter
 - Added API for retrieving team application list
 - Added API for removing team application
 - Added API for setting automatic installation of team applications

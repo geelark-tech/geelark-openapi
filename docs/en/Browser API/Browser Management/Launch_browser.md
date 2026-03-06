@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Used to start the browser, you need to specify the environment ID.
@@ -27,7 +25,7 @@ Used to start the browser, you need to specify the environment ID.
 
 ```json
 {
- &quot;id&quot;: &quot;539893235657500146&quot;
+ "id": "539893235657500146"
 }
 ```
 
@@ -37,11 +35,11 @@ Used to start the browser, you need to specify the environment ID.
 
 ```json
 {
-  &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;:{
-  	&quot;debugPort&quot;: 11000
+  "traceId": "123456ABCDEF",
+  "code": 0,
+  "msg": "success",
+  "data":{
+  	"debugPort": 11000
   }
 }
 ```

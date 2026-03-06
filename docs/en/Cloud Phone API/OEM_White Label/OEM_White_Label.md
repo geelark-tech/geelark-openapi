@@ -1,5 +1,3 @@
-[TOC]
-
 
 
 ## Interface Description
@@ -29,7 +27,7 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 | title | No | string | Title, maximum length 64 bytes. If not provided or left empty, the original value remains unchanged. |  Refer to Request Example |
 | logo | No | string |Logo URL, maximum length 255 bytes. If not provided or left empty, the original value remains unchanged.|  Refer to Request Example |
 | hideHeader | No | bool | Whether to hide the header at the top of the cloud phone. Defaults to false if not provided|  false|
-|mirrorUrl|No|string|The QR code and the url opened on the phone&#039;s browser in the &quot;Mirror&quot; entrance, limited to 255 characters. if set this value, GeeLark will display the url in the &quot;Mirror&quot; entrance (as shown picture blow).![demo](https://singapore-upgrade.geelark.cn/en_mirror_url_demo.jpg &quot;demo&quot;) When open this url, please redirect to https://mobile.geelark.com/mobile.html with all parameters (it is recommended to use a iframe) )|Refer to Request Example|
+|mirrorUrl|No|string|The QR code and the url opened on the phone&#039;s browser in the "Mirror" entrance, limited to 255 characters. if set this value, GeeLark will display the url in the "Mirror" entrance (as shown picture blow).![demo](https://singapore-upgrade.geelark.cn/en_mirror_url_demo.jpg "demo") When open this url, please redirect to https://mobile.geelark.com/mobile.html with all parameters (it is recommended to use a iframe) )|Refer to Request Example|
 | toolBarSettings | No | array[ToolBarSettings] | Control whether the toolbar entrance on the side of the cloud phone should displayed. If not set, all will be displayed by default. | See request example |
 
 ### ToolBarSettings
@@ -61,34 +59,34 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 ## Request Example
 ```json
 {
-    &quot;logo&quot;: &quot;https://material.geelark.cn/user-upload/banner0903_cn.jpg&quot;,
-    &quot;title&quot;: &quot;GeeLark&quot;,
-    &quot;hideHeader&quot;: false,
-    &quot;mirrorUrl&quot;: &quot;https://www.abcd.com/mirror/url&quot;,
-	&quot;toolBarSettings&quot;: [
+    "logo": "https://material.geelark.cn/user-upload/banner0903_cn.jpg",
+    "title": "GeeLark",
+    "hideHeader": false,
+    "mirrorUrl": "https://www.abcd.com/mirror/url",
+	"toolBarSettings": [
         {
-            &quot;toolBar&quot;: &quot;networkQuality&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "networkQuality",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;rotate&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "rotate",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;screenshot&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "screenshot",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;upload&quot;,
-            &quot;visible&quot;: true
+            "toolBar": "upload",
+            "visible": true
         },
 		 {
-            &quot;toolBar&quot;: &quot;library&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "library",
+            "visible": false
         },
 		 {
-            &quot;toolBar&quot;: &quot;volumeUp&quot;,
-            &quot;visible&quot;: false
+            "toolBar": "volumeUp",
+            "visible": false
         }
     ]
 }
@@ -100,9 +98,9 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 
 ```json
 {
-    &quot;traceId&quot;: &quot;ADD9A7489BB2198DBC0FB37082684CB0&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "ADD9A7489BB2198DBC0FB37082684CB0",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

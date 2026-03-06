@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get all proxies
@@ -24,10 +22,10 @@ Get all proxies
 
 ```json
 {
-	&quot;page&quot;: 1,
-	&quot;pageSize&quot;: 1,
-	&quot;ids&quot;: [
-		&quot;493188072704313353&quot;
+	"page": 1,
+	"pageSize": 1,
+	"ids": [
+		"493188072704313353"
 	]
 }
 ```
@@ -57,22 +55,22 @@ Get all proxies
 
 ```json
 {
-    &quot;traceId&quot;: &quot;31ec87cd-b8a0-40c1-984e-9d6b8a483322&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-		&quot;total&quot;: 1,
-		&quot;page&quot;: 1,
-		&quot;pageSize&quot;: 1,
-		&quot;list&quot;: [
+    "traceId": "31ec87cd-b8a0-40c1-984e-9d6b8a483322",
+    "code": 0,
+    "msg": "success",
+    "data": {
+		"total": 1,
+		"page": 1,
+		"pageSize": 1,
+		"list": [
 			{
-				&quot;id&quot;: &quot;493188072704313353&quot;,
-				&quot;serialNo&quot;: 1,
-				&quot;scheme&quot;: &quot;socks5&quot;,
-				&quot;server&quot;: &quot;192.3.8.1&quot;,
-				&quot;port&quot;: 8000,
-				&quot;username&quot;: &quot;admin&quot;,
-				&quot;password&quot;: &quot;admin&quot;
+				"id": "493188072704313353",
+				"serialNo": 1,
+				"scheme": "socks5",
+				"server": "192.3.8.1",
+				"port": 8000,
+				"username": "admin",
+				"password": "admin"
 			}
 		]
 	}

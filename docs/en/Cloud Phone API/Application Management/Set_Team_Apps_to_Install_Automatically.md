@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Set up automatic installation for team applications. Once automatic installation is enabled, the applications will be installed after the cloud phone starts up.
@@ -23,15 +21,15 @@ Set up automatic installation for team applications. Once automatic installation
 | --- | --- | --- | --- | --- |
 | id | Yes | string | Team application ID | 497652752864775437 |
 | status | Yes | integer | Whether to install automatically, 0 for no, 1 for yes | 1 |
-| installGroupIds | No | array[string] | Allowed environment groups for installation, defaults to all environment groups, 0 represents no group | [&quot;497652752864775437&quot;] |
+| installGroupIds | No | array[string] | Allowed environment groups for installation, defaults to all environment groups, 0 represents no group | ["497652752864775437"] |
 
 ## Request Example
 
 
 ```json
 {
- &quot;id&quot;: &quot;497652752864775437&quot;,
- &quot;status&quot;: 1
+ "id": "497652752864775437",
+ "status": 1
 }
 ```
 
@@ -41,9 +39,9 @@ Set up automatic installation for team applications. Once automatic installation
 
 ```json
 {
- &quot;traceId&quot;: &quot;886A92FCBE9B7A52A7F583FCBD2BF6A8&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "886A92FCBE9B7A52A7F583FCBD2BF6A8",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

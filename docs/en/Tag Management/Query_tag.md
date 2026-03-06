@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## Interface Description
 
@@ -38,8 +36,8 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5
+  "page": 1,
+  "pageSize": 5
 }
 ```
 
@@ -47,9 +45,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;ids&quot;: [&quot;528989565910778880&quot;, &quot;528989565894198272&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "ids": ["528989565910778880", "528989565894198272"]
 }
 ```
 
@@ -57,9 +55,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;names&quot;: [&quot;tagRed&quot;, &quot;tagWhite&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "names": ["tagRed", "tagWhite"]
 }
 ```
 
@@ -67,9 +65,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;colors&quot;: [&quot;blue&quot;, &quot;red&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "colors": ["blue", "red"]
 }
 ```
 
@@ -77,38 +75,38 @@
 
 ```json
 {
-  &quot;traceId&quot;: &quot;913AE8DBBBB48B70825EBAABB11B91BD&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;total&quot;: 24,
-    &quot;page&quot;: 1,
-    &quot;pageSize&quot;: 5,
-    &quot;list&quot;: [
+  "traceId": "913AE8DBBBB48B70825EBAABB11B91BD",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "total": 24,
+    "page": 1,
+    "pageSize": 5,
+    "list": [
       {
-        &quot;id&quot;: &quot;528989565877355520&quot;,
-        &quot;name&quot;: &quot;tagGreen&quot;,
-        &quot;color&quot;: &quot;green&quot;
+        "id": "528989565877355520",
+        "name": "tagGreen",
+        "color": "green"
       },
       {
-        &quot;id&quot;: &quot;528989565877289984&quot;,
-        &quot;name&quot;: &quot;tagBlue&quot;,
-        &quot;color&quot;: &quot;blue&quot;
+        "id": "528989565877289984",
+        "name": "tagBlue",
+        "color": "blue"
       },
       {
-        &quot;id&quot;: &quot;528989565894067200&quot;,
-        &quot;name&quot;: &quot;tagPurple&quot;,
-        &quot;color&quot;: &quot;purple&quot;
+        "id": "528989565894067200",
+        "name": "tagPurple",
+        "color": "purple"
       },
       {
-        &quot;id&quot;: &quot;528989565910778880&quot;,
-        &quot;name&quot;: &quot;tagRed&quot;,
-        &quot;color&quot;: &quot;red&quot;
+        "id": "528989565910778880",
+        "name": "tagRed",
+        "color": "red"
       },
       {
-        &quot;id&quot;: &quot;528989565894198272&quot;,
-        &quot;name&quot;: &quot;tagEmpty&quot;,
-        &quot;color&quot;: &quot;white&quot;
+        "id": "528989565894198272",
+        "name": "tagEmpty",
+        "color": "white"
       }
     ]
   }

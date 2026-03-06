@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Delete unnecessary environments. Batch deletion is supported, but the number of environments that can be deleted at one time cannot exceed 100.
@@ -28,7 +26,7 @@ Delete unnecessary environments. Batch deletion is supported, but the number of 
 
 ```json
 {
-  &quot;envIds&quot;: [&quot;539893235657500146&quot;]
+  "envIds": ["539893235657500146"]
 }
 ```
 
@@ -38,13 +36,13 @@ Delete unnecessary environments. Batch deletion is supported, but the number of 
 
 ```json
 {
-	&quot;traceId&quot;:&quot;123456ABCDEF&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;data&quot;:{
-		&quot;busyIds&quot;:[&quot;539893235657500146&quot;],
-		&quot;serverErrIds&quot;:[&quot;539893235657500147&quot;],
-		&quot;successIds&quot;:[&quot;539893235657500148&quot;]
+	"traceId":"123456ABCDEF",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"busyIds":["539893235657500146"],
+		"serverErrIds":["539893235657500147"],
+		"successIds":["539893235657500148"]
 	}
 }
 ```

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Modify group information including name and remark.
@@ -32,11 +30,11 @@
 
 ```json
 {
-  &quot;list&quot;: [
+  "list": [
     {
-      &quot;id&quot;: &quot;528995439832269824&quot;,
-      &quot;name&quot;: &quot;newGroupRemark&quot;,
-      &quot;remark&quot;: &quot;update remark&quot;
+      "id": "528995439832269824",
+      "name": "newGroupRemark",
+      "remark": "update remark"
     }
   ]
 }
@@ -46,13 +44,13 @@
 
 ```json
 {
-  &quot;traceId&quot;: &quot;B068F85E849B683291AE8ECCBB7B3DB9&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;totalAmount&quot;: 1,
-    &quot;successAmount&quot;: 1,
-    &quot;failAmount&quot;: 0
+  "traceId": "B068F85E849B683291AE8ECCBB7B3DB9",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "totalAmount": 1,
+    "successAmount": 1,
+    "failAmount": 0
   }
 }
 ```

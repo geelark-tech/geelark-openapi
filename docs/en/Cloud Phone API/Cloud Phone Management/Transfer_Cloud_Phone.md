@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 - Transfer Cloud Phone
@@ -18,21 +16,21 @@
 | --- | --- | --- | --- | --- |
 | account | yes | string | target account | Anna@geelark.com |
 | ids | yes | array[string] | The maximum length limit for the array of the cloud phone ID to be transferred is 200, and any part exceeding 200 will be ignored | |
-| transferOption | no | arrry[string] |Transfer options with optional parameters：name：cloud phone name，proxy：cloud phone proxy，tag：cloud phone tag，remark：cloud phone remark，files：cloud phone files | [ &quot;name&quot;,&quot;proxy&quot;, &quot;tag&quot;,&quot;remark&quot; ]| 
+| transferOption | no | arrry[string] |Transfer options with optional parameters：name：cloud phone name，proxy：cloud phone proxy，tag：cloud phone tag，remark：cloud phone remark，files：cloud phone files | [ "name","proxy", "tag","remark" ]| 
 
 ## Request Example
 
 ```json
 {
-    &quot;ids&quot;: [
-        &quot;539893235657500146&quot;
+    "ids": [
+        "539893235657500146"
     ],
-    &quot;account&quot;: &quot;Anna@geelark.com&quot;,
-    &quot;transferOption&quot;: [
-        &quot;name&quot;,
-        &quot;proxy&quot;,
-        &quot;tag&quot;,
-        &quot;remark&quot;
+    "account": "Anna@geelark.com",
+    "transferOption": [
+        "name",
+        "proxy",
+        "tag",
+        "remark"
     ]
 }
 ```
@@ -42,14 +40,14 @@
 
 ```json
 {
-	&quot;traceId&quot;: &quot;B0BA8FF29AB60B8ABF4E9A26BF08F7B9&quot;,
-	&quot;code&quot;: 0,
-	&quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: [
+	"traceId": "B0BA8FF29AB60B8ABF4E9A26BF08F7B9",
+	"code": 0,
+	"msg": "success",
+	"data": [
 		{
-			&quot;successCount&quot;: 10,
-			&quot;failCount&quot;: 2,
-			&quot;failEnvIds&quot; : [&quot;539893235657500146&quot;]
+			"successCount": 10,
+			"failCount": 2,
+			"failEnvIds" : ["539893235657500146"]
 		}
 	]
 }

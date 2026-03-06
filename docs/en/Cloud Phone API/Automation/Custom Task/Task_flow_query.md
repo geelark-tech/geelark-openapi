@@ -1,5 +1,3 @@
-[TOC]
-
 Request URL
 -----------
 
@@ -23,8 +21,8 @@ Request Example
 
 ```json
 {
-	&quot;page&quot;: 1,
-	&quot;pageSize&quot;: 1
+	"page": 1,
+	"pageSize": 1
 }
 ```
 
@@ -51,22 +49,22 @@ Response Example
 
 ```json
 {
-	 &quot;traceId&quot;: &quot;914969A485BE1AE584ECB4D19AF83EBA&quot;,
-	 &quot;code&quot;: 0,
-	 &quot;msg&quot;: &quot;success&quot;,
-	 &quot;data&quot;: {
-		 &quot;total&quot;: 1,
-		 &quot;page&quot;: 1,
-		 &quot;pageSize&quot;: 1,
-		 &quot;items&quot;: [
+	 "traceId": "914969A485BE1AE584ECB4D19AF83EBA",
+	 "code": 0,
+	 "msg": "success",
+	 "data": {
+		 "total": 1,
+		 "page": 1,
+		 "pageSize": 1,
+		 "items": [
 			 {
-				 &quot;id&quot;: &quot;562316072435344885&quot;,
-				 &quot;title&quot;: &quot;video flow&quot;,
-				 &quot;desc&quot;: &quot;this is a video flow&quot;,
-				 &quot;params&quot;: [
-					 &quot;Title&quot;,
-					 &quot;Desc&quot;,
-					 &quot;Video&quot;
+				 "id": "562316072435344885",
+				 "title": "video flow",
+				 "desc": "this is a video flow",
+				 "params": [
+					 "Title",
+					 "Desc",
+					 "Video"
 				 ]
 			 }
 		 ]

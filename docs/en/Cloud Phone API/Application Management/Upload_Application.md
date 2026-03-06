@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Upload Application
@@ -23,8 +21,8 @@ Upload Application
 
 ```json
 {
-    &quot;fileUrl&quot; : &quot;https://material.geelark.cn/user-upload/495622401615203830/apk/uCeztwvXpswsHPH5WFht.apk&quot;,
-    &quot;desc&quot; : &quot;app description&quot;
+    "fileUrl" : "https://material.geelark.cn/user-upload/495622401615203830/apk/uCeztwvXpswsHPH5WFht.apk",
+    "desc" : "app description"
 }
 ```
 
@@ -38,11 +36,11 @@ Upload Application
 
 ```json
 {
-    &quot;traceId&quot;: &quot;B82825D58F85FB31B755BD6CA32A30A9&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;taskId&quot;: &quot;1830906144634757120&quot;
+    "traceId": "B82825D58F85FB31B755BD6CA32A30A9",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "taskId": "1830906144634757120"
     }
 }
 ```

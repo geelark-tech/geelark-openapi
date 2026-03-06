@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 set material tag
 
@@ -22,8 +20,8 @@ set material tag
 ## Request Example
 ```json
 {
- &quot;materialsId&quot; : [&quot;570457374221926935&quot;],
- &quot;tagsId&quot; : [&quot;570461738663674391&quot;]
+ "materialsId" : ["570457374221926935"],
+ "tagsId" : ["570461738663674391"]
 }
 ```
 
@@ -32,20 +30,20 @@ set material tag
 
 ```json
 {
-    &quot;traceId&quot;: &quot;AC3ADD84BEA1D8D2A7DDAF8B90A8D2A8&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;failDetails&quot;: [
+    "traceId": "AC3ADD84BEA1D8D2A7DDAF8B90A8D2A8",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "failDetails": [
             {
-                &quot;id&quot;: &quot;5704573742219269351&quot;,
-                &quot;code&quot;: 60005,
-                &quot;msg&quot;: &quot;material not found&quot;
+                "id": "5704573742219269351",
+                "code": 60005,
+                "msg": "material not found"
             },
             {
-                &quot;id&quot;: &quot;5704617386636743911&quot;,
-                &quot;code&quot;: 43022,
-                &quot;msg&quot;: &quot;tag not found&quot;
+                "id": "5704617386636743911",
+                "code": 43022,
+                "msg": "tag not found"
             }
         ]
     }

@@ -28,9 +28,9 @@ Request Example
 
 ```json
 {
-    &quot;profilesId&quot;: &quot;497540679501610040&quot;,
-    &quot;parallelsNum&quot;:1,
-    &quot;monthlyRentalNum&quot; : 1
+    "profilesId": "497540679501610040",
+    "parallelsNum":1,
+    "monthlyRentalNum" : 1
 }
 ```
 
@@ -39,9 +39,9 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A3889654BA84B91CBABF8535B83AEABB&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "A3889654BA84B91CBABF8535B83AEABB",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

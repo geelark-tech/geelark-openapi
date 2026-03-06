@@ -1,5 +1,3 @@
-[TOC]
-
 ## 常用命令
 
 GeeLark云手机支持Andorid系统所有的ADB命令，以下是一些日常使用较多的命令，开启adb请参考：https://www.geelark.cn/knowledge-base/geelark-start-guide/#adb

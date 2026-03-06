@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 - 获取云手机设备ID （一键新机后请重新获取最新的ID），对应云手机唯一的硬件设备ID，等同于系统的Andorid_ID，App可以通过在云手机上获取此ID与云手机环境绑定。App端获取设备ID方式：
@@ -8,9 +6,9 @@ Android 13系统：通过adb执行 getprop ro.boot.serialno 命令
 
 ```java
 if(android.os.Build.VERSION.SDK_INT == 33){
-   serialNo = Command.exeCommand(&quot;getprop ro.boot.serialno&quot;);
+   serialNo = Command.exeCommand("getprop ro.boot.serialno");
 }else {
-   serialNo = Command.exeCommand(&quot;getprop ro.serialno&quot;);
+   serialNo = Command.exeCommand("getprop ro.serialno");
 }
 ```
 
@@ -32,7 +30,7 @@ if(android.os.Build.VERSION.SDK_INT == 33){
 
 ```json
 {
-    &quot;id&quot; : &quot;544932706425791985&quot;
+    "id" : "544932706425791985"
 }
 ```
 
@@ -41,11 +39,11 @@ if(android.os.Build.VERSION.SDK_INT == 33){
 
 ```json
 {
-    &quot;traceId&quot;: &quot;89D8C3C08DA4DB5089069D34A3786494&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;serialNum&quot;: &quot;r2cbvzlx5bs&quot;
+    "traceId": "89D8C3C08DA4DB5089069D34A3786494",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "serialNum": "r2cbvzlx5bs"
     }
 }
 ```

@@ -1,5 +1,3 @@
-[TOC]
-
 # 一、获取上传文件的临时地址uploadUrl
 ## 接口说明
 
@@ -17,13 +15,13 @@
 
 | 参数名       | 必选   |     类型   |    说明    |示例|
 | ----------- | -------| -----------|----------- |--------- |
-| fileType   | 是     |   string | 文件类型, 目前支持：&quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, &quot;gif&quot;, &quot;bmp&quot;, &quot;tiff&quot;, &quot;tif&quot;, &quot;webp&quot;, &quot;svg&quot;, &quot;heif&quot;, &quot;heic&quot;,&quot;mp4&quot;, &quot;avi&quot;, &quot;mkv&quot;, &quot;mov&quot;, &quot;wmv&quot;, &quot;flv&quot;, &quot;webm&quot;, &quot;mpeg&quot;, &quot;mpg&quot;, &quot;3gp&quot;,&quot;apk&quot;,&quot;xapk&quot;,&quot;xml&quot;,&quot;mp3&quot; | jpg |
+| fileType   | 是     |   string | 文件类型, 目前支持："jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp", "svg", "heif", "heic","mp4", "avi", "mkv", "mov", "wmv", "flv", "webm", "mpeg", "mpg", "3gp","apk","xapk","xml","mp3" | jpg |
 
 ## 请求示例
 
 ```json
 {
-    &quot;fileType&quot;: &quot;mp4&quot;
+    "fileType": "mp4"
 }
 ```
 
@@ -38,12 +36,12 @@
 
 ```json
 {
- &quot;traceId&quot;: &quot;9F49062C8DB3C90D8E94B4DFA37BDF89&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;,
- &quot;data&quot;: {
- &quot;uploadUrl&quot;: &quot;http://42-studio-prod.oss-cn-hangzhou.aliyuncs.com/open-upload%2F497521349346987872%2F20240730%2Fe2u5amyB.txt?Expires=1722310832&amp;OSSAccessKeyId=LTAI5t7JzQBfi1nV3HbsKojG&amp;Signature=HGBVqTUfXcUAthLPnO3ZYIVnAxg%3D&quot;,
- &quot;resourceUrl&quot;: &quot;https://material-prod.geelark.cn/open-upload/497521349346987872/20240730/e2u5amyB.txt&quot;
+ "traceId": "9F49062C8DB3C90D8E94B4DFA37BDF89",
+ "code": 0,
+ "msg": "success",
+ "data": {
+ "uploadUrl": "http://42-studio-prod.oss-cn-hangzhou.aliyuncs.com/open-upload%2F497521349346987872%2F20240730%2Fe2u5amyB.txt?Expires=1722310832&amp;OSSAccessKeyId=LTAI5t7JzQBfi1nV3HbsKojG&amp;Signature=HGBVqTUfXcUAthLPnO3ZYIVnAxg%3D",
+ "resourceUrl": "https://material-prod.geelark.cn/open-upload/497521349346987872/20240730/e2u5amyB.txt"
  }
 }
 ```
@@ -57,26 +55,26 @@
 
 ## linux
 ``` shell
-curl -X PUT --upload-file ./upload_test.txt &quot;uploadUrl&quot;
+curl -X PUT --upload-file ./upload_test.txt "uploadUrl"
 ```
 
 ## Go
 ```go
 // upload file path
-filePath := &quot;/Users/xxx/Desktop/upload_test.mp4&quot;
+filePath := "/Users/xxx/Desktop/upload_test.mp4"
 
 // open file
 file, err := os.Open(filePath)
 if err != nil {
- fmt.Println(&quot;Error opening file:&quot;, err)
+ fmt.Println("Error opening file:", err)
  return
 }
 
 // create http client
-url := &quot;uploadUrl&quot;
-req, err := http.NewRequest(&quot;PUT&quot;, url, file)
+url := "uploadUrl"
+req, err := http.NewRequest("PUT", url, file)
 if err != nil {
- fmt.Println(&quot;Error creating request:&quot;, err)
+ fmt.Println("Error creating request:", err)
  return
 }
 
@@ -84,16 +82,16 @@ if err != nil {
 client := &amp;http.Client{}
 resp, err := client.Do(req)
 if err != nil {
- fmt.Println(&quot;Error sending request:&quot;, err)
+ fmt.Println("Error sending request:", err)
  return
 }
 defer resp.Body.Close()
 
 // handle response
 if resp.StatusCode == http.StatusOK {
- fmt.Println(&quot;File uploaded successfully!&quot;)
+ fmt.Println("File uploaded successfully!")
 } else {
- fmt.Println(&quot;Error uploading file:&quot;, resp.Status)
+ fmt.Println("Error uploading file:", resp.Status)
 }
 ```
 

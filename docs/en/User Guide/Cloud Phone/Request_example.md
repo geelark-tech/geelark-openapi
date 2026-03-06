@@ -1,19 +1,17 @@
-[TOC]
-
 # Request Example
 
 ## Token verification
 
 ```js
-const url = &quot;https://openapi.geelark.com/open/v1/phone/list&quot;;
+const url = "https://openapi.geelark.com/open/v1/phone/list";
 
-const appToken = &quot;your appToken&quot;;
+const appToken = "your appToken";
 
-var traceUUid = &quot;yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx&quot;.replace(
+var traceUUid = "yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx".replace(
  /[xy]/g,
  function (c) {
  var r = (Math.random() * 16) | 0, 
- v = c == &quot;x&quot; ? r : (r &amp; 0x3) | 0x8; 
+ v = c == "x" ? r : (r &amp; 0x3) | 0x8; 
  return v.toString(16); 
  }
 );
@@ -23,15 +21,15 @@ var traceId = traceUUid.toUpperCase();
 var data = {
  page: 1,
  pageSize: 10,
- tags: [&quot;tagNew&quot;],
+ tags: ["tagNew"],
 };
 
 fetch(url, {
- method: &quot;POST&quot;,
+ method: "POST",
  headers: {
- &quot;Content-Type&quot;: &quot;application/json&quot;,
+ "Content-Type": "application/json",
  traceId: traceId,
- Authorization: &quot;Bearer &quot; + appToken,
+ Authorization: "Bearer " + appToken,
  },
  body: JSON.stringify(data),
 })
@@ -47,21 +45,21 @@ fetch(url, {
 ## Key verification
 
 ```js
-const CryptoJS = require(&quot;crypto-js&quot;);
+const CryptoJS = require("crypto-js");
 
-const url = &quot;https://openapi.geelark.com/open/v1/phone/list&quot;; // Example request URL
+const url = "https://openapi.geelark.com/open/v1/phone/list"; // Example request URL
 
-const appID = &quot;your appID&quot;; // Your appID
-const apiKey = &quot;your apiKey&quot;; // Your apiKey
+const appID = "your appID"; // Your appID
+const apiKey = "your apiKey"; // Your apiKey
 
 let timestamp = new Date().getTime().toString(); // Millisecond timestamp
 
 // Generate UUID
-var traceUUid = &quot;yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx&quot;.replace(
+var traceUUid = "yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx".replace(
  /[xy]/g,
  function (c) {
  var r = (Math.random() * 16) | 0, // Randomly generate a number between 0 and 15
- v = c == &quot;x&quot; ? r : (r &amp; 0x3) | 0x8; // If c is &#039;y&#039;, only take one of 8, 9, a, b
+ v = c == "x" ? r : (r &amp; 0x3) | 0x8; // If c is &#039;y&#039;, only take one of 8, 9, a, b
  return v.toString(16); // Convert the number to a hexadecimal string
  }
 );
@@ -81,7 +79,7 @@ var data = {
 };
 
 headers = {
- &quot;Content-Type&quot;: &quot;application/json&quot;,
+ "Content-Type": "application/json",
  appId: appID,
  traceId: traceId,
  ts: timestamp,
@@ -92,9 +90,9 @@ headers = {
 console.log(headers);
 
 fetch(url, {
- method: &quot;POST&quot;,
+ method: "POST",
  headers: {
- &quot;Content-Type&quot;: &quot;application/json&quot;,
+ "Content-Type": "application/json",
  appId: appID,
  traceId: traceId,
  ts: timestamp,

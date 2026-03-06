@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Grant team application permissions, including all permissions such as location permissions, which only apply to newly installed applications.
@@ -30,8 +28,8 @@ Grant team application permissions, including all permissions such as location p
 
 ```json
 {
- &quot;id&quot;: &quot;497652752864775437&quot;,
- &quot;appAuth&quot;: 1
+ "id": "497652752864775437",
+ "appAuth": 1
 }
 ```
 
@@ -41,9 +39,9 @@ Grant team application permissions, including all permissions such as location p
 
 ```json
 {
- &quot;traceId&quot;: &quot;886A92FCBE9B7A52A7F583FCBD2BF6A8&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "886A92FCBE9B7A52A7F583FCBD2BF6A8",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

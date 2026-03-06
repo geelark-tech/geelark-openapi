@@ -1,10 +1,8 @@
-[TOC]
-
 API Description
 ---------------
 
 Upload files to the cloud phone.  
-Before uploading, please start the cloud phone. The file will be uploaded to the &quot;Downloads&quot; folder of the cloud phone.
+Before uploading, please start the cloud phone. The file will be uploaded to the "Downloads" folder of the cloud phone.
 
 Request URL
 -----------
@@ -28,8 +26,8 @@ Request Example
 ---------------
 ```json
 {
-    &quot;id&quot;: &quot;528715748189668352&quot;,
-	&quot;fileUrl&quot; : &quot;https://material-prod.geelark.cn/app/icon/20240506/nFrUEcRc9I.jpg&quot;
+    "id": "528715748189668352",
+	"fileUrl" : "https://material-prod.geelark.cn/app/icon/20240506/nFrUEcRc9I.jpg"
 }
 ```
 
@@ -38,11 +36,11 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A62BBBF3A294487F9B49B9FFA0F84CA8&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-        &quot;taskId&quot;: &quot;1850726441252569088&quot;
+    "traceId": "A62BBBF3A294487F9B49B9FFA0F84CA8",
+    "code": 0,
+    "msg": "success",
+	"data": {
+        "taskId": "1850726441252569088"
     }
 }
 ```

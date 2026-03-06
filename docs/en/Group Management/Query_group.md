@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## Interface Description
 
@@ -36,8 +34,8 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5
+  "page": 1,
+  "pageSize": 5
 }
 ```
 
@@ -45,9 +43,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;ids&quot;: [&quot;528995439832269824&quot;, &quot;528985080069096448&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "ids": ["528995439832269824", "528985080069096448"]
 }
 ```
 
@@ -55,9 +53,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;names&quot;: [&quot;groupRemark&quot;, &quot;testRemark&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "names": ["groupRemark", "testRemark"]
 }
 ```
 
@@ -65,9 +63,9 @@
 
 ```json
 {
-  &quot;page&quot;: 1,
-  &quot;pageSize&quot;: 5,
-  &quot;remarks&quot;: [&quot;remark&quot;, &quot;test&quot;]
+  "page": 1,
+  "pageSize": 5,
+  "remarks": ["remark", "test"]
 }
 ```
 
@@ -75,23 +73,23 @@
 
 ```json
 {
-  &quot;traceId&quot;: &quot;A25B0025BA886B1EB2679AAAAC599998&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;total&quot;: 2,
-    &quot;page&quot;: 1,
-    &quot;pageSize&quot;: 5,
-    &quot;list&quot;: [
+  "traceId": "A25B0025BA886B1EB2679AAAAC599998",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "total": 2,
+    "page": 1,
+    "pageSize": 5,
+    "list": [
       {
-        &quot;id&quot;: &quot;528995439832269824&quot;,
-        &quot;name&quot;: &quot;groupRemark&quot;,
-        &quot;remark&quot;: &quot;remark&quot;
+        "id": "528995439832269824",
+        "name": "groupRemark",
+        "remark": "remark"
       },
       {
-        &quot;id&quot;: &quot;528985080069096448&quot;,
-        &quot;name&quot;: &quot;testRemark&quot;,
-        &quot;remark&quot;: &quot;test&quot;
+        "id": "528985080069096448",
+        "name": "testRemark",
+        "remark": "test"
       }
     ]
   }

@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 * Create a warmup task by directly calling the add task interface.
@@ -75,15 +73,15 @@
 
 ```json
 {
-    &quot;planName&quot;: &quot;testAdd&quot;,
-    &quot;taskType&quot;: 2,
-    &quot;list&quot;: [
+    "planName": "testAdd",
+    "taskType": 2,
+    "list": [
         {
-            &quot;scheduleAt&quot;: 1718744459,
-            &quot;envId&quot;: &quot;123456654321&quot;,
-            &quot;action&quot;: &quot;search video&quot;,
-            &quot;keywords&quot;: [&quot;hi&quot;],
-			&quot;duration&quot;: 10
+            "scheduleAt": 1718744459,
+            "envId": "123456654321",
+            "action": "search video",
+            "keywords": ["hi"],
+			"duration": 10
         }
     ]
 }
@@ -93,13 +91,13 @@
 
 ```json
 {
-    &quot;planName&quot;: &quot;testAdd&quot;,
-    &quot;taskType&quot;: 1,
-    &quot;list&quot;: [
+    "planName": "testAdd",
+    "taskType": 1,
+    "list": [
         {
-            &quot;scheduleAt&quot;: 1718744459,
-            &quot;envId&quot;: &quot;123456654321&quot;,
-            &quot;video&quot;: &quot;https://demo.geelark.com/open-upload/DhRP36s3.mp4&quot;
+            "scheduleAt": 1718744459,
+            "envId": "123456654321",
+            "video": "https://demo.geelark.com/open-upload/DhRP36s3.mp4"
         }
     ]
 }
@@ -109,13 +107,13 @@
 
 ```json
 {
-    &quot;planName&quot;: &quot;testAdd&quot;,
-    &quot;taskType&quot;: 3,
-    &quot;list&quot;: [
+    "planName": "testAdd",
+    "taskType": 3,
+    "list": [
         {
-            &quot;scheduleAt&quot;: 1718744459,
-            &quot;envId&quot;: &quot;123456654321&quot;,
-            &quot;images&quot;: [&quot;https://demo.geelark.com/open-upload/DhRP36s3.jpg&quot;, &quot;https://demo.geelark.com/open-upload/DhRP36s3.jpg&quot;]
+            "scheduleAt": 1718744459,
+            "envId": "123456654321",
+            "images": ["https://demo.geelark.com/open-upload/DhRP36s3.jpg", "https://demo.geelark.com/open-upload/DhRP36s3.jpg"]
         }
     ]
 }
@@ -131,12 +129,12 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCEDF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-		&quot;taskIds&quot;: [
-			&quot;123456ABCEDF&quot;
+    "traceId": "123456ABCEDF",
+    "code": 0,
+    "msg": "success",
+	"data": {
+		"taskIds": [
+			"123456ABCEDF"
 		]
 	}
 }

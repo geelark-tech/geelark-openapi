@@ -1,5 +1,3 @@
-[TOC]
-
 API Description
 ---------------
 
@@ -29,9 +27,9 @@ Request Example
 
 ```json
 {
-    &quot;envId&quot; : &quot;1809135651036667904&quot;,
-    &quot;page&quot; : 1,
-    &quot;pageSize&quot; : 5
+    "envId" : "1809135651036667904",
+    "page" : 1,
+    "pageSize" : 5
 }
 ```
 
@@ -64,26 +62,26 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "123",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "items": [
             {
-                &quot;appIcon&quot;: &quot;http://cmp1-prod.zxpcloud.com/apps/io.tm.k.drama/K-DRAMA_1716451323126.png&quot;,
-                &quot;appId&quot;: &quot;1793552962123993090&quot;,
-                &quot;appName&quot;: &quot;K-DRAMA&quot;,
-                &quot;appVersionId&quot;: &quot;1793552962140770305&quot;,
-                &quot;installStatus&quot;: 1,
-                &quot;installTime&quot;: &quot;2024-07-10 23:07:56&quot;,
-                &quot;packageName&quot;: &quot;io.tm.k.drama&quot;,
-                &quot;versionCode&quot;: &quot;21120300&quot;,
-                &quot;versionName&quot;: &quot;1.0.1&quot;
+                "appIcon": "http://cmp1-prod.zxpcloud.com/apps/io.tm.k.drama/K-DRAMA_1716451323126.png",
+                "appId": "1793552962123993090",
+                "appName": "K-DRAMA",
+                "appVersionId": "1793552962140770305",
+                "installStatus": 1,
+                "installTime": "2024-07-10 23:07:56",
+                "packageName": "io.tm.k.drama",
+                "versionCode": "21120300",
+                "versionName": "1.0.1"
             }
         ],
-        &quot;total&quot;: 1,
-        &quot;page&quot;: 1,
-        &quot;pageSize&quot;: 5
+        "total": 1,
+        "page": 1,
+        "pageSize": 5
     }
 }
 ```

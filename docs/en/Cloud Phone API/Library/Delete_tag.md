@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 delete material tag
 
@@ -21,7 +19,7 @@ delete material tag
 ## Request Example
 ```json
 {
-    &quot;ids&quot; : [&quot;570461738663674391&quot;]
+    "ids" : ["570461738663674391"]
 }
 ```
 
@@ -30,18 +28,18 @@ delete material tag
 
 ```json
 {
-  &quot;traceId&quot;: &quot;ACEB0CFEB887F99CB989BC9D9FF92BBC&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;totalAmount&quot;: 2,
-    &quot;successAmount&quot;: 1,
-    &quot;failAmount&quot;: 1,
-    &quot;failDetails&quot;: [
+  "traceId": "ACEB0CFEB887F99CB989BC9D9FF92BBC",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "totalAmount": 2,
+    "successAmount": 1,
+    "failAmount": 1,
+    "failDetails": [
       {
-        &quot;code&quot;: 43022,
-        &quot;id&quot;: &quot;528953724308030464&quot;,
-        &quot;msg&quot;: &quot;tag not found&quot;
+        "code": 43022,
+        "id": "528953724308030464",
+        "msg": "tag not found"
       }
     ]
   }

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 create material
 
@@ -24,9 +22,9 @@ create material
 ## Request Example
 ```json
 {
- &quot;url&quot; : &quot;https://material.geelark.cn/client-img/banner0903_cn.gif&quot;,
- &quot;tagsId&quot; : [&quot;569577509402731994&quot;,&quot;569577514586891738&quot;],
- &quot;fileName&quot;: &quot;a.jpg&quot;
+ "url" : "https://material.geelark.cn/client-img/banner0903_cn.gif",
+ "tagsId" : ["569577509402731994","569577514586891738"],
+ "fileName": "a.jpg"
 }
 ```
 
@@ -35,16 +33,16 @@ create material
 
 ```json
 {
- &quot;traceId&quot;: &quot;ADD9A7489BB2198DBC0FB37082684CB0&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;,
- &quot;data&quot;: {
- &quot;id&quot;: &quot;570606523940605924&quot;,
- &quot;failDetails&quot;: [
+ "traceId": "ADD9A7489BB2198DBC0FB37082684CB0",
+ "code": 0,
+ "msg": "success",
+ "data": {
+ "id": "570606523940605924",
+ "failDetails": [
  {
- &quot;id&quot;: &quot;5695775094027319941&quot;,
- &quot;code&quot;: 43022,
- &quot;msg&quot;: &quot;tag not found&quot;
+ "id": "5695775094027319941",
+ "code": 43022,
+ "msg": "tag not found"
  }
  ]
  }

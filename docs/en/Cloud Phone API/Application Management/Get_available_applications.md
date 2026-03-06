@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get the list of apps available for installation on the cloud phone.
@@ -26,11 +24,11 @@ Get the list of apps available for installation on the cloud phone.
 
 ```json
 {
-    &quot;name&quot; : &quot;tiktok&quot;,
-    &quot;envId&quot; : &quot;1809135651036667904&quot;,
-	&quot;getUploadApp&quot; : false,
-    &quot;page&quot; : 1,
-    &quot;pageSize&quot; : 5
+    "name" : "tiktok",
+    "envId" : "1809135651036667904",
+	"getUploadApp" : false,
+    "page" : 1,
+    "pageSize" : 5
 }
 ```
 
@@ -67,30 +65,30 @@ Get the list of apps available for installation on the cloud phone.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "123",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "items": [
             {
-                &quot;appIcon&quot;: &quot;http://cmp1-prod.zxpcloud.com/apps/io.tm.k.drama/K-DRAMA_1716451323126.png&quot;,
-                &quot;appName&quot;: &quot;K-DRAMA&quot;,
-                &quot;appVersionInfoList&quot;: [
+                "appIcon": "http://cmp1-prod.zxpcloud.com/apps/io.tm.k.drama/K-DRAMA_1716451323126.png",
+                "appName": "K-DRAMA",
+                "appVersionInfoList": [
                     {
-                        &quot;id&quot;: &quot;1793552962140770305&quot;,
-                        &quot;installStatus&quot;: 1,
-                        &quot;versionCode&quot;: 21120300,
-                        &quot;versionName&quot;: &quot;1.0.1&quot;
+                        "id": "1793552962140770305",
+                        "installStatus": 1,
+                        "versionCode": 21120300,
+                        "versionName": "1.0.1"
                     }
                 ],
-                &quot;id&quot;: &quot;1793552962123993090&quot;,
-                &quot;installStatus&quot;: 1,
-                &quot;packageName&quot;: &quot;io.tm.k.drama&quot;
+                "id": "1793552962123993090",
+                "installStatus": 1,
+                "packageName": "io.tm.k.drama"
             }
         ],
-        &quot;total&quot;: 1,
-        &quot;page&quot;: 1,
-        &quot;pageSize&quot;: 5
+        "total": 1,
+        "page": 1,
+        "pageSize": 5
     }
 }
 ```

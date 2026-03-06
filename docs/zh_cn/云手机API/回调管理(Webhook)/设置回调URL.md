@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 用户请求api后，可以在自己设置的回调接口中处理相关信息
 
@@ -22,7 +20,7 @@
 ## 请求示例
 ```json
 {
-    &quot;url&quot;: &quot;http:/example.geelark.com/phone/callback/test&quot;
+    "url": "http:/example.geelark.com/phone/callback/test"
 }
 ```
 
@@ -31,9 +29,9 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;960B32039F84AA489514ADCC9ADA909F&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "960B32039F84AA489514ADCC9ADA909F",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

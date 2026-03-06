@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Modify environment information, support updating account passwords and cookies, proxy information, fingerprint information, etc.
@@ -23,13 +21,13 @@ Modify environment information, support updating account passwords and cookies, 
 | id | Yes | string | Environment id | 497548067550006541 |
 | serialName | No | string | Environment name. If left blank, no change. Maximum 100 characters. | myBrowser |
 | groupId | No | string | Environment group id. If omitted, no change. If left blank, the environment is marked as ungrouped. | 497548067550006541 |
-| tagIds | No | array[string] | Environment tag ids. If omitted, no change. If left blank, the environment is marked as untagless. | [&quot;497548067550006541&quot;] |
+| tagIds | No | array[string] | Environment tag ids. If omitted, no change. If left blank, the environment is marked as untagless. | ["497548067550006541"] |
 | remark | No | string | Environment remark. Maximum 1500 characters. If left blank, no change. | myRemark |
-| cookie | No | string | Cookie. Supports JSON and Netscape formats. | [{&quot;domain&quot;:&quot;.example.com&quot;,&quot;expires&quot;:&quot;2025-12-31T23:59:59Z&quot;,&quot;httpOnly&quot;:true,&quot;name&quot;:&quot;SESSION_ID&quot;,&quot;path&quot;:&quot;/&quot;,&quot;sameSite&quot;:&quot;Lax&quot;,&quot;secure&quot;:true,&quot;value&quot;:&quot;a1b2c3d4e5f67890abcdef1234567890&quot;}] |
+| cookie | No | string | Cookie. Supports JSON and Netscape formats. | [{"domain":".example.com","expires":"2025-12-31T23:59:59Z","httpOnly":true,"name":"SESSION_ID","path":"/","sameSite":"Lax","secure":true,"value":"a1b2c3d4e5f67890abcdef1234567890"}] |
 | accountPlatform | No | string | Account platform. Will not be changed if not passed. Only supports https://www.tiktok.com/, https://www.facebook.com/ | https://www.tiktok.com/ |
 | accountUsername | No | string | Account username. Valid only when accountPlatform is valid. | myUser |
 | accountPassword | No | string | Account password. Valid only when accountPlatform is valid. | myPass |
-| openTabs | No | string | Opens the specified webpages. Separate multiple pages with &quot;;&quot;. If not passed, no changes will be made. | http://www.b.com |
+| openTabs | No | string | Opens the specified webpages. Separate multiple pages with ";". If not passed, no changes will be made. | http://www.b.com |
 | browserOs | No | int | Operating system. If not passed, no changes will be made. 1-win, 2-mac | 1 |
 | browserUa | No | string | UserAgent. If not passed, no changes will be made. | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.7103.93 Safari/537.36 |
 | simulateConfig | No | SimulateConfig | Simulate configuration. If not passed, no changes will be made. | See SimulateConfig |
@@ -106,51 +104,51 @@ Modify environment information, support updating account passwords and cookies, 
 
 ```json
 {
-	&quot;id&quot;:&quot;497548067550006541&quot;,
-	&quot;simulateConfig&quot;:{
-		&quot;webRtc&quot;:{
-			&quot;switcher&quot;:1
+	"id":"497548067550006541",
+	"simulateConfig":{
+		"webRtc":{
+			"switcher":1
 		},
-		&quot;geoLocation&quot;:{
-			&quot;switcher&quot;:1,
-			&quot;baseOnIp&quot;:true,
-			&quot;longitude&quot;:20,
-			&quot;latitude&quot;:10,
-			&quot;accuracy&quot;:1
+		"geoLocation":{
+			"switcher":1,
+			"baseOnIp":true,
+			"longitude":20,
+			"latitude":10,
+			"accuracy":1
 		},
-		&quot;canvas&quot;:{
-			&quot;switcher&quot;:1
+		"canvas":{
+			"switcher":1
 		},
-		&quot;webglImage&quot;:{
-			&quot;switcher&quot;:1
+		"webglImage":{
+			"switcher":1
 		},
-		&quot;hardware&quot;:{
-			&quot;switcher&quot;:1
+		"hardware":{
+			"switcher":1
 		},
-		&quot;audioContext&quot;:{
-			&quot;switcher&quot;:1
+		"audioContext":{
+			"switcher":1
 		},
-		&quot;mediaDevice&quot;:{
-			&quot;switcher&quot;:1
+		"mediaDevice":{
+			"switcher":1
 		},
-		&quot;clientRects&quot;:{
-			&quot;switcher&quot;:1
+		"clientRects":{
+			"switcher":1
 		},
-		&quot;speechVoise&quot;:{
-			&quot;switcher&quot;:1
+		"speechVoise":{
+			"switcher":1
 		},
-		&quot;hardwareConcurrency&quot;:26,
-		&quot;memeryDevice&quot;:8,
-		&quot;doNotTrack&quot;:2,
-		&quot;bluetooth&quot;:{
-			&quot;switcher&quot;:1
+		"hardwareConcurrency":26,
+		"memeryDevice":8,
+		"doNotTrack":2,
+		"bluetooth":{
+			"switcher":1
 		},
-		&quot;battery&quot;:{
-			&quot;switcher&quot;:1
+		"battery":{
+			"switcher":1
 		},
-		&quot;portScanProtection&quot;:{
-			&quot;switcher&quot;:1,
-			&quot;value&quot;:&quot;80&quot;
+		"portScanProtection":{
+			"switcher":1,
+			"value":"80"
 		}
 	}
 }
@@ -162,9 +160,9 @@ Modify environment information, support updating account passwords and cookies, 
 
 ```json
 {
-  &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;
+  "traceId": "123456ABCDEF",
+  "code": 0,
+  "msg": "success"
 }
 ```
 

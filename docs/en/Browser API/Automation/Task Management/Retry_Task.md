@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## Interface Description
 
@@ -30,7 +28,7 @@ Retry the browser task; you can retry if the task fails or is canceled.
 
 ```json
 {
-    &quot;taskId&quot;: &quot;497652752864775437&quot;
+    "taskId": "497652752864775437"
 }
 ```
 
@@ -39,9 +37,9 @@ Retry the browser task; you can retry if the task fails or is canceled.
 
 ```json
 {
-	&quot;traceId&quot;:&quot;2XsBK1HDR&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;
+	"traceId":"2XsBK1HDR",
+	"code":0,
+	"msg":"success"
 }
 ```
 

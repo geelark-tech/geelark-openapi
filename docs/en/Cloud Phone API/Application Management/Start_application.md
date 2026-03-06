@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Start an app.
@@ -24,8 +22,8 @@ Start an app.
 
 ```json
 {
-    &quot;envId&quot; : &quot;1809135651036667904&quot;,
-    &quot;appVersionId&quot; : &quot;1793552962140770305&quot;
+    "envId" : "1809135651036667904",
+    "appVersionId" : "1793552962140770305"
 }
 ```
 
@@ -33,9 +31,9 @@ Start an app.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "123",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

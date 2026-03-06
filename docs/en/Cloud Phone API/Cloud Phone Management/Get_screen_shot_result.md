@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 Query the status of cloud phone screenshot task
 After requesting a screenshot, you can actively obtain the result through this interface within 30 minutes. If it expires, the retrieval will fail
@@ -22,7 +20,7 @@ After requesting a screenshot, you can actively obtain the result through this i
 ## Request Example
 ```json
 {
-    &quot;taskId&quot;: &quot;528715748189668352&quot;
+    "taskId": "528715748189668352"
 }
 ```
 
@@ -32,12 +30,12 @@ After requesting a screenshot, you can actively obtain the result through this i
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A62BBBF3A294487F9B49B9FFA0F84CA8&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-        &quot;status&quot;: 2,
-		&quot;downloadLink&quot;: &quot;https://zx-cloud-phone-pre.obs.cn-southwest-2.myhuaweicloud.com/envirFileExport/1851511129017700352/IMG_20241122160248.png?AccessKeyId=UFNIPAPFJX2MAGMFGRYZ&amp;Expires=1732264377&amp;Signature=dqV5JYzYDdm0wwAgkZIpDrs%2FL%2FE%3D&quot;
+    "traceId": "A62BBBF3A294487F9B49B9FFA0F84CA8",
+    "code": 0,
+    "msg": "success",
+	"data": {
+        "status": 2,
+		"downloadLink": "https://zx-cloud-phone-pre.obs.cn-southwest-2.myhuaweicloud.com/envirFileExport/1851511129017700352/IMG_20241122160248.png?AccessKeyId=UFNIPAPFJX2MAGMFGRYZ&amp;Expires=1732264377&amp;Signature=dqV5JYzYDdm0wwAgkZIpDrs%2FL%2FE%3D"
     }
 }
 ```

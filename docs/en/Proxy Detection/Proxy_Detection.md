@@ -1,5 +1,3 @@
-[TOC]
-
 API Description
 ---------------
 
@@ -33,12 +31,12 @@ Request Example
 ---------------
 ```json
 {
-	&quot;detect_type&quot;: &quot;IP2Location&quot;,
-	&quot;proxy_type&quot;: &quot;socks5&quot;,
-	&quot;server&quot;: &quot;185.162.130.86&quot;,
-	&quot;port&quot;: 10000,
-	&quot;username&quot;: &quot;username&quot;,
-	&quot;password&quot;: &quot;pass&quot;
+	"detect_type": "IP2Location",
+	"proxy_type": "socks5",
+	"server": "185.162.130.86",
+	"port": 10000,
+	"username": "username",
+	"password": "pass"
 }
 ```
 
@@ -61,19 +59,19 @@ Response Example
 ----------------
 ```json
 {
-	&quot;traceId&quot;: &quot;B379AA1BBBB529758ED091C480AA4285&quot;,
-	&quot;code&quot;: 0,
-	&quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-		&quot;detectStatus&quot;: true,
-		&quot;message&quot;: &quot;&quot;,
-		&quot;outboundIP&quot;: &quot;223.135.25.196&quot;,
-		&quot;countryCode&quot;: &quot;JP&quot;,
-		&quot;countryName&quot;: &quot;Japan&quot;,
-		&quot;subdivision&quot;: &quot;Tokyo&quot;,
-		&quot;city&quot;: &quot;Tokyo&quot;,
-		&quot;timezone&quot;: &quot;Asia/Tokyo&quot;,
-		&quot;isp&quot;: &quot;Sony Network Communications Inc.&quot;
+	"traceId": "B379AA1BBBB529758ED091C480AA4285",
+	"code": 0,
+	"msg": "success",
+	"data": {
+		"detectStatus": true,
+		"message": "",
+		"outboundIP": "223.135.25.196",
+		"countryCode": "JP",
+		"countryName": "Japan",
+		"subdivision": "Tokyo",
+		"city": "Tokyo",
+		"timezone": "Asia/Tokyo",
+		"isp": "Sony Network Communications Inc."
 	}
 }
 ```

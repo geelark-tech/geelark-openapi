@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Used to check the availability of the current device&#039;s API interface.
@@ -17,9 +15,9 @@ Used to check the availability of the current device&#039;s API interface.
 ```json
 
 {
-&quot;code&quot;: 0,
+"code": 0,
 
-&quot;msg&quot;: &quot;success&quot;
+"msg": "success"
 
 }```
 

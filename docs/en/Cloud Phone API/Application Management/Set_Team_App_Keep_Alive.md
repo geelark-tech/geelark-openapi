@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Enable or disable team app keep-alive. Only supports the Pro tier.
@@ -33,8 +31,8 @@ On Android 14, you must enable or disable keep-alive while the phone is powered 
 
 ```json
 {
- &quot;id&quot;: &quot;497652752864775437&quot;,
- &quot;opera&quot;: 1
+ "id": "497652752864775437",
+ "opera": 1
 }
 ```
 
@@ -44,9 +42,9 @@ On Android 14, you must enable or disable keep-alive while the phone is powered 
 
 ```json
 {
- &quot;traceId&quot;: &quot;886A92FCBE9B7A52A7F583FCBD2BF6A8&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "886A92FCBE9B7A52A7F583FCBD2BF6A8",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

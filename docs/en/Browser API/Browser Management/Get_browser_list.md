@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 Query the created environment information, including agent information, agent ID, etc.
@@ -22,11 +20,11 @@ Query the created environment information, including agent information, agent ID
 | --- | --- | --- | --- | --- |
 | page | No | int | Page number, minimum is 1, defaults to 1 if left blank | 1 |
 | pageSize | No | int | Number of records per page, minimum is 1, maximum is 100, defaults to 10 if left blank | 10 |
-| ids | No | array[string] | Environment IDs, maximum is 100. Pagination parameters are used only if left blank | [&quot;5213214343124321&quot;] |
+| ids | No | array[string] | Environment IDs, maximum is 100. Pagination parameters are used only if left blank | ["5213214343124321"] |
 | serialName | No | string | Environment name | myEnv |
 | remark | No | string | Remark | myRemark |
 | groupName | No | string | Group name | myGroup |
-| tags | No | array[string] | Array of tag names | [&quot;myTag&quot;] |
+| tags | No | array[string] | Array of tag names | ["myTag"] |
 
 
 ## Request Example
@@ -34,8 +32,8 @@ Query the created environment information, including agent information, agent ID
 
 ```json
 {
- &quot;page&quot;: 1,
- &quot;pageSize&quot;: 10
+ "page": 1,
+ "pageSize": 10
 }
 ```
 
@@ -45,109 +43,109 @@ Query the created environment information, including agent information, agent ID
 
 ```json
 {
-	&quot;traceId&quot;:&quot;Zt0YNAeHR&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;data&quot;:{
-		&quot;total&quot;:1,
-		&quot;page&quot;:1,
-		&quot;pageSize&quot;:10,
-		&quot;items&quot;:[
+	"traceId":"Zt0YNAeHR",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"total":1,
+		"page":1,
+		"pageSize":10,
+		"items":[
 			{
-				&quot;id&quot;:&quot;5213214343124321&quot;,
-				&quot;serialName&quot;:&quot;myEnv&quot;,
-				&quot;serialNo&quot;:&quot;3&quot;,
-				&quot;group&quot;:{
-					&quot;id&quot;:&quot;5213214343124321&quot;,
-					&quot;name&quot;:&quot;myGroup&quot;,
-					&quot;remark&quot;:&quot;myRemark&quot;
+				"id":"5213214343124321",
+				"serialName":"myEnv",
+				"serialNo":"3",
+				"group":{
+					"id":"5213214343124321",
+					"name":"myGroup",
+					"remark":"myRemark"
 				},
-				&quot;remark&quot;:&quot;myRemark&quot;,
-				&quot;tags&quot;:[
+				"remark":"myRemark",
+				"tags":[
 					{
-						&quot;name&quot;:&quot;myTag&quot;
+						"name":"myTag"
 					}
 				],
-				&quot;proxy&quot;:{
-					&quot;type&quot;:&quot;&quot;,
-					&quot;server&quot;:&quot;&quot;,
-					&quot;port&quot;:0,
-					&quot;username&quot;:&quot;&quot;,
-					&quot;password&quot;:&quot;&quot;
+				"proxy":{
+					"type":"",
+					"server":"",
+					"port":0,
+					"username":"",
+					"password":""
 				},
-				&quot;accountInfo&quot;:{
-					&quot;url&quot;:&quot;https://www.tiktok.com/&quot;,
-					&quot;userName&quot;:&quot;jay&quot;,
-					&quot;passWord&quot;:&quot;password&quot;,
-					&quot;afterStartup&quot;:3,
-					&quot;autoOpenUrls&quot;:[&quot;http://www.b.com&quot;]
+				"accountInfo":{
+					"url":"https://www.tiktok.com/",
+					"userName":"jay",
+					"passWord":"password",
+					"afterStartup":3,
+					"autoOpenUrls":["http://www.b.com"]
 				},
-				&quot;simulateInfo&quot;:{
-					&quot;os&quot;:2,
-					&quot;vendor&quot;:1,
-					&quot;mixtureKey&quot;:&quot;87da5186e1feabc1&quot;,
-					&quot;ua&quot;:&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.6943.141 Safari/537.36&quot;,
-					&quot;uaVersion&quot;:&quot;133&quot;,
-					&quot;timeZone&quot;:{
-						&quot;switcher&quot;:2
+				"simulateInfo":{
+					"os":2,
+					"vendor":1,
+					"mixtureKey":"87da5186e1feabc1",
+					"ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.6943.141 Safari/537.36",
+					"uaVersion":"133",
+					"timeZone":{
+						"switcher":2
 					},
-					&quot;webRtc&quot;:{
-						&quot;switcher&quot;:1
+					"webRtc":{
+						"switcher":1
 					},
-					&quot;geoLocation&quot;:{
-						&quot;switcher&quot;:1,
-						&quot;baseOnIp&quot;:true,
-						&quot;longitude&quot;:20,
-						&quot;latitude&quot;:10,
-						&quot;accuracy&quot;:1
+					"geoLocation":{
+						"switcher":1,
+						"baseOnIp":true,
+						"longitude":20,
+						"latitude":10,
+						"accuracy":1
 					},
-					&quot;language&quot;:{
-						&quot;switcher&quot;:1
+					"language":{
+						"switcher":1
 					},
-					&quot;resolution&quot;:{
-						&quot;switcher&quot;:2
+					"resolution":{
+						"switcher":2
 					},
-					&quot;font&quot;:{
-						&quot;switcher&quot;:2
+					"font":{
+						"switcher":2
 					},
-					&quot;canvas&quot;:{
-						&quot;switcher&quot;:1
+					"canvas":{
+						"switcher":1
 					},
-					&quot;webglImage&quot;:{
-						&quot;switcher&quot;:1
+					"webglImage":{
+						"switcher":1
 					},
-					&quot;webglMetadata&quot;:{
-						&quot;switcher&quot;:3,
-						&quot;provider&quot;:&quot;Google Inc. (Intel Inc.)&quot;,
-						&quot;render&quot;:&quot;ANGLE (Intel Inc., Intel(R) HD Graphics 6000, OpenGL 4.1)&quot;
+					"webglMetadata":{
+						"switcher":3,
+						"provider":"Google Inc. (Intel Inc.)",
+						"render":"ANGLE (Intel Inc., Intel(R) HD Graphics 6000, OpenGL 4.1)"
 					},
-					&quot;hardware&quot;:{
-						&quot;switcher&quot;:1
+					"hardware":{
+						"switcher":1
 					},
-					&quot;audioContext&quot;:{
-						&quot;switcher&quot;:1
+					"audioContext":{
+						"switcher":1
 					},
-					&quot;mediaDevice&quot;:{
-						&quot;switcher&quot;:1
+					"mediaDevice":{
+						"switcher":1
 					},
-					&quot;clientRects&quot;:{
-						&quot;switcher&quot;:1
+					"clientRects":{
+						"switcher":1
 					},
-					&quot;speechVoise&quot;:{
-						&quot;switcher&quot;:1
+					"speechVoise":{
+						"switcher":1
 					},
-					&quot;hardwareConcurrency&quot;:26,
-					&quot;memeryDevice&quot;:8,
-					&quot;doNotTrack&quot;:2,
-					&quot;bluetooth&quot;:{
-						&quot;switcher&quot;:1
+					"hardwareConcurrency":26,
+					"memeryDevice":8,
+					"doNotTrack":2,
+					"bluetooth":{
+						"switcher":1
 					},
-					&quot;battery&quot;:{
-						&quot;switcher&quot;:1
+					"battery":{
+						"switcher":1
 					},
-					&quot;portScanProtection&quot;:{
-						&quot;switcher&quot;:1,
-						&quot;value&quot;:&quot;80&quot;
+					"portScanProtection":{
+						"switcher":1,
+						"value":"80"
 					}
 				}
 			}

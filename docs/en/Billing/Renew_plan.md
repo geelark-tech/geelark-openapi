@@ -25,8 +25,8 @@ Request Example
 
 ```json
 {
-    &quot;days&quot;:30,
-    &quot;promoCode&quot; : &quot;GeeLark666&quot;
+    "days":30,
+    "promoCode" : "GeeLark666"
 }
 ```
 
@@ -35,9 +35,9 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A3889654BA84B91CBABF8535B83AEABB&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "A3889654BA84B91CBABF8535B83AEABB",
+    "code": 0,
+    "msg": "success"
 }
 ```
 

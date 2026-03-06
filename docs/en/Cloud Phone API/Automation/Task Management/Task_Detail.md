@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 The first request for searchAfter does not need to be passed. If the response&#039;s logContinue is true, it indicates that the log needs to be returned in pages. At this point, the response&#039;s searchAfter can be passed as a parameter.
@@ -25,8 +23,8 @@ The first request for searchAfter does not need to be passed. If the response&#0
 
 ```json
 {
-    &quot;id&quot;: &quot;1234567898&quot;,
-	&quot;searchAfter&quot;: [
+    "id": "1234567898",
+	"searchAfter": [
 		1749004889852
 	]
 }
@@ -266,28 +264,28 @@ The first request for searchAfter does not need to be passed. If the response&#0
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-		&quot;id&quot;: &quot;123456ABCDEF&quot;,
-		&quot;planName&quot;: &quot;plan123456ABCDEF&quot;,
-		&quot;taskType&quot;: 2,
-		&quot;serialName&quot;: &quot;test&quot;,
-		&quot;envId&quot;: &quot;123456654321&quot;,
-		&quot;scheduleAt&quot;: 1718744459,
-		&quot;status&quot;: 3,
-		&quot;cost&quot;: 60,
-		&quot;resultImages&quot;: [
-            &quot;https://material.geelark.com/geeUserUix/569544577254450679_1929760564478226432_20250604104103.jpg&quot;
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+		"id": "123456ABCDEF",
+		"planName": "plan123456ABCDEF",
+		"taskType": 2,
+		"serialName": "test",
+		"envId": "123456654321",
+		"scheduleAt": 1718744459,
+		"status": 3,
+		"cost": 60,
+		"resultImages": [
+            "https://material.geelark.com/geeUserUix/569544577254450679_1929760564478226432_20250604104103.jpg"
         ],
-        &quot;logs&quot;: [
-            &quot;[2025-06-04 02:38:00 025] Waiting for execution&quot;
+        "logs": [
+            "[2025-06-04 02:38:00 025] Waiting for execution"
         ],
-        &quot;searchAfter&quot;: [
+        "searchAfter": [
             1749004889853
         ],
-        &quot;logContinue&quot;: false
+        "logContinue": false
     }
 }
 ```
@@ -296,30 +294,30 @@ The first request for searchAfter does not need to be passed. If the response&#0
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-		&quot;id&quot;: &quot;123456ABCDEF&quot;,
-		&quot;planName&quot;: &quot;plan123456ABCDEF&quot;,
-		&quot;taskType&quot;: 2,
-		&quot;serialName&quot;: &quot;test&quot;,
-		&quot;envId&quot;: &quot;123456654321&quot;,
-		&quot;scheduleAt&quot;: 1718744459,
-		&quot;status&quot;: 4,
-		&quot;failCode&quot;: 29999,
-		&quot;failDesc&quot;: &quot;some reason&quot;,
-		&quot;cost&quot;: 60,
-		&quot;resultImages&quot;: [
-            &quot;https://material.geelark.com/geeUserUix/569544577254450679_1929760564478226432_20250604104103.jpg&quot;
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+		"id": "123456ABCDEF",
+		"planName": "plan123456ABCDEF",
+		"taskType": 2,
+		"serialName": "test",
+		"envId": "123456654321",
+		"scheduleAt": 1718744459,
+		"status": 4,
+		"failCode": 29999,
+		"failDesc": "some reason",
+		"cost": 60,
+		"resultImages": [
+            "https://material.geelark.com/geeUserUix/569544577254450679_1929760564478226432_20250604104103.jpg"
         ],
-        &quot;logs&quot;: [
-            &quot;[2025-06-04 02:38:00 025] Waiting for execution&quot;
+        "logs": [
+            "[2025-06-04 02:38:00 025] Waiting for execution"
         ],
-        &quot;searchAfter&quot;: [
+        "searchAfter": [
             1749004889853
         ],
-        &quot;logContinue&quot;: false
+        "logContinue": false
     }
 }
 ```

@@ -1,5 +1,3 @@
-[TOC]
-
 API Description
 -----------------
 
@@ -26,9 +24,9 @@ Request Example
 ---------------
 ```json
 {
-    &quot;ids&quot;:[
-        &quot;123456ABCDEF&quot;,
-        &quot;123456ABCDEF&quot;
+    "ids":[
+        "123456ABCDEF",
+        "123456ABCDEF"
     ]
 }
 ```
@@ -56,23 +54,23 @@ Response Example
 
 ```json
 {
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;traceId&quot;: &quot;12345ABCDEF&quot;,
-    &quot;data&quot;: {
-        &quot;totalAmount&quot;: 4,
-        &quot;successAmount&quot;: 2,
-        &quot;failAmount&quot;: 2,
-        &quot;failDetails&quot;: [
+    "code": 0,
+    "msg": "success",
+    "traceId": "12345ABCDEF",
+    "data": {
+        "totalAmount": 4,
+        "successAmount": 2,
+        "failAmount": 2,
+        "failDetails": [
             {
-                &quot;code&quot;: 42001,
-                &quot;id&quot;: &quot;12345ABCDEF&quot;,
-                &quot;msg&quot;: &quot;env not found&quot;
+                "code": 42001,
+                "id": "12345ABCDEF",
+                "msg": "env not found"
             },
             {
-                &quot;code&quot;: 43009,
-                &quot;id&quot;: &quot;12345ABCDEF&quot;,
-                &quot;msg&quot;: &quot;env is started&quot;
+                "code": 43009,
+                "id": "12345ABCDEF",
+                "msg": "env is started"
             }
         ]
     }

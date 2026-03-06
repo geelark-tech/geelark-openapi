@@ -1,7 +1,5 @@
-[TOC]
 
-
-- GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](https://open.geelark.com/api/callback-type &quot;Callback Type&quot;)
+- GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](https://open.geelark.com/api/callback-type "Callback Type")
 
 ### Interface Authentication
 User-defined callback interface authentication is consistent with the authentication for requesting the Geelark API.
@@ -47,12 +45,12 @@ When making a request, the following request headers will be carried
 
 ```json
 {
-	&quot;type&quot;: 1,
-	&quot;id&quot;: &quot;528086321789535232&quot;,
-	&quot;result&quot;: true,
-	&quot;username&quot; : &quot;admin@geelark.com&quot;,
-	&quot;ip&quot; : &quot;62.141.247.218&quot;,
-	&quot;eventTime&quot; : 1766567054
+	"type": 1,
+	"id": "528086321789535232",
+	"result": true,
+	"username" : "admin@geelark.com",
+	"ip" : "62.141.247.218",
+	"eventTime" : 1766567054
 }
 ```
 
@@ -69,10 +67,10 @@ When making a request, the following request headers will be carried
 
 ```
 {
-    &quot;type&quot;: 4,
-    &quot;id&quot;: &quot;528715748189668352&quot;,
-	&quot;taskId&quot;: &quot;128715748189668352&quot;,
-    &quot;result&quot;: true,
+    "type": 4,
+    "id": "528715748189668352",
+	"taskId": "128715748189668352",
+    "result": true,
 }
 ```
 
@@ -90,11 +88,11 @@ When making a request, the following request headers will be carried
 
 ```
 {
-    &quot;type&quot;: 5,
-    &quot;id&quot;: &quot;528715748189668352&quot;,
-	&quot;taskId&quot;: &quot;128715748189668352&quot;,
-    &quot;result&quot;: true,
-	&quot;downloadLink&quot;: &quot;https://www.abc.com/a.jpg&quot;
+    "type": 5,
+    "id": "528715748189668352",
+	"taskId": "128715748189668352",
+    "result": true,
+	"downloadLink": "https://www.abc.com/a.jpg"
 }
 ```
 
@@ -111,9 +109,9 @@ When making a request, the following request headers will be carried
 
 ```
 {
-    &quot;type&quot;: 6,
-	&quot;taskId&quot;: &quot;528715748189668352&quot;,
-    &quot;result&quot;: true
+    "type": 6,
+	"taskId": "528715748189668352",
+    "result": true
 }
 ```
 
@@ -132,12 +130,12 @@ When making a request, the following request headers will be carried
 
 ```json
 {     
-	&quot;type&quot;: 8,
-	&quot;id&quot;: &quot;528086321789535232&quot; ,
-	&quot;username&quot; : &quot;GeeLark&quot;,
-	&quot;ip&quot; : &quot;62.141.247.218&quot;,
-	&quot;eventTime&quot; : 1766567054,
-	&quot;useMin&quot;: 1
+	"type": 8,
+	"id": "528086321789535232" ,
+	"username" : "GeeLark",
+	"ip" : "62.141.247.218",
+	"eventTime" : 1766567054,
+	"useMin": 1
 }
 ```
 
@@ -153,11 +151,11 @@ When making a request, the following request headers will be carried
 
 ```
 {
-	&quot;type&quot;: 9,
-	&quot;items&quot;: [
+	"type": 9,
+	"items": [
 		{
-			&quot;id&quot; : &quot;583502967211075086&quot;,
-			&quot;name&quot; : &quot;newName&quot;
+			"id" : "583502967211075086",
+			"name" : "newName"
 		}
 	]
 }
@@ -175,11 +173,11 @@ When making a request, the following request headers will be carried
 
 ```
 {
-	&quot;type&quot;: 10,
-	&quot;items&quot;: [
+	"type": 10,
+	"items": [
 		{
-			&quot;id&quot; : &quot;583502967211075086&quot;,
-			&quot;recycle&quot; : false
+			"id" : "583502967211075086",
+			"recycle" : false
 		}
 	]
 }
@@ -196,8 +194,8 @@ When making a request, the following request headers will be carried
 
 ```
 {
-	&quot;type&quot;: 11,
-	&quot;envIds&quot; : [&quot;583502967211075086&quot;]
+	"type": 11,
+	"envIds" : ["583502967211075086"]
 }
 ```
 
@@ -213,9 +211,9 @@ When making a request, the following request headers will be carried
 
 ```
 {
-    &quot;type&quot;: 12,
-	&quot;taskIds&quot;: [&quot;528715748189668352&quot;],
-    &quot;channel&quot;: &quot;api&quot;
+    "type": 12,
+	"taskIds": ["528715748189668352"],
+    "channel": "api"
 }
 ```
 
@@ -231,9 +229,9 @@ When making a request, the following request headers will be carried
 
 ```
 {
-    &quot;type&quot;: 13,
-	&quot;taskIds&quot;: [&quot;528715748189668352&quot;],
-    &quot;channel&quot;: &quot;api&quot;
+    "type": 13,
+	"taskIds": ["528715748189668352"],
+    "channel": "api"
 }
 ```
 
@@ -248,9 +246,9 @@ When making a request, the following request headers will be carried
 #### Example of Callback Parameters for Cloud Phone Batch Import Contacts
 ```
 {
-    &quot;type&quot;: 14,
-	&quot;taskId&quot;: &quot;528715748189168352&quot;,
-    &quot;status&quot;: 1
+    "type": 14,
+	"taskId": "528715748189168352",
+    "status": 1
 }
 ```
 
@@ -268,11 +266,11 @@ When making a request, the following request headers will be carried
 
 ```
 {
-	&quot;type&quot;: 15,
-	&quot;packageName&quot;: &quot;com.example.app&quot;,
-	&quot;appVersionId&quot;: &quot;1793552962140770305&quot;,
-	&quot;id&quot;: &quot;528715748189168352&quot;,
-	&quot;result&quot;: 1
+	"type": 15,
+	"packageName": "com.example.app",
+	"appVersionId": "1793552962140770305",
+	"id": "528715748189168352",
+	"result": 1
 }
 ```
 

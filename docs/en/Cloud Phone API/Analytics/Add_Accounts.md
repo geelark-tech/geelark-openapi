@@ -1,5 +1,3 @@
-[TOC]
-
 Request URL
 -----------
 
@@ -32,11 +30,11 @@ Request Example
 
 ```json
 {
-    &quot;channel&quot;:0,
-    &quot;accountsData&quot;: [
+    "channel":0,
+    "accountsData": [
         {
-            &quot;account&quot;:&quot;XXX&quot;,
-            &quot;remark&quot;:&quot;remark xxx&quot;
+            "account":"XXX",
+            "remark":"remark xxx"
         }
     ]
 }
@@ -56,14 +54,14 @@ Response Example
 
 ```json
 {
-	&quot;traceId&quot;: &quot;9D1A84D6A2A8F9A8A5CD9BA7B7E84281&quot;,
-	&quot;code&quot;: 0,
-	&quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-    	&quot;bizCode&quot;: 0,
-    	&quot;successCount&quot;: 1,
-    	&quot;failCount&quot;: 0,
-    	&quot;repeatCount&quot;: 0
+	"traceId": "9D1A84D6A2A8F9A8A5CD9BA7B7E84281",
+	"code": 0,
+	"msg": "success",
+	"data": {
+    	"bizCode": 0,
+    	"successCount": 1,
+    	"failCount": 0,
+    	"repeatCount": 0
 	}
 }
 ```

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 delete material
 
@@ -21,7 +19,7 @@ delete material
 ## Request Example
 ```json
 {
-    &quot;ids&quot; : [&quot;569569510948864567&quot;]
+    "ids" : ["569569510948864567"]
 }
 ```
 
@@ -30,18 +28,18 @@ delete material
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A1A84FBC88912B5A9F77B681B2A9A983&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;totalAmount&quot;: 1,
-        &quot;successAmount&quot;: 0,
-        &quot;failAmount&quot;: 1,
-        &quot;failDetails&quot;: [
+    "traceId": "A1A84FBC88912B5A9F77B681B2A9A983",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "totalAmount": 1,
+        "successAmount": 0,
+        "failAmount": 1,
+        "failDetails": [
             {
-                &quot;id&quot;: &quot;5695695109488645671&quot;,
-                &quot;code&quot;: 60005,
-                &quot;msg&quot;: &quot;material not found&quot;
+                "id": "5695695109488645671",
+                "code": 60005,
+                "msg": "material not found"
             }
         ]
     }

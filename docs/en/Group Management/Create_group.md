@@ -1,5 +1,3 @@
-[TOC]
-
 
 ## Interface Description
 
@@ -31,16 +29,16 @@
 
 ```json
 {
-  &quot;list&quot;: [
+  "list": [
     {
-      &quot;name&quot;: &quot;group&quot;
+      "name": "group"
     },
     {
-      &quot;name&quot;: &quot;groupRemark&quot;,
-      &quot;remark&quot;: &quot;remark&quot;
+      "name": "groupRemark",
+      "remark": "remark"
     },
     {
-      &quot;name&quot;: &quot;groupInvalid&quot;
+      "name": "groupInvalid"
     }
   ]
 }
@@ -50,29 +48,29 @@
 
 ```json
 {
-  &quot;traceId&quot;: &quot;AA6849499B949BDCBD7FA792AB1981A5&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;totalAmount&quot;: 3,
-    &quot;successAmount&quot;: 2,
-    &quot;failAmount&quot;: 1,
-    &quot;successDetails&quot;: [
+  "traceId": "AA6849499B949BDCBD7FA792AB1981A5",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "totalAmount": 3,
+    "successAmount": 2,
+    "failAmount": 1,
+    "successDetails": [
       {
-        &quot;id&quot;: &quot;528994851237135360&quot;,
-        &quot;name&quot;: &quot;group&quot;
+        "id": "528994851237135360",
+        "name": "group"
       },
       {
-        &quot;id&quot;: &quot;528994851237200896&quot;,
-        &quot;name&quot;: &quot;groupRemark&quot;,
-        &quot;remark&quot;: &quot;remark&quot;
+        "id": "528994851237200896",
+        "name": "groupRemark",
+        "remark": "remark"
       }
     ],
-    &quot;failDetails&quot;: [
+    "failDetails": [
       {
-        &quot;code&quot;: 43031,
-        &quot;name&quot;: &quot;groupInvalid&quot;,
-        &quot;msg&quot;: &quot;group existed&quot;
+        "code": 43031,
+        "name": "groupInvalid",
+        "msg": "group existed"
       }
     ]
   }

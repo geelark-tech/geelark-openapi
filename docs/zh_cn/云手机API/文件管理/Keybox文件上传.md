@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 上传Keybox文件，通过Google完整性验证，目前仅支持Android 12/13/15系统版本。Android 12/13只需上传Keybox文件即可，Android 15需要以下额外步骤：
@@ -33,8 +31,8 @@
 
 ```json
 {
-  &quot;id&quot;:&quot;572036556940928503&quot;,
-  &quot;fileUrl&quot;:&quot;https://material.geelark.cn/client-img/oakendn.xml&quot;
+  "id":"572036556940928503",
+  "fileUrl":"https://material.geelark.cn/client-img/oakendn.xml"
 }
 ```
 
@@ -44,11 +42,11 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;9738691CA8A3589D8822A11FAE2B2A9A&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;taskId&quot;: &quot;1957394823745384448&quot;
+    "traceId": "9738691CA8A3589D8822A11FAE2B2A9A",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "taskId": "1957394823745384448"
     }
 }
 ```

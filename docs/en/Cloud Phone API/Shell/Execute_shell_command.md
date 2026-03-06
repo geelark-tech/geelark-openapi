@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 Execute shell commands on cloud phones.
 
@@ -23,8 +21,8 @@ Execute shell commands on cloud phones.
 ## Request Example
 ```json
 {
- &quot;id&quot;: &quot;528715748189668352&quot;,
- &quot;cmd&quot;: &quot;pm list packages&quot;
+ "id": "528715748189668352",
+ "cmd": "pm list packages"
 }
 ```
 
@@ -32,12 +30,12 @@ Execute shell commands on cloud phones.
 
 ```json
 {
- &quot;traceId&quot;: &quot;924A8E4AAC9E0B0B96ABA7B8801B2CBE&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;,
- &quot;data&quot;: {
- &quot;status&quot;: true,
-		&quot;output&quot;: &quot;com.zhiliaoapp.musically&quot;
+ "traceId": "924A8E4AAC9E0B0B96ABA7B8801B2CBE",
+ "code": 0,
+ "msg": "success",
+ "data": {
+ "status": true,
+		"output": "com.zhiliaoapp.musically"
  }
 }
 ```

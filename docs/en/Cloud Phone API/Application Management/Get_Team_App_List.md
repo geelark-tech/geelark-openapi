@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Get Team Application List
@@ -30,8 +28,8 @@ Get Team Application List
 
 ```json
 {
- &quot;page&quot; : 1,
- &quot;pageSize&quot; : 5
+ "page" : 1,
+ "pageSize" : 5
 }
 ```
 
@@ -41,27 +39,27 @@ Get Team Application List
 
 ```json
 {
-	&quot;traceId&quot;:&quot;97CBBCCB8DAFC8D1BDEFB943945BFC95&quot;,
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;data&quot;:{
-		&quot;total&quot;:4,
-		&quot;page&quot;:1,
-		&quot;pageSize&quot;:1,
-		&quot;items&quot;:[
+	"traceId":"97CBBCCB8DAFC8D1BDEFB943945BFC95",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"total":4,
+		"page":1,
+		"pageSize":1,
+		"items":[
 			{
-				&quot;id&quot;:&quot;497652752864775437&quot;,
-				&quot;appName&quot;:&quot;TikTok&quot;,
-				&quot;appIcon&quot;:&quot;https://material.geelark.cn/app/icon/20251026/kVAQ8OuTNF.png&quot;,
-				&quot;versionId&quot;:&quot;1793552962123993090&quot;,
-				&quot;versionCode&quot;:410903,
-				&quot;versionName&quot;:&quot;41.9.3&quot;,
-				&quot;status&quot;:0,
-				&quot;isUpload&quot;:false,
-				&quot;uploadStatus&quot;:0,
-				&quot;appAuth&quot;:0,
-				&quot;appRoot&quot;:0,
-				&quot;envGroups&quot;:[]
+				"id":"497652752864775437",
+				"appName":"TikTok",
+				"appIcon":"https://material.geelark.cn/app/icon/20251026/kVAQ8OuTNF.png",
+				"versionId":"1793552962123993090",
+				"versionCode":410903,
+				"versionName":"41.9.3",
+				"status":0,
+				"isUpload":false,
+				"uploadStatus":0,
+				"appAuth":0,
+				"appRoot":0,
+				"envGroups":[]
 			}
 		]
 	}

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 
 - Create tags with specified **name and color (optional)**.
@@ -40,41 +38,41 @@
 
 ```json
 {
-  &quot;list&quot;: [
+  "list": [
     {
-      &quot;name&quot;: &quot;tagEmpty&quot;
+      "name": "tagEmpty"
     },
     {
-      &quot;name&quot;: &quot;tagRed&quot;,
-      &quot;color&quot;: &quot;red&quot;
+      "name": "tagRed",
+      "color": "red"
     },
     {
-      &quot;name&quot;: &quot;tagBlue&quot;,
-      &quot;color&quot;: &quot;blue&quot;
+      "name": "tagBlue",
+      "color": "blue"
     },
     {
-      &quot;name&quot;: &quot;tagGreen&quot;,
-      &quot;color&quot;: &quot;green&quot;
+      "name": "tagGreen",
+      "color": "green"
     },
     {
-      &quot;name&quot;: &quot;tagYellow&quot;,
-      &quot;color&quot;: &quot;yellow&quot;
+      "name": "tagYellow",
+      "color": "yellow"
     },
     {
-      &quot;name&quot;: &quot;tagPurple&quot;,
-      &quot;color&quot;: &quot;purple&quot;
+      "name": "tagPurple",
+      "color": "purple"
     },
     {
-      &quot;name&quot;: &quot;tagWhite&quot;,
-      &quot;color&quot;: &quot;white&quot;
+      "name": "tagWhite",
+      "color": "white"
     },
     {
-      &quot;name&quot;: &quot;tagWhite2&quot;,
-      &quot;color&quot;: &quot;&quot;
+      "name": "tagWhite2",
+      "color": ""
     },
     {
-      &quot;name&quot;: &quot;tagInvalid&quot;,
-      &quot;color&quot;: &quot;abc&quot;
+      "name": "tagInvalid",
+      "color": "abc"
     }
   ]
 }
@@ -84,60 +82,60 @@
 
 ```json
 {
-  &quot;traceId&quot;: &quot;BC78266DA98F18EA9278B9C89AF9BB9B&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;totalAmount&quot;: 9,
-    &quot;successAmount&quot;: 8,
-    &quot;failAmount&quot;: 1,
-    &quot;successDetails&quot;: [
+  "traceId": "BC78266DA98F18EA9278B9C89AF9BB9B",
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "totalAmount": 9,
+    "successAmount": 8,
+    "failAmount": 1,
+    "successDetails": [
       {
-        &quot;id&quot;: &quot;528989565877224448&quot;,
-        &quot;name&quot;: &quot;tagWhite2&quot;,
-        &quot;color&quot;: &quot;white&quot;
+        "id": "528989565877224448",
+        "name": "tagWhite2",
+        "color": "white"
       },
       {
-        &quot;id&quot;: &quot;528989565877289984&quot;,
-        &quot;name&quot;: &quot;tagBlue&quot;,
-        &quot;color&quot;: &quot;blue&quot;
+        "id": "528989565877289984",
+        "name": "tagBlue",
+        "color": "blue"
       },
       {
-        &quot;id&quot;: &quot;528989565877355520&quot;,
-        &quot;name&quot;: &quot;tagGreen&quot;,
-        &quot;color&quot;: &quot;green&quot;
+        "id": "528989565877355520",
+        "name": "tagGreen",
+        "color": "green"
       },
       {
-        &quot;id&quot;: &quot;528989565894001664&quot;,
-        &quot;name&quot;: &quot;tagYellow&quot;,
-        &quot;color&quot;: &quot;yellow&quot;
+        "id": "528989565894001664",
+        "name": "tagYellow",
+        "color": "yellow"
       },
       {
-        &quot;id&quot;: &quot;528989565894067200&quot;,
-        &quot;name&quot;: &quot;tagPurple&quot;,
-        &quot;color&quot;: &quot;purple&quot;
+        "id": "528989565894067200",
+        "name": "tagPurple",
+        "color": "purple"
       },
       {
-        &quot;id&quot;: &quot;528989565894132736&quot;,
-        &quot;name&quot;: &quot;tagWhite&quot;,
-        &quot;color&quot;: &quot;white&quot;
+        "id": "528989565894132736",
+        "name": "tagWhite",
+        "color": "white"
       },
       {
-        &quot;id&quot;: &quot;528989565894198272&quot;,
-        &quot;name&quot;: &quot;tagEmpty&quot;,
-        &quot;color&quot;: &quot;white&quot;
+        "id": "528989565894198272",
+        "name": "tagEmpty",
+        "color": "white"
       },
       {
-        &quot;id&quot;: &quot;528989565910778880&quot;,
-        &quot;name&quot;: &quot;tagRed&quot;,
-        &quot;color&quot;: &quot;red&quot;
+        "id": "528989565910778880",
+        "name": "tagRed",
+        "color": "red"
       }
     ],
-    &quot;failDetails&quot;: [
+    "failDetails": [
       {
-        &quot;code&quot;: 43023,
-        &quot;name&quot;: &quot;tagInvalid&quot;,
-        &quot;msg&quot;: &quot;tag color not found&quot;
+        "code": 43023,
+        "name": "tagInvalid",
+        "msg": "tag color not found"
       }
     ]
   }

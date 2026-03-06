@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 在云手机上执行adb shell命令
 
@@ -24,8 +22,8 @@
 ## 请求示例
 ```json
 {
-    &quot;id&quot;: &quot;528715748189668352&quot;,
-    &quot;cmd&quot;: &quot;pm list packages&quot;
+    "id": "528715748189668352",
+    "cmd": "pm list packages"
 }
 ```
 
@@ -34,12 +32,12 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A619E93696ABFB81B7FCB9939DB8B49F&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;status&quot;: true,
-        &quot;output&quot;: &quot;com.zhiliaoapp.musically&quot;
+    "traceId": "A619E93696ABFB81B7FCB9939DB8B49F",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "status": true,
+        "output": "com.zhiliaoapp.musically"
     }
 }
 ```

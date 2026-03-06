@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 search material
 
@@ -22,19 +20,19 @@ search material
 | tagsId | No | array[string] |search tag id | Refer to Request Example  |
 | source | No | int | source: 0-upload，1-AI Edit 2Baidu  Cloud Drive 3GhostCut 4GoogleDrive 5Image to video | Refer to Request Example  |
 | fileType | No | array[int] | file type  1-image，2-video | Refer to Request Example  |
-| ids | No | array[string] |ID array，The maximum length of the array is 100. | [&quot;5213214343124321&quot;] |
+| ids | No | array[string] |ID array，The maximum length of the array is 100. | ["5213214343124321"] |
 
 
 ## Request Example
 ```json
 {
-    &quot;fileType&quot; : [1],
-    &quot;fileName&quot; : &quot;demo&quot;,
-    &quot;tagIds&quot; : [&quot;569577514586891738&quot;],
-    &quot;source&quot; : 1,
-    &quot;page&quot; : 1,
-    &quot;pageSize&quot; : 50,
-	&quot;ids&quot;: [&quot;608127302118696420&quot;] 
+    "fileType" : [1],
+    "fileName" : "demo",
+    "tagIds" : ["569577514586891738"],
+    "source" : 1,
+    "page" : 1,
+    "pageSize" : 50,
+	"ids": ["608127302118696420"] 
 }
 ```
 
@@ -43,32 +41,32 @@ search material
 
 ```json
 {
-    &quot;traceId&quot;: &quot;8D192F0785AEAAFA879FA44A990BEDAC&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;total&quot;: 12,
-        &quot;page&quot;: 1,
-        &quot;pageSize&quot;: 50,
-        &quot;list&quot;: [
+    "traceId": "8D192F0785AEAAFA879FA44A990BEDAC",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "total": 12,
+        "page": 1,
+        "pageSize": 50,
+        "list": [
             {
-                &quot;id&quot;: &quot;569546671000653787&quot;,
-                &quot;createdTime&quot;: 1749005870,
-                &quot;fileName&quot;: &quot;2025_06_02_11_31_IMG_9607.MOV&quot;,
-                &quot;fileSize&quot;: 120713028,
-                &quot;fileUrl&quot;: &quot;https://material.geelark.cn/user-upload/497521349346987872/material-center/Ryzt3vkK14T5asJQPx2W.MOV&quot;,
-                &quot;fileType&quot;: 2,
-                &quot;width&quot;: 2160,
-                &quot;height&quot;: 3840,
-                &quot;source&quot;: 0,
-                &quot;tags&quot;: [
+                "id": "569546671000653787",
+                "createdTime": 1749005870,
+                "fileName": "2025_06_02_11_31_IMG_9607.MOV",
+                "fileSize": 120713028,
+                "fileUrl": "https://material.geelark.cn/user-upload/497521349346987872/material-center/Ryzt3vkK14T5asJQPx2W.MOV",
+                "fileType": 2,
+                "width": 2160,
+                "height": 3840,
+                "source": 0,
+                "tags": [
                     {
-                        &quot;id&quot;: &quot;569577514586891738&quot;,
-                        &quot;name&quot;: &quot;2&quot;,
-                        &quot;color&quot;: 2
+                        "id": "569577514586891738",
+                        "name": "2",
+                        "color": 2
                     }
                 ],
-                &quot;userName&quot;: &quot;Tom&quot;
+                "userName": "Tom"
             }
         ]
     }

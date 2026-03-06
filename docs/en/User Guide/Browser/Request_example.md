@@ -1,20 +1,18 @@
-[TOC]
-
 ## Example
 
 ```js
-const url = &quot;http://localhost:40185/api/v1/browser/start&quot;; // Sample request address
+const url = "http://localhost:40185/api/v1/browser/start"; // Sample request address
 
 
 
 var data = {
- &quot;id&quot;: &quot;123456789xxxx&quot;
+ "id": "123456789xxxx"
 };
 
 fetch(url, {
- method: &quot;POST&quot;,
+ method: "POST",
  headers: {
- &quot;Content-Type&quot;: &quot;application/json&quot;,
+ "Content-Type": "application/json",
  },
  body: JSON.stringify(data),
 })

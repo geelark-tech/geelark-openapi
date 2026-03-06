@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 获取ADB信息
@@ -16,13 +14,13 @@
 
 | 参数名 | 必选 | 类型 | 说明 | 示例 |
 | --- | --- | --- | --- | --- |
-| ids | 是 | array[string] | 云手机id数组 | [&quot;526209711930868736&quot;] |
+| ids | 是 | array[string] | 云手机id数组 | ["526209711930868736"] |
 
 ## 请求示例
 
 ```json
 {
- &quot;ids&quot; : [&quot;526806961778328576&quot;,&quot;524798337208026112&quot;,&quot;524783756767134720&quot;]
+ "ids" : ["526806961778328576","524798337208026112","524783756767134720"]
 }
 ```
 
@@ -31,24 +29,24 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;8AB9D6B482B679ECB5578314903B80B9&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "8AB9D6B482B679ECB5578314903B80B9",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "items": [
             {
-                &quot;code&quot;: 0,
-                &quot;id&quot;: &quot;524783756767134720&quot;,
-                &quot;ip&quot;: &quot;124.71.210.176&quot;,
-                &quot;pwd&quot;: &quot;8c1da4&quot;,
-                &quot;port&quot;: &quot;25219&quot;
+                "code": 0,
+                "id": "524783756767134720",
+                "ip": "124.71.210.176",
+                "pwd": "8c1da4",
+                "port": "25219"
             },
             {
-                &quot;code&quot;: 42002,
-                &quot;id&quot;: &quot;524798337208026112&quot;,
-                &quot;ip&quot;: &quot;&quot;,
-                &quot;pwd&quot;: &quot;&quot;,
-                &quot;port&quot;: &quot;&quot;
+                "code": 42002,
+                "id": "524798337208026112",
+                "ip": "",
+                "pwd": "",
+                "port": ""
             }
         ]
     }

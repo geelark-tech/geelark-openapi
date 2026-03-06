@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Task Query
@@ -25,7 +23,7 @@ Task Query
 
 ```json
 {
-    &quot;ids&quot;: [&quot;123321&quot;, &quot;456654&quot;]
+    "ids": ["123321", "456654"]
 }
 ```
 
@@ -267,20 +265,20 @@ Task Query
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;total&quot;: 1,
-        &quot;items&quot;: [
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "total": 1,
+        "items": [
             {
-                &quot;id&quot;: &quot;123456ABCDEF&quot;,
-                &quot;planName&quot;: &quot;plan123456ABCDEF&quot;,
-                &quot;taskType&quot;: 2,
-                &quot;serialName&quot;: &quot;test&quot;,
-                &quot;envId&quot;: &quot;123456654321&quot;,
-                &quot;scheduleAt&quot;: 1718744459,
-                &quot;status&quot;: 3
+                "id": "123456ABCDEF",
+                "planName": "plan123456ABCDEF",
+                "taskType": 2,
+                "serialName": "test",
+                "envId": "123456654321",
+                "scheduleAt": 1718744459,
+                "status": 3
             }
         ]
     }
@@ -291,22 +289,22 @@ Task Query
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCDEF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;total&quot;: 1,
-        &quot;items&quot;: [
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "total": 1,
+        "items": [
             {
-                &quot;id&quot;: &quot;123456ABCDEF&quot;,
-                &quot;planName&quot;: &quot;plan123456ABCDEF&quot;,
-                &quot;taskType&quot;: 2,
-                &quot;serialName&quot;: &quot;test&quot;,
-                &quot;envId&quot;: &quot;123456654321&quot;,
-                &quot;scheduleAt&quot;: 1718744459,
-                &quot;status&quot;: 4,
-				&quot;failCode&quot;: 29999,
-				&quot;failDesc&quot;: &quot;some reason&quot;
+                "id": "123456ABCDEF",
+                "planName": "plan123456ABCDEF",
+                "taskType": 2,
+                "serialName": "test",
+                "envId": "123456654321",
+                "scheduleAt": 1718744459,
+                "status": 4,
+				"failCode": 29999,
+				"failDesc": "some reason"
             }
         ]
     }

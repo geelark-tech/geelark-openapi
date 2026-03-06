@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Set up the cloud phone network connection mode
@@ -30,8 +28,8 @@ Set up the cloud phone network connection mode
 
 ```json
 {
-  &quot;id&quot;: &quot;528086284158239744&quot;,
-  &quot;netType&quot;: 0
+  "id": "528086284158239744",
+  "netType": 0
 }
 ```
 
@@ -41,9 +39,9 @@ Set up the cloud phone network connection mode
 
 ```json
 {
-  &quot;traceId&quot;: &quot;B04B0843BD86D9589AB3BAB6A9EA3D92&quot;,
-  &quot;code&quot;: 0,
-  &quot;msg&quot;: &quot;success&quot;
+  "traceId": "B04B0843BD86D9589AB3BAB6A9EA3D92",
+  "code": 0,
+  "msg": "success"
 }
 ```
 

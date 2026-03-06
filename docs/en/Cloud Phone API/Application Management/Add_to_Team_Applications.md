@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Add the app to the team Applications and it will be automatically installed after the cloud phone is started
@@ -18,15 +16,15 @@ Add the app to the team Applications and it will be automatically installed afte
 | --- | --- | --- | --- | --- |
 | id | yes | string | Application id; Please call the “Get Application List” API to obtain it. | 1793552962123993090 |
 | versionId | yes | string | Version id; Please call the “Get Application List” API to obtain it. | 1793552962140770305 |
-| installGroupIds | no | array[string] | Environment groups allowed for installation. Defaults to all environment groups. &quot;0&quot; indicates no grouping;Please call the query group API first to obtain the group ID. | [&quot;528715748189668352&quot;] |
+| installGroupIds | no | array[string] | Environment groups allowed for installation. Defaults to all environment groups. "0" indicates no grouping;Please call the query group API first to obtain the group ID. | ["528715748189668352"] |
 
 ## Request Example
 
 ```json
 {
- &quot;id&quot;: &quot;1793552962123993090&quot;,
- &quot;versionId&quot;: &quot;1793552962140770305&quot;,
- &quot;installGroupIds&quot;: [&quot;0&quot;]
+ "id": "1793552962123993090",
+ "versionId": "1793552962140770305",
+ "installGroupIds": ["0"]
 }
 ```
 
@@ -34,9 +32,9 @@ Add the app to the team Applications and it will be automatically installed afte
 
 ```json
 {
- &quot;traceId&quot;: &quot;886A92FCBE9B7A52A7F583FCBD2BF6A8&quot;,
- &quot;code&quot;: 0,
- &quot;msg&quot;: &quot;success&quot;
+ "traceId": "886A92FCBE9B7A52A7F583FCBD2BF6A8",
+ "code": 0,
+ "msg": "success"
 }
 ```
 

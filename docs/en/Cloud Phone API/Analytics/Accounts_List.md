@@ -1,5 +1,3 @@
-[TOC]
-
 Request URL
 -----------
 
@@ -27,9 +25,9 @@ Request Example
 ---------------
 ```json
 {
-    &quot;page&quot;:1,
-    &quot;pageSize&quot;:10,
-    &quot;channel&quot;:1
+    "page":1,
+    "pageSize":10,
+    "channel":1
 }
 ```
 
@@ -60,23 +58,23 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;99793C8DABAC5970A91693E38BBA0596&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;items&quot;: [
+    "traceId": "99793C8DABAC5970A91693E38BBA0596",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "items": [
             {
-                &quot;id&quot;: &quot;565523829426802069&quot;,
-                &quot;account&quot;: &quot;xxx&quot;,
-                &quot;channel&quot;: 1,
-                &quot;remark&quot;: &quot;remark&quot;,
-                &quot;operator&quot;: &quot;xxx&quot;,
-                &quot;created_time&quot;: 1746608069,
-                &quot;updated_time&quot;: 1746608069
+                "id": "565523829426802069",
+                "account": "xxx",
+                "channel": 1,
+                "remark": "remark",
+                "operator": "xxx",
+                "created_time": 1746608069,
+                "updated_time": 1746608069
             }
         ],
-        &quot;total&quot;: 1,
-        &quot;page&quot;: 1
+        "total": 1,
+        "page": 1
     }
 }
 ```

@@ -1,5 +1,3 @@
-[TOC]
-
 ## Interface Description
 After the user requests the API, they can process relevant information in the callback interface they have set up.
 
@@ -20,7 +18,7 @@ After the user requests the API, they can process relevant information in the ca
 ## Request Example
 ```json
 {
-    &quot;url&quot;: &quot;http://example.geelark.com/phone/callback/test&quot;
+    "url": "http://example.geelark.com/phone/callback/test"
 }
 ```
 
@@ -28,8 +26,8 @@ After the user requests the API, they can process relevant information in the ca
 
 ```json
 {
-    &quot;traceId&quot;: &quot;960B32039F84AA489514ADCC9ADA909F&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "960B32039F84AA489514ADCC9ADA909F",
+    "code": 0,
+    "msg": "success"
 }
 ```

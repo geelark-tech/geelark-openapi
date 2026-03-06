@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 - Hide the cloud phone accessibility in app.
@@ -18,15 +16,15 @@
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| ids | Yes | array[string] | clound phone id array | [&quot;599257164413959866&quot;] |
-| pkgName | Yes | array[string] | app package name array |  [&quot;com.zhiliaoapp.musically&quot;] |
+| ids | Yes | array[string] | clound phone id array | ["599257164413959866"] |
+| pkgName | Yes | array[string] | app package name array |  ["com.zhiliaoapp.musically"] |
 
 ## Request Example
 
 ```json
 {
-	&quot;ids&quot;: [&quot;599257164413959866&quot;],
-	&quot;pkgName&quot; : [&quot;com.zhiliaoapp.musically&quot;]
+	"ids": ["599257164413959866"],
+	"pkgName" : ["com.zhiliaoapp.musically"]
 }
 ```
 
@@ -42,15 +40,15 @@
 
 ```json
 {
-	&quot;traceId&quot;: &quot;A17A45A3B3A49AB5A1BDB654B7C82B81&quot;,
-	&quot;code&quot;: 0,
-	&quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-		&quot;failDetails&quot;: [
+	"traceId": "A17A45A3B3A49AB5A1BDB654B7C82B81",
+	"code": 0,
+	"msg": "success",
+	"data": {
+		"failDetails": [
 			{
-				&quot;id&quot;: &quot;599257164413959866&quot;,
-				&quot;code&quot;: 42001,
-				&quot;msg&quot;: &quot;env not found&quot;
+				"id": "599257164413959866",
+				"code": 42001,
+				"msg": "env not found"
 			}
 		]
 	}

@@ -1,5 +1,3 @@
-[TOC]
-
 ## 接口说明
 
 调用上传Keybox文件接口后，通过返回的taskId获取执行结果
@@ -29,7 +27,7 @@
 
 ```json
 {
-  &quot;id&quot;:&quot;1957625857585983488&quot;
+  "id":"1957625857585983488"
 }
 ```
 
@@ -39,11 +37,11 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A62B9AFFBA9869968572A2178CC91F88&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;status&quot;: 1
+    "traceId": "A62B9AFFBA9869968572A2178CC91F88",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "status": 1
     }
 }
 ```

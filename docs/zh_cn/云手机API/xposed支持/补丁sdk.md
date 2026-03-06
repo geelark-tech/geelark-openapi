@@ -1,11 +1,9 @@
-[TOC]
-
 
 补丁sdk用于生成补丁模块，可以通过安装补丁接口安装到云手机，实现系统及app适配能力，目前仅支持Android 12、Andorid 13、Andorid 15系统。
 
 补丁模块安装后会实时生效，**无需**修改系统源码，**无需**设备重启，**无需**应用重启。
 
-下载最新版本sdk及demo: [点击下载](https://germany-upgrade.geelark.com/xposed/latest.zip &quot;点击下载&quot;)
+下载最新版本sdk及demo: [点击下载](https://germany-upgrade.geelark.com/xposed/latest.zip "点击下载")
 
 
 **工作原理**
@@ -69,14 +67,14 @@
  minSdkVersion = 23
  compileSdkVersion = 33
  targetSdkVersion = 33
- buildToolsVersion = &quot;33.0.0&quot;
+ buildToolsVersion = "33.0.0"
  javaVersion = JavaVersion.VERSION_1_8
- ndkVersion = &quot;24.0.8215888&quot;
- cmakeVersion = &quot;3.22.1&quot;
+ ndkVersion = "24.0.8215888"
+ cmakeVersion = "3.22.1"
 
  // 这里填写sdk目录所在的路径，demo中是放在项目根目录下的sdk目录
- patchSdkDir = &quot;$rootDir/sdk&quot;
- patchGradle = &quot;$patchSdkDir/patch.gradle&quot;
+ patchSdkDir = "$rootDir/sdk"
+ patchGradle = "$patchSdkDir/patch.gradle"
  }
 	```
 
@@ -85,13 +83,13 @@
 	```config
  buildscript {
  dependencies {
- classpath fileTree(dir: &quot;$rootProject.ext.patchSdkDir&quot;, include: &#039;agp_*.jar&#039;)
+ classpath fileTree(dir: "$rootProject.ext.patchSdkDir", include: &#039;agp_*.jar&#039;)
  }
  }
  // 只修改这里的配置即可
  ext.patch = [
  // 补丁id，作为确认补丁的唯一标识，注意不要冲突！
- id: &quot;sdktest&quot;,
+ id: "sdktest",
  // 补丁版本，如果为0，则自动根据当前的epoch时间戳生成，例如1696822576
  version: 0,
  // 可以加载补丁的包名正则表达式，如果存在pkg.txt文件，则忽略这里的配置
@@ -101,11 +99,11 @@
  // 是否支持热加载，热加载可以在一次进程的生命周期中多次加载，卸载，加载...
  hotpatch: true,
  // 补丁描述
- description: &quot;补丁测试demo&quot;,
+ description: "补丁测试demo",
  // 补丁负责方，这里可以写你的公司的名字，用于排查问题
- owner: &quot;unknown&quot;
+ owner: "unknown"
  ]
- apply from: &quot;$rootProject.ext.patchGradle&quot;
+ apply from: "$rootProject.ext.patchGradle"
 	 ```
 
 4. 在**app项目中**定义如下类：com.android.hp.Entry，并分别根据业务需求实现init和deInit方法
@@ -126,7 +124,7 @@
  * 注意： 请不要修改这个类文件的路径及类名！！！
  */
  public class Entry {
- private static final String TAG = &quot;Entry&quot;;
+ private static final String TAG = "Entry";
 
  /**
  * 在补丁加载时会调用，调用时机：
@@ -138,17 +136,17 @@
  */
  public static void init(Context appContext, Bundle params) {
  // 在补丁中，可以使用DGLog工具类来打印log，注意log分级
- DGLog.i(TAG, &quot;init() loaded pkg = %s&quot;, appContext.getPackageName());
+ DGLog.i(TAG, "init() loaded pkg = %s", appContext.getPackageName());
 
  // 使用例子1：干预系统获取应用api(android.app.ApplicationPackageManager.getPackageInfoAsUser(String, int, int))，禁止返回com.abc的应用包
  try {
- // 通过反射获取 &quot;android.app.ApplicationPackageManager&quot; 类
- Class&lt;?&gt; pmClass = Class.forName(&quot;android.app.ApplicationPackageManager&quot;, true, appContext.getClassLoader());
+ // 通过反射获取 "android.app.ApplicationPackageManager" 类
+ Class&lt;?&gt; pmClass = Class.forName("android.app.ApplicationPackageManager", true, appContext.getClassLoader());
 
- // 使用 xposed-api，hook &quot;android.app.ApplicationPackageManager.getPackageInfoAsUser&quot; 方法
+ // 使用 xposed-api，hook "android.app.ApplicationPackageManager.getPackageInfoAsUser" 方法
  // 这个方法是PackageManager.getPackageInfo()的底层实现，所以这里hook这个方法即可
  // 注意：xposed的部分api是会抛出异常的，请注意处理异常！！！
- XposedHelpers.findAndHookMethod(pmClass, &quot;getPackageInfoAsUser&quot;, String.class, int.class, int.class, new XC_MethodHook() {
+ XposedHelpers.findAndHookMethod(pmClass, "getPackageInfoAsUser", String.class, int.class, int.class, new XC_MethodHook() {
  @Override
  protected void afterHookedMethod(MethodHookParam param) throws Throwable {
  super.afterHookedMethod(param);
@@ -156,9 +154,9 @@
  // 获取查询的包名
  String pkg = (String) param.args[0];
 
- // 如果查询的包名是 &quot;com.abc&quot;，那么抛出异常来隐藏这个应用
- if (&quot;com.abc&quot;.equals(pkg)) {
- DGLog.d(TAG, &quot;hide app %s from %s&quot;, pkg, param.method.getName());
+ // 如果查询的包名是 "com.abc"，那么抛出异常来隐藏这个应用
+ if ("com.abc".equals(pkg)) {
+ DGLog.d(TAG, "hide app %s from %s", pkg, param.method.getName());
 
  // 抛出 NameNotFoundException，使其看起来像这个包没有安装在设备上
  param.setThrowable(new PackageManager.NameNotFoundException(pkg));
@@ -167,10 +165,10 @@
  });
 
  // 记录成功的日志
- DGLog.d(TAG, &quot;hide app by pms api success!&quot;);
+ DGLog.d(TAG, "hide app by pms api success!");
  } catch (Throwable t) {
  // 如果有任何异常，记录异常日志
- DGLog.e(TAG, &quot;init package manager guard error&quot;, t);
+ DGLog.e(TAG, "init package manager guard error", t);
  }
  }
 
@@ -182,7 +180,7 @@
  * @param params 其它信息，一般不会使用，具体参考文档。
  */
  public static void deInit(Context appContext, Bundle params) {
- DGLog.i(TAG, &quot;deInit() loaded pkg = %s&quot;, appContext.getPackageName());
+ DGLog.i(TAG, "deInit() loaded pkg = %s", appContext.getPackageName());
  }
  }
 

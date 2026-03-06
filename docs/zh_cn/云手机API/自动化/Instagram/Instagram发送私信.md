@@ -1,5 +1,3 @@
-[TOC]
-
 ## 请求URL
 
 - `https://openapi.geelark.cn/open/v1/rpa/task/instagramMessage`
@@ -23,12 +21,12 @@
 
 ```json
 {
-  &quot;name&quot;:&quot;test&quot;,
-  &quot;remark&quot;:&quot;test remark&quot;,
-  &quot;scheduleAt&quot;: 1741846843,
-  &quot;id&quot;:&quot;557536075321468390&quot;,
-  &quot;usernames&quot;:[&quot;user&quot;],
-  &quot;content&quot;: &quot;123456&quot;
+  "name":"test",
+  "remark":"test remark",
+  "scheduleAt": 1741846843,
+  "id":"557536075321468390",
+  "usernames":["user"],
+  "content": "123456"
 }
 ```
 
@@ -36,11 +34,11 @@
 
 ```json
 {
-    &quot;traceId&quot;: &quot;A4D8BCF69B878A71AC589F5CB1D80EAB&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;taskId&quot;: &quot;558017255909123564&quot;
+    "traceId": "A4D8BCF69B878A71AC589F5CB1D80EAB",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "taskId": "558017255909123564"
     }
 }
 ```

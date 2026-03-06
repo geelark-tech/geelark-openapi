@@ -1,5 +1,3 @@
-[TOC]
-
 ##  API Description
 
 Query Application Upload Status
@@ -22,7 +20,7 @@ Query Application Upload Status
 
 ```json
 {
-    &quot;taskId&quot; :  &quot;1830906144634757120&quot;
+    "taskId" :  "1830906144634757120"
 }
 ```
 
@@ -40,15 +38,15 @@ Query Application Upload Status
 
 ```json
 {
-    &quot;traceId&quot;: &quot;B9C9A787A1B559A6B883A171A7EA129B&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;status&quot;: 1,
-        &quot;appName&quot;: &quot;パワサカ&quot;,
-        &quot;appIcon&quot;: &quot;https://material.geelark.cn/app/icon/20240903/223wgZeZq3.jpg&quot;,
-        &quot;appId&quot;: &quot;1813124121385549826&quot;,
-        &quot;versionId&quot;: &quot;1813124121435881473&quot;
+    "traceId": "B9C9A787A1B559A6B883A171A7EA129B",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "status": 1,
+        "appName": "パワサカ",
+        "appIcon": "https://material.geelark.cn/app/icon/20240903/223wgZeZq3.jpg",
+        "appId": "1813124121385549826",
+        "versionId": "1813124121435881473"
     }
 }
 ```

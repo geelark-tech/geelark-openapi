@@ -1,5 +1,3 @@
-[TOC]
-
 API Description
 ---------------
 
@@ -34,27 +32,27 @@ Response Example
 
 ```json
 {
-    &quot;traceId&quot;: &quot;BBBA5FE8B3A8FBDEB0209321B43BEB80&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-    &quot;data&quot;: [
+    "traceId": "BBBA5FE8B3A8FBDEB0209321B43BEB80",
+    "code": 0,
+    "msg": "success",
+    "data": [
         {
-            &quot;id&quot;: &quot;497540679501610040&quot;,
-            &quot;price&quot;: 5,
-            &quot;level&quot;: 0,
-            &quot;envNum&quot;: 5,
-            &quot;freeTime&quot;: 60,
-            &quot;openEnvNumOneDay&quot;: 1000,
-            &quot;createEnvNumOneDay&quot;: 25
+            "id": "497540679501610040",
+            "price": 5,
+            "level": 0,
+            "envNum": 5,
+            "freeTime": 60,
+            "openEnvNumOneDay": 1000,
+            "createEnvNumOneDay": 25
         },
         {
-            &quot;id&quot;: &quot;512719311391949750&quot;,
-            &quot;price&quot;: 19,
-            &quot;level&quot;: 1,
-            &quot;envNum&quot;: 20,
-            &quot;freeTime&quot;: 60,
-            &quot;openEnvNumOneDay&quot;: 10000,
-            &quot;createEnvNumOneDay&quot;: 200
+            "id": "512719311391949750",
+            "price": 19,
+            "level": 1,
+            "envNum": 20,
+            "freeTime": 60,
+            "openEnvNumOneDay": 10000,
+            "createEnvNumOneDay": 200
         }
     ]
 }

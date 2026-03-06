@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 You can call this interface to cancel tasks that are in the following status:
@@ -25,7 +23,7 @@ You can call this interface to cancel tasks that are in the following status:
 
 ```json
 {
-    &quot;ids&quot;: [&quot;123321&quot;, &quot;456654&quot;]
+    "ids": ["123321", "456654"]
 }
 ```
 
@@ -52,13 +50,13 @@ You can call this interface to cancel tasks that are in the following status:
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCEDF&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;,
-	&quot;data&quot;: {
-		&quot;totalAmount&quot;: 10,
-		&quot;successAmount&quot;: 10,
-		&quot;failAmount&quot;: 0
+    "traceId": "123456ABCEDF",
+    "code": 0,
+    "msg": "success",
+	"data": {
+		"totalAmount": 10,
+		"successAmount": 10,
+		"failAmount": 0
 	}
 }
 ```
@@ -66,25 +64,25 @@ You can call this interface to cancel tasks that are in the following status:
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCEDF&quot;,
-    &quot;code&quot;: 40000,
-    &quot;msg&quot;: &quot;unknown error&quot;
+    "traceId": "123456ABCEDF",
+    "code": 40000,
+    "msg": "unknown error"
 }
 ```
 or
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCEDF&quot;,
-    &quot;code&quot;: 40009,
-    &quot;msg&quot;: &quot;process all failure&quot;,
-	&quot;data&quot;: {
-		&quot;totalAmount&quot;: 1,
-		&quot;successAmount&quot;: 0,
-		&quot;failAmount&quot;: 1,
-		&quot;failDetails&quot;: [
-			&quot;id&quot;: &quot;123456ABCEDF&quot;
-			&quot;code&quot;: &quot;48001&quot;,
-			&quot;msg&quot;: &quot;the current task status does not allow the operation&quot;
+    "traceId": "123456ABCEDF",
+    "code": 40009,
+    "msg": "process all failure",
+	"data": {
+		"totalAmount": 1,
+		"successAmount": 0,
+		"failAmount": 1,
+		"failDetails": [
+			"id": "123456ABCEDF"
+			"code": "48001",
+			"msg": "the current task status does not allow the operation"
 		]
 	}
 }
@@ -94,17 +92,17 @@ or
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123456ABCEDF&quot;,
-    &quot;code&quot;: 40006,
-    &quot;msg&quot;: &quot;partial success&quot;,
-	&quot;data&quot;: {
-		&quot;totalAmount&quot;: 2,
-		&quot;successAmount&quot;: 1,
-		&quot;failAmount&quot;: 1,
-		&quot;failDetails&quot;: [
-			&quot;id&quot;: &quot;123456ABCEDF&quot;
-			&quot;code&quot;: &quot;48001&quot;,
-			&quot;msg&quot;: &quot;the current task status does not allow the operation&quot;
+    "traceId": "123456ABCEDF",
+    "code": 40006,
+    "msg": "partial success",
+	"data": {
+		"totalAmount": 2,
+		"successAmount": 1,
+		"failAmount": 1,
+		"failDetails": [
+			"id": "123456ABCEDF"
+			"code": "48001",
+			"msg": "the current task status does not allow the operation"
 		]
 	}
 }

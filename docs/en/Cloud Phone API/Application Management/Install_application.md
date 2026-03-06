@@ -1,5 +1,3 @@
-[TOC]
-
 ## API Description
 
 Install an app.
@@ -22,8 +20,8 @@ Install an app.
 ## Request Example
 ```json
 {
-    &quot;envId&quot; : &quot;1809135651036667904&quot;,
-    &quot;appVersionId&quot; : &quot;1793552962140770305&quot;
+    "envId" : "1809135651036667904",
+    "appVersionId" : "1793552962140770305"
 }
 ```
 
@@ -31,9 +29,9 @@ Install an app.
 
 ```json
 {
-    &quot;traceId&quot;: &quot;123&quot;,
-    &quot;code&quot;: 0,
-    &quot;msg&quot;: &quot;success&quot;
+    "traceId": "123",
+    "code": 0,
+    "msg": "success"
 }
 ```
 
