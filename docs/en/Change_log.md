@@ -1,3 +1,4 @@
+[TOC]
 ### 2026.02.27
 - Add response parameters to the Get the current subscription plan information API: availableMonthlyRentals
 
@@ -7,7 +8,7 @@
 - Add a new request parameter ids to the Search material API.
 
 ### 2026.02.10
-- Instagram's Reels album API adds a Post parameter.
+- Instagram&#039;s Reels album API adds a Post parameter.
 
 ### 2026.02.10
 - Add renew plan API
@@ -46,7 +47,7 @@
 - Add cloud phone move group API
 
 ### 2026.01.12
-- Cloud phone Custom Settings add "toolBarSettings" parameter
+- Cloud phone Custom Settings add &quot;toolBarSettings&quot; parameter
 
 ### 2026.01.08
 - The one-click new phone interface supports retaining the phone number, region, language, and network type.
@@ -57,11 +58,11 @@
 - Add Hide Accessibility API
 
 ### 2026.01.04
-- Support custom phone number on "Modify cloud phone information" API
+- Support custom phone number on &quot;Modify cloud phone information&quot; API
 - Creating a cloud phone supports custom languages
 
 ### 2025.12.29
-- Cloud phone Custom Settings add "mirrorUrl" parameter
+- Cloud phone Custom Settings add &quot;mirrorUrl&quot; parameter
 
 ### 2025.12.25
 - New cloud phones support setting regions
@@ -84,7 +85,7 @@
 - Add cloud phone delete and serial name change callback
 
 ### 2025.12.16
-- Add /open/v1/phone/list "openStatus" parameter
+- Add /open/v1/phone/list &quot;openStatus&quot; parameter
 - Added API for retrieving team application list
 - Added API for removing team application
 - Added API for setting automatic installation of team applications
@@ -131,7 +132,7 @@
 - Added new parameters to the cloud phone startup API: hideSideBar, displayTimer
 - Added a stop callback to the cloud phone callback events
 - Added a new API for getting the app list
-- Added a new API for adding apps to Team's applications
+- Added a new API for adding apps to Team&#039;s applications
 
 ### 2025.10.21
 - Added TikTok AI random comment-Asia task interface
