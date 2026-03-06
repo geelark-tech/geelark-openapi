@@ -1,0 +1,123 @@
+[TOC]
+
+## 接口说明
+
+当任务处于以下状态时，可以调用接口取消
+- `等待执行`
+- `执行中`
+
+
+## 请求URL
+
+- `https://openapi.geelark.cn/open/v1/task/cancel`
+
+## 请求方法
+
+- POST
+
+## 请求参数
+
+| 参数名       | 必选   |     类型   |    说明    |
+| ----------- | -------| -----------|----------- |
+| ids        | 是     |   array[string]  | 任务id数组，最多100个 |
+
+## 请求示例
+
+```json
+{
+    "ids": ["123321", "456654"]
+}
+```
+
+## 响应体数据说明
+
+| 参数名 | 类型 | 说明 |
+| --- | --- | --- |
+| totalAmount | integer | 处理总数 |
+| successAmount | integer | 处理成功数 |
+| failAmount | integer | 处理失败数 |
+| failDetails | array[FailDetail] | 处理失败细节 |
+
+### FailDetail
+
+| 参数名 | 类型 | 说明 |
+| --- | --- | --- |
+| id | string | 任务id |
+| code | integer | 错误码 |
+| msg | string | 错误信息 |
+
+## 响应示例
+
+### 全部成功
+
+```json
+{
+    "traceId": "123456ABCEDF",
+    "code": 0,
+    "msg": "success",
+	"data": {
+		"totalAmount": 10,
+		"successAmount": 10,
+		"failAmount": 0
+	}
+}
+```
+
+### 全部失败
+
+```json
+{
+    "traceId": "123456ABCEDF",
+    "code": 40000,
+    "msg": "unknown error"
+}
+```
+
+```json
+{
+    "traceId": "123456ABCEDF",
+    "code": 40009,
+    "msg": "process all failure",
+	"data": {
+		"totalAmount": 1,
+		"successAmount": 0,
+		"failAmount": 1,
+		"failDetails": [
+			"id": "123456ABCEDF"
+			"code": "48001",
+			"msg": "the current task status does not allow the operation"
+		]
+	}
+}
+```
+
+### 部分成功
+
+```json
+{
+    "traceId": "123456ABCEDF",
+    "code": 40006,
+    "msg": "partial success",
+	"data": {
+		"totalAmount": 2,
+		"successAmount": 1,
+		"failAmount": 1,
+		"failDetails": [
+			"id": "123456ABCEDF"
+			"code": "48001",
+			"msg": "the current task status does not allow the operation"
+		]
+	}
+}
+```
+
+## 错误码
+
+响应体外层错误码请参考[云手机错误码](https://open.geelark.cn/api/cloud-phone-error-codes)
+
+### 单个任务处理错误码
+
+| 错误码 | 说明 |
+| --- | --- |
+| 48001 | 任务状态不允许取消 |
+| 40000 | 未知错误 |

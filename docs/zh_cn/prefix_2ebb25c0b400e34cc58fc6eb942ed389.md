@@ -1,0 +1,114 @@
+[TOC]
+
+## 接口说明
+云手机批量启动
+
+## 请求URL
+
+- `https://openapi.geelark.cn/open/v1/phone/start`
+
+
+## 请求方法
+- POST
+
+## 请求参数
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+| ids | 是 | array[string] | 云手机id列表 | 参考请求示例|
+| ~~hideSideBar~~ | 否 | bool | 已弃用，请使用[OEM自定义设置接口](https://open.geelark.cn/api/phone-customization) | -|
+| ~~displayTimer~~ | 否 | bool | 已弃用，请使用[OEM自定义设置接口](https://open.geelark.cn/api/phone-customization)） | -|
+|width|否|int|云手机显示宽度，单位px|200，默认值336，允许值范围：200<=width<=600|
+|center|否|int|云手机显示是否居中|0：不居中，1：居中；不传默认也为1|
+|~~hideLibrary~~|否|bool|已弃用，请使用[OEM自定义设置接口](https://open.geelark.cn/api/phone-customization) |-|
+|~~hideMirror~~|否|bool|已弃用，请使用[OEM自定义设置接口](https://open.geelark.cn/api/phone-customization) |-|
+|energySavingMode|否|integer|是否开启节能模式，开启后云手机超过30分钟未操作自动关机|0：关闭，1：打开；不传默认为0|
+
+## 请求示例
+```json
+{
+    "ids":[
+        "12345678ABCDEFG",
+        "12345678ABCDEFG",
+        "12345678ABCDEFG"
+    ]
+}
+```
+
+
+## 响应示例
+
+```json
+{
+    "code": 0,
+    "msg": "success",
+    "traceId": "12345678ABCDEF",
+    "data": {
+        "totalAmount": 3,
+        "successAmount": 1,
+        "failAmount": 2,
+        "failDetails": [
+            {
+                "code": 43004,
+                "id": "12345678ABCDEFG",
+                "msg": "env is expired"
+            },
+            {
+                "code": 42001,
+                "id": "12345678ABCDEFG",
+                "msg": "env not found"
+            }
+        ],
+		"successDetails": [
+			{
+				"id": "12345678ABCDEFG",
+				"url": "https://speedup.geelark.com/phone-api",
+				"chargingMethod": "Per-minute usage"
+			}
+		]
+    }
+}
+```
+
+## 响应体数据说明
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| totalAmount | integer | 请求id总数 |
+| successAmount | integer | 成功数 |
+| successDetails | array[SuccessDetails] | 成功信息 |
+| failAmount | integer | 失败数 |
+| failDetails | array[FailDetails] | 失败信息 |
+
+### SuccessDetails 成功信息
+
+| 参数名 | 类型 | 说明 |
+| - | - | - |
+| id | string | 云手机id |
+| url | string | 远程链接 |
+| chargingMethod | string | 计费类型，每分钟计费:Per-minute usage，包月:Monthly rental，并发数:Parallels |
+
+### FailDetails 失败信息
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| code | integer | 失败码 |
+| id | string | 失败云手机id |
+| msg | string | 失败信息 |
+
+
+## 错误码
+
+以下为接口特定错误码，其他错误码请参考[云手机错误码](https://open.geelark.cn/api/cloud-phone-error-codes)
+
+| 错误码 | 说明 |
+| --- | --- |
+| 42001 | 云手机不存在 |
+| 43004 | 云手机已过期 |
+| 47004 | 云手机关联的设备不存在 |
+| 43007 | 云手机已经被其他人打开并使用中 |
+| 45002 | 代理不可用 |
+| 47002 | 云手机资源不足 |
+| 43020 | 云手机当前不可用，请稍后重试 |
+| 43029 | 所选云手机机型维护中，请稍后再试 |
+
+

@@ -1,0 +1,90 @@
+[TOC]
+
+## 接口说明
+
+获取团队应用列表
+
+## 请求URL
+
+- `https://openapi.geelark.cn/open/v1/app/teamApp/list`
+
+## 请求方法
+
+- POST
+
+## 请求参数
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+| page        | 是     |   integer  | 页码，最小为1 | 1|
+| pageSize    | 是     |   integer  | 每页多少条数据，最小为1，最大为200 | 10|
+
+## 请求示例
+
+```json
+{
+ "page" : 1,
+ "pageSize" : 5
+}
+```
+
+## 响应示例
+
+```json
+{
+	"traceId":"97CBBCCB8DAFC8D1BDEFB943945BFC95",
+	"code":0,
+	"msg":"success",
+	"data":{
+		"total":4,
+		"page":1,
+		"pageSize":1,
+		"items":[
+			{
+				"id":"497652752864775437",
+				"appName":"TikTok",
+				"appIcon":"https://material.geelark.cn/app/icon/20251026/kVAQ8OuTNF.png",
+				"versionId":"1793552962123993090",
+				"versionCode":410903,
+				"versionName":"41.9.3",
+				"status":0,
+				"isUpload":false,
+				"uploadStatus":0,
+				"appAuth":0,
+				"appRoot":0,
+				"envGroups":[]
+			}
+		]
+	}
+}
+```
+
+## 响应体数据说明
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| total | integer   | 总数  |
+| page | integer   | 页码  |
+| pageSize | integer   | 分页大小  |
+| items | array[AppTeamAppListItem]   | 数据数组  |
+
+### 应用信息 AppTeamAppListItem
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| id | string | 团队应用id |
+| appName | string | 应用名称 |
+| appIcon | string | 应用图标 |
+| versionId | string | 版本id |
+| versionCode | integer | 版本号 |
+| versionName | string | 版本名 |
+| status | integer | 是否要自动安装，0否，1是 |
+| isUpload | bool | 是否上传的应用 |
+| uploadStatus | integer | 上传状态 0:上传中 1:上传成功 2:上传失败 3:审核不通过 |
+| appAuth | integer | app授权 0关闭授权；1打开授权 |
+| appRoot | integer | app root 0关闭，1打开 |
+| envGroups | array[string] | 允许安装的环境组id，空代表所有环境组，0代表未分组 |
+
+## 错误码
+
+请参考[云手机错误码](https://open.geelark.cn/api/cloud-phone-error-codes)

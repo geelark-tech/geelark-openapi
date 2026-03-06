@@ -1,0 +1,151 @@
+[TOC]
+
+## 接口说明
+
+- 基础套餐一次仅支持创建一台云手机，Pro套餐支持批量新建
+- 支持选择机型，请先调用云手机品牌列表接口获取支持的品牌机型信息
+- 代理信息，已添加代理，动态代理必须指定一个，优先使用已添加代理，其次是代理信息
+
+## 请求URL
+
+- `https://openapi.geelark.cn/open/v1/phone/addNew`
+
+## 请求方法
+
+- POST
+
+## 请求参数
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+| mobileType | 是 | string | 云手机类型，可设置</br>Android 9</br>Android 10</br>Android 11</br> Android 12</br> Android 13</br> Android 14</br> Android 15 | Android 10 |
+|chargeMode|否|int|计费模式，0-按需，1-包月，默认为按需|0|
+|region|否|string|指定云手机所在的机房，可选参数：cn(中国大陆), sgp(新加坡)| cn|
+|data|是|array[EnvRowApi]|环境参数数组，最多传100个|参考请求示例|
+
+### 环境参数 EnvRowApi
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+|profileName|是|string|云手机名称|myPhone|
+|proxyInformation|否|string|代理信息，支持http、https、socks5类型|socks5://AD00xx004:3000xxx0002@100.200.200.100:30000|
+|refreshUrl|否|string|代理的刷新url|http://someaddr|
+|proxyNumber|否|integer|已添加代理的序号|1|
+|dynamicProxy|否|string|已保存的动态代理，可设置IPHTML/kookeey/Luminati(BrightData)/rolaip/Proxyma/DECODO/NodeMaven/kookeeyMobile|NodeMaven|
+|dynamicProxyLocation|否|string| 动态代理国家，指定动态代理时必填，取值请参考[动态代理国家代码列表](https://singapore-upgrade.geelark.cn/apiResource/proxy-country.txt) | us |
+| mobileRegion | 否 |string| 云手机地区，不传则跟随代理，取值请参考[云手机地区列表](https://singapore-upgrade.geelark.cn/apiResource/region.txt) | USA-US |
+| mobileProvince | 否 |string| 州，目前仅支持美国地区，设置后可以指定云手机时区，取值请参考[州-城市映射表](https://singapore-upgrade.geelark.cn/apiResource/timezone.json) | Alabama |
+| mobileCity | 否 |string| 城市，目前仅支持美国地区，设置后可以指定云手机时区，取值请参考[州-城市映射表](https://singapore-upgrade.geelark.cn/apiResource/timezone.json) | Abbeville |
+|mobileLanguage|否|string|云手机的语言，传baseOnIP则根据代理设置，传default或不传则用英文，自定义语言取值参考[语言列表](https://singapore-upgrade.geelark.cn/apiResource/language.txt)|default|
+|profileGroup|否|string|分组名，不存在自动新建|myGroup|
+|profileTags|否|array[string]|标签名，不存在自动新建|参考请求示例 |
+|profileNote|否|string|备注|remark|
+| surfaceBrandName | 否 | string | 手机品牌，从品牌列表接口获取对应安卓版本的值，品牌型号要同时传值 | samsung |
+| surfaceModelName | 否 | string | 手机型号，从品牌列表接口获取对应安卓版本的值，品牌型号要同时传值 | Galaxy S23 |
+| netType | 否 | integer | 联网方式，0-Wi-Fi，1-移动网络，仅Andorid 12/Andorid 13/Andorid 15支持，默认为移动网络 | 0 |
+| phoneNumber | 否 | string | 手机号，为空则自动生成 | +66817806147 |
+| phoneName | 否 | string | 设备名，默认自动生成，Android 9/11不支持 | myDevice |
+
+## 请求示例
+```json
+{
+  "mobileType": "Android 12",
+  "chargeMode": 0,
+  "data": [
+    {
+      "profileName": "myPhone",
+      "proxyInformation": "socks5://AD00xx004:3000xxx0002@100.200.200.100:30000",
+      "mobileLanguage": "default",
+      "profileGroup": "myGroup",
+      "profileTags": ["myTag"],
+      "profileNote": "remark"
+    }
+  ]
+}
+```
+
+
+## 响应示例
+
+```json
+{
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "totalAmount": 1,
+        "successAmount": 1,
+        "failAmount": 0,
+        "details": [
+            {
+                "index": 1,
+                "code": 0,
+                "msg": "success",
+				"id": "497652752864775437",
+                "profileName": "22 ungrouped",
+                "envSerialNo": "22",
+				"equipmentInfo": {
+					"countryName": "Thailand",
+					"phoneNumber": "+66877382166",
+					"enableSim": 1,
+					"imei": "863406055475987",
+					"osVersion": "Android 11.0",
+					"wifiBssid": "1C:1D:67:B1:C1:76",
+					"mac": "9C:A5:C0:5F:C5:AD",
+					"bluetoothMac": "D0:15:4A:5B:7E:AE",
+					"timeZone": "Asia/Bangkok"
+			 	}
+            }
+        ]
+    }
+}
+```
+
+## 响应体数据说明
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| totalAmount | integer | 创建总数 |
+| successAmount | integer | 成功数 |
+| failAmount | integer | 失败数 |
+| details | Details | 创建响应详情 |
+
+### details 创建响应
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| index | integer | 创建序号 |
+| code | integer | 结果码，成功返回0 |
+| msg | string | 结果信息 |
+| id | string | 云手机ID |
+| profileName | string | 云手机名称 |
+| envSerialNo | string | 云手机序号 |
+| equipmentInfo  | EquipmentInfo    | 云手机设备信息 |
+
+#### equipmentInfo 云手机设备信息 <EquipmentInfo>
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| countryName | string | 国家名 |
+| phoneNumber | string | 手机号码 |
+| enableSim | int | SIM卡状态 0未启用1 已启用 |
+| imei | string | IMEI |
+| osVersion | string | 系统版本 |
+| wifiBssid | string | Wi-Fi MAC地址 |
+| mac | string | 手机Wi-Fi MAC地址 |
+| bluetoothMac | string | 蓝牙地址 |
+| timeZone | string | 时区 |
+|deviceBrand|string|品牌|
+|deviceModel|string|型号|
+
+## 错误码
+
+以下为接口特定错误码，其他错误码请参考[云手机错误码](https://open.geelark.cn/api/cloud-phone-error-codes)
+
+| 错误码 | 说明 |
+| --- | --- |
+| 44001 | 无法批量创建，请升级到pro套餐 |
+| 44002 | 无法批量创建，创建云手机数达到套餐最大值 |
+| 44004 | 无法批量创建，今日可创建云手机数达到最大值 |
+| 43029 | 所选云手机机型维护中，请稍后再试 |
+| 45005 | 云手机地区时区设置有误 |
+| 50000 | 未知错误|

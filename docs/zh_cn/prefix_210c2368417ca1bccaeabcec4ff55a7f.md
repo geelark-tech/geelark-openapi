@@ -1,0 +1,80 @@
+[TOC]
+
+## 接口说明
+
+转让浏览器，可以将浏览器转给其他团队。
+
+
+## 请求URL
+
+- `http://localhost:40185/api/v1/browser/transfer`
+
+
+## 请求方法
+
+
+- POST
+
+
+## 请求参数
+
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+| username | 是 | string | 目标用户账号 | Anna@geelark.com |
+| envIds | 是 | array[string] | 要转让的环境id，数组最大长度限制为200，超过200部分会忽略 |["539893235657500146"]|
+| transferOption | 否 | array[string] | 转让选项可选参数：name：环境名，proxy：代理，tag：标签，remark：备注，files：附件 | [ “name”,”proxy”, “tag”,”remark” ] |
+
+
+## 请求示例
+
+
+```json
+{
+  "envIds": ["539893235657500146"],
+  "username": "Anna@geelark.com"
+}
+```
+
+
+## 响应示例
+
+
+```json
+{
+    "traceId": "123456ABCDEF",
+    "code": 0,
+    "msg": "success",
+    "data": {
+		"successCount": 10,
+		"failCount": 2,
+		"failEnvIds": ["539893235657500146"]
+    }
+}
+```
+
+
+## 响应体数据说明
+
+
+| 参数名 | 类型 | 说明 |
+| --- | --- | --- |
+| successCount | int | 转让成功数 |
+| failCount | int | 转让失败数 |
+| failEnvIds | array[string] | 转让失败环境Id，正在使用或不存在的环境 |
+
+
+## 错误码
+
+
+以下为接口特定错误码，其他错误码请参考[浏览器错误码](https://open.geelark.cn/api/browser-error-codes)
+
+
+| 错误码 | 说明 |
+| --- | --- |
+| 40013 | 目标用户账号不存在 |
+| 43022 | 不能转让给自己 |
+| 43027 | 该浏览器不能转让 |
+| 40011 | 当前用户非付费用户 |
+| 43028 | 子用户没有该环境组权限 |
+

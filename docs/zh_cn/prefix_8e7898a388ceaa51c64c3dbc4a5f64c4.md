@@ -1,0 +1,88 @@
+[TOC]
+
+## 接口说明
+批量删除云手机
+
+## 请求URL
+
+- `https://openapi.geelark.cn/open/v1/phone/delete`
+
+## 请求方法
+
+- POST
+
+## 请求参数
+
+| 参数名 | 必选 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- | --- |
+| ids | 是 | array[string] | 云手机id列表，最大限制100 | 参考请求示例 |
+
+
+
+## 请求示例
+```json
+{
+    "ids":[
+        "123456ABCDEF",
+        "123456ABCDEF"
+    ]
+}
+```
+
+
+## 响应示例
+
+```json
+{
+    "code": 0,
+    "msg": "success",
+    "traceId": "12345ABCDEF",
+    "data": {
+        "totalAmount": 4,
+        "successAmount": 2,
+        "failAmount": 2,
+        "failDetails": [
+            {
+                "code": 42001,
+                "id": "12345ABCDEF",
+                "msg": "env not found"
+            },
+            {
+                "code": 43009,
+                "id": "12345ABCDEF",
+                "msg": "env is started"
+            }
+        ]
+    }
+}
+```
+
+## 响应体数据说明
+
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| totalAmount | integer | 请求id总数 |
+| successAmount | integer | 成功id总数 |
+| failAmount | integer | 失败id总数 |
+| failDetails | array[FailDetails] | 失败信息 |
+
+### failDetails 失败信息 <FailDetails>
+| 参数名       |     类型   |    说明    |
+| ----------- | -----------|----------- |
+| code | integer | 错误码 |
+| id | integer | 云手机id |
+| msg | string | 错误信息 |
+
+## 错误码
+
+以下为接口特定错误码，其他错误码请参考[云手机错误码](https://open.geelark.cn/api/cloud-phone-error-codes)
+
+| 错误码 | 说明 |
+| --- | --- |
+| 42001 | 云手机不存在 |
+| 43009 | 云手机已启动，无法删除 |
+| 43010 | 云手机启动中，无法删除 |
+| 43021 | 云手机正在使用，请稍后再试 |
+
+
+
