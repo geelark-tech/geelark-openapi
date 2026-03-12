@@ -1,4 +1,3 @@
-
 API Description
 ---------------
 
@@ -17,7 +16,7 @@ Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | ----------- | -------| -----------|----------- |--------- |
-| profilesId   | yes     |   string  | profiles id，it can be obtained through the &#039;get plan list&#039; API | 497540679501610040 |
+| profilesId   | yes     |   string  | profiles id，it can be obtained through the 'get plan list' API | 497540679501610040 |
 |parallelsNum|yes|int|the parallels number should be greater than or equal to the parallels number of the current plan| 1 |
 |monthlyRentalNum|yes|int|the monthly rental number should be greater than or equal to the monthly rental number of the current plan| 1  |
 |days|no|int| Parameter was required when the plan was expired, renewal duration：30/90/180/360 day| 30 |
@@ -55,4 +54,3 @@ Please refer to the [Cloud Phone Error Codes](https://open.geelark.com/api/cloud
 | 41001 | balance not enough |
 | 41002 | only support upgrade plan, please operate on the client side |
 | 41003 | promo code is invalid |
-

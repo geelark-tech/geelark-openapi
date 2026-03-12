@@ -77,7 +77,7 @@ Batch shut down cloud phones.
 | failAmount | integer | Number of failed IDs |
 | failDetails | array\[FailDetails\] | Information about failures |
 
-### failDetails Failure Information &lt;FailDetails&gt;
+### failDetails Failure Information <FailDetails>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |

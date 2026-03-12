@@ -57,7 +57,7 @@
 | failAmount     | integer | Total number of failed requests |
 | list           | GPS     | GPS information      |
 
-### list GPS Information &lt;GPS&gt;
+### list GPS Information <GPS>
 | Parameter Name | Type    | Description          |
 | -------------- | ------- | -------------------- |
 | id             | string  | Cloud phone ID       |

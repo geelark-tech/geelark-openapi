@@ -1,6 +1,6 @@
 ## Interface Description
 
-Used to check the availability of the current device&#039;s API interface.
+Used to check the availability of the current device's API interface.
 
 ## Request URL
 

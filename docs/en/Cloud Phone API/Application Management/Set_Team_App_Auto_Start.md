@@ -49,4 +49,3 @@ Enable or disable team application auto-start
 
 
 Please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
-

@@ -52,10 +52,3 @@ Below are specific error codes for the API. For other error codes, please refer 
 | Error Code | Description |
 | --- | --- |
 | 60002 | tag name repeat |
-
-
-
-
-
-
-

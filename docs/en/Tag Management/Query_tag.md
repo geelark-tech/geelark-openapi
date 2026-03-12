@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 - Retrieve tag information.
@@ -123,7 +122,7 @@
 | list           | array[Tag]        | Tag list             |
 | failDetails    | array[FailDetail] | Failure details      |
 
-### list Tag List &lt;Tag&gt;
+### list Tag List <Tag>
 
 | Parameter Name | Type   | Description |
 | -------------- | ------ | ----------- |
@@ -131,7 +130,7 @@
 | name           | string | Tag name    |
 | color          | string | Tag color   |
 
-### failDetails Failure Info &lt;FailDetail&gt;
+### failDetails Failure Info <FailDetail>
 
 | Parameter Name | Type    | Description                                      |
 | -------------- | ------- | ------------------------------------------------ |
@@ -149,4 +148,3 @@ Below are the specific error codes for this interface. For other error codes, pl
 | 43022      | Tag does not exist                 |
 | 43023      | Tag color does not exist           |
 | 43024      | Tag name does not exist            |
-

@@ -60,7 +60,7 @@ Retrieve the list of cloud phones.
 | pageSize | integer | Page size |
 | items | array\[Phone\] | List of cloud phones |
 
-### items Cloud Phone Data &lt;Phone&gt;
+### items Cloud Phone Data <Phone>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ Retrieve the list of cloud phones.
 | serialNo | string | Cloud phone serial number |
 | group | Group | Cloud phone group information |
 | remark | string | Cloud phone remark |
-| status | int | Cloud phone status&lt;br/&gt;0 - Started&lt;br/&gt;1 - Starting&lt;br/&gt;2 - Shut down |
+| status | int | Cloud phone status<br/>0 - Started<br/>1 - Starting<br/>2 - Shut down |
 | tags | array\[Tag\] | List of cloud phone tags |
 | equipmentInfo  | EquipmentInfo    | cloud phone equipment info |
 | proxy | Proxy | Proxy info |
@@ -78,7 +78,7 @@ Retrieve the list of cloud phones.
 | monthlyExpire | int | Monthly subscription expiration time, timestamp in seconds |
 | rpaStatus | int | Whether RPA is running: 1 = running, 0 = not running |
 
-### group Group Information &lt;Group&gt;
+### group Group Information <Group>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
@@ -86,13 +86,13 @@ Retrieve the list of cloud phones.
 | name | string | Group name |
 | remark | string | Group remark |
 
-### tags Cloud Phone Tags &lt;Tag&gt;
+### tags Cloud Phone Tags <Tag>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
 | name | string | Cloud phone tag name |
 
-### equipmentInfo Cloud phone equipment info &lt;EquipmentInfo&gt;
+### equipmentInfo Cloud phone equipment info <EquipmentInfo>
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |
@@ -113,7 +113,7 @@ Retrieve the list of cloud phones.
 |province|string|Province; only populated if specified at creation time| 
 |city|string|City; only populated if specified at creation time|
 
-### proxy Proxy info &lt;Proxy&gt;
+### proxy Proxy info <Proxy>
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |

@@ -72,5 +72,3 @@ For error codes, please refer to  [Cloud Phone Error Codes](https://open.geelar
 | --- | --- |
 | 40013 | target account not found |
 | 43022 | can not transfer to myself |
-
-

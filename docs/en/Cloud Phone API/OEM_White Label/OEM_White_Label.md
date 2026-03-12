@@ -1,7 +1,5 @@
-
-
 ## Interface Description
-For anyone who want to integrate the 1st and world&#039;s best cloud phone, feel free to do it. Contact us if you need any help regarding integration.
+For anyone who want to integrate the 1st and world's best cloud phone, feel free to do it. Contact us if you need any help regarding integration.
 
 Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc.
 - `You can access this feature when your plan includes 50 or more profiles.`
@@ -27,7 +25,7 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 | title | No | string | Title, maximum length 64 bytes. If not provided or left empty, the original value remains unchanged. |  Refer to Request Example |
 | logo | No | string |Logo URL, maximum length 255 bytes. If not provided or left empty, the original value remains unchanged.|  Refer to Request Example |
 | hideHeader | No | bool | Whether to hide the header at the top of the cloud phone. Defaults to false if not provided|  false|
-|mirrorUrl|No|string|The QR code and the url opened on the phone&#039;s browser in the "Mirror" entrance, limited to 255 characters. if set this value, GeeLark will display the url in the "Mirror" entrance (as shown picture blow).![demo](https://singapore-upgrade.geelark.cn/en_mirror_url_demo.jpg "demo") When open this url, please redirect to https://mobile.geelark.com/mobile.html with all parameters (it is recommended to use a iframe) )|Refer to Request Example|
+|mirrorUrl|No|string|The QR code and the url opened on the phone's browser in the "Mirror" entrance, limited to 255 characters. if set this value, GeeLark will display the url in the "Mirror" entrance (as shown picture blow).![demo](https://singapore-upgrade.geelark.cn/en_mirror_url_demo.jpg "demo") When open this url, please redirect to https://mobile.geelark.com/mobile.html with all parameters (it is recommended to use a iframe) )|Refer to Request Example|
 | toolBarSettings | No | array[ToolBarSettings] | Control whether the toolbar entrance on the side of the cloud phone should displayed. If not set, all will be displayed by default. | See request example |
 
 ### ToolBarSettings
@@ -117,6 +115,3 @@ Below are the specific error codes for this interface. For other error codes, pl
 | 40015 | Permission limit |
 | 60003 | Illegal url |
 | 60004 | Invalid file format |
-
-
-

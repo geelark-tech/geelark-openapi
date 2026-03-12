@@ -1,3 +1,12 @@
+### 2026.03.11
+- TikTok random likes and TikTok AI random comments support probability parameters
+- Added an interface for creating random TikTok follow tasks
+- Added an interface for querying browser task details
+- Added an API for checking browser status
+- Added an API for clearing browser cache
+- Added an API for moving browser groups
+- Added an API for querying environment cookies
+
 ### 2026.02.27
 - Add response parameters to the Get the current subscription plan information API: availableMonthlyRentals
 
@@ -7,7 +16,7 @@
 - Add a new request parameter ids to the Search material API.
 
 ### 2026.02.10
-- Instagram&#039;s Reels album API adds a Post parameter.
+- Instagram's Reels album API adds a Post parameter.
 
 ### 2026.02.10
 - Add renew plan API
@@ -131,7 +140,7 @@
 - Added new parameters to the cloud phone startup API: hideSideBar, displayTimer
 - Added a stop callback to the cloud phone callback events
 - Added a new API for getting the app list
-- Added a new API for adding apps to Team&#039;s applications
+- Added a new API for adding apps to Team's applications
 
 ### 2025.10.21
 - Added TikTok AI random comment-Asia task interface

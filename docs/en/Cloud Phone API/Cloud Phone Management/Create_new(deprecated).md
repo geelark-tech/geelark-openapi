@@ -160,7 +160,7 @@ Dynamic proxy settings can be configured on the client side first, and then by s
 | envSerialNo | string | Cloud phone serial number |
 | equipmentInfo  | EquipmentInfo    | cloud phone equipment info |
 
-#### equipmentInfo Cloud phone equipment info &lt;EquipmentInfo&gt;
+#### equipmentInfo Cloud phone equipment info <EquipmentInfo>
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |

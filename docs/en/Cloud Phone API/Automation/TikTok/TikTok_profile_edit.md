@@ -18,9 +18,9 @@ Request Parameters
 | scheduleAt | Yes | int | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | avatar | No | string | Avatar URL, refer to the User Guide - File Upload for creating automation tasks; the uploaded image should have a 1:1 aspect ratio, otherwise the edit will fail |
-| nickName | No | string | Nickname, up to 50 characters |
-| bio | No | string | Bio, up to 200 characters |
-| site | No | string | Website, up to 100 characters, please provide a URL starting with http/https |
+| nickName | No | string | Nickname, up to 30 characters |
+| bio | No | string | Bio, up to 160 characters |
+| site | No | string | Website, please provide a URL starting with http/https |
 
 Request Example
 ----------------

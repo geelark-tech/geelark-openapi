@@ -41,7 +41,7 @@ Response Data Description
 | failAmount | integer | Total number of failed IDs |
 | failDetails | array\[FailDetails\] | Failure details |
 
-### Failure Details &lt;FailDetails&gt;
+### Failure Details <FailDetails>
 
 | Parameter | Type | Description |
 | --- | --- | --- |

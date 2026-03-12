@@ -56,7 +56,7 @@ delete material tag
 | failDetails    | array[FailDetails] | Failure details      |
 
 
-### Failure Details &lt;FailDetails&gt;
+### Failure Details <FailDetails>
 
 
 | Parameter Name | Type              | Description          |
@@ -73,12 +73,3 @@ Below are specific error codes for the API. For other error codes, please refer 
 | Error Code | Description |
 | ------ | ---------- |
 | 43022  | tag not found |
-
-
-
-
-
-
-
-
-

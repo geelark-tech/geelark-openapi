@@ -66,5 +66,3 @@ Below are specific error codes for this interface. For other error codes, please
 | Error Code | Description |
 | --- | --- |
 | 43028 | The sub-user does not have the permission of the environment group |
-
-

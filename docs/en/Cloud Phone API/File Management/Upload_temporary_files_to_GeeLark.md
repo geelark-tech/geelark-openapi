@@ -3,7 +3,7 @@
 API Description
 ---------------
 
-Upload temporary files to GeeLark (Expires in 30 days)
+Upload temporary files to GeeLark (Expires in 3 days)
 
 Request URL
 -----------
@@ -20,7 +20,7 @@ Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| fileType | Yes | string | File type, Currently supported: "jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp", "svg", "heif", "heic","mp4", "avi", "mkv", "mov", "wmv", "flv", "webm", "mpeg", "mpg", "3gp","apk","xapk","xml","mp3"| jpg |
+| fileType | Yes | string | File type, Currently supported: "jpg", "jpeg", "png", "gif", "bmp", "webp","heif", "heic", "mp4", "webm","xml", "apk", "xapk" |"mp4"|
 
 Request Example
 ---------------
@@ -49,8 +49,8 @@ Response Example
  "code": 0,
  "msg": "success",
  "data": {
- "uploadUrl": "http://42-studio-prod.oss-cn-hangzhou.aliyuncs.com/open-upload%2F497521349346987872%2F20240730%2Fe2u5amyB.txt?Expires=1722310832&amp;OSSAccessKeyId=LTAI5t7JzQBfi1nV3HbsKojG&amp;Signature=HGBVqTUfXcUAthLPnO3ZYIVnAxg%3D",
- "resourceUrl": "https://material-prod.geelark.cn/open-upload/497521349346987872/20240730/e2u5amyB.txt"
+ "uploadUrl": "http://42-studio-prod.oss-cn-hangzhou.aliyuncs.com/open-upload%2F497521349346987872%2F20240730%2Fe2u5amyB.mp4?Expires=1722310832&OSSAccessKeyId=LTAI5t7JzQBfi1nV3HbsKojG&Signature=HGBVqTUfXcUAthLPnO3ZYIVnAxg%3D",
+ "resourceUrl": "https://material-prod.geelark.cn/open-upload/497521349346987872/20240730/e2u5amyB.mp4"
  }
 }
 ```
@@ -67,7 +67,7 @@ Upload Usage Example
 
 ### linux
 ``` shell
-curl -X PUT --upload-file ./upload_test.txt "uploadUrl"
+curl -X PUT --upload-file ./upload_test.mp4 "uploadUrl"
 ```
 
 ### Go
@@ -91,7 +91,7 @@ if err != nil {
 }
 
 // send request
-client := &amp;http.Client{}
+client := &http.Client{}
 resp, err := client.Do(req)
 if err != nil {
  fmt.Println("Error sending request:", err)
@@ -108,5 +108,5 @@ if resp.StatusCode == http.StatusOK {
 ```
 ## Postman
 Please note that the header cannot pass any extra fields!
-![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&amp;sign=55a9c6fd741b6c9b78e71e4beb948dd3)
-![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&amp;sign=e9ccd1ef2db200455f61ce465a989b20)
+![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&sign=55a9c6fd741b6c9b78e71e4beb948dd3)
+![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&sign=e9ccd1ef2db200455f61ce465a989b20)

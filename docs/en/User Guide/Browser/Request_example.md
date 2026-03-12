@@ -16,11 +16,11 @@ fetch(url, {
  },
  body: JSON.stringify(data),
 })
- .then((res) =&gt; res.json())
- .then((res) =&gt; {
+ .then((res) => res.json())
+ .then((res) => {
  console.log(res);
  })
- .catch((err) =&gt; {
+ .catch((err) => {
  console.error(err);
  });
 ```

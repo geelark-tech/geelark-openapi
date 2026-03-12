@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 - Retrieve group information.
@@ -106,7 +105,7 @@
 | list           | array[Group]      | Group list           |
 | failDetails    | array[FailDetails] | Failure details      |
 
-### list Group List &lt;Group&gt;
+### list Group List <Group>
 
 | Parameter Name | Type   | Description |
 | -------------- | ------ | ----------- |
@@ -114,7 +113,7 @@
 | name           | string | Group name  |
 | remark         | string | Group remark|
 
-### failDetails Failure Info &lt;FailDetails&gt;
+### failDetails Failure Info <FailDetails>
 
 | Parameter Name | Type    | Description                                      |
 | -------------- | ------- | ------------------------------------------------ |

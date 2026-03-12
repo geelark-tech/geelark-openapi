@@ -1,5 +1,5 @@
 ## API Description
-- Get the cloud phone device ID (please re-obtain the latest ID after one-click new phone), which corresponds to the cloud phone&#039;s unique hardware device ID, which is equivalent to the system&#039;s Andorid_ID. The App can bind to the cloud phone environment by obtaining this ID on the cloud phone. How to obtain the device ID on the App side:
+- Get the cloud phone device ID (please re-obtain the latest ID after one-click new phone), which corresponds to the cloud phone's unique hardware device ID, which is equivalent to the system's Andorid_ID. The App can bind to the cloud phone environment by obtaining this ID on the cloud phone. How to obtain the device ID on the App side:
 Android 13 system: execute the getprop ro.boot.serialno command through adb
 Other systems: execute the getprop ro.serialno command through adb
 

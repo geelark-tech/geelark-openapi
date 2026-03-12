@@ -41,15 +41,15 @@ Retrieve the status of cloud phones.
 | successDetails | array\[SuccessDetails\] | Information about successful responses |
 | failDetails | array\[FailDetails\] | Information about failed responses |
 
-### successDetails Success Information &lt;SuccessDetails&gt;
+### successDetails Success Information <SuccessDetails>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
 | id | string | ID of the successful cloud phone |
 | serialName | string | Name of the successful cloud phone |
-| status | integer | Cloud phone status code&lt;br/&gt; 0 - Started&lt;br/&gt; 1 - Starting&lt;br/&gt; 2 - Shut down&lt;br/&gt; 3 - Expired |
+| status | integer | Cloud phone status code<br/> 0 - Started<br/> 1 - Starting<br/> 2 - Shut down<br/> 3 - Expired |
 
-### failDetails Failure Information &lt;FailDetails&gt;
+### failDetails Failure Information <FailDetails>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |

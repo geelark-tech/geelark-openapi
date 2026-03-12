@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 - Modify tag information including name and color.
@@ -19,7 +18,7 @@
 | -------------- | -------- | ---------- | --------------------- | ----------------- |
 | list           | Yes      | array[Tag] | Array of tags to update | Refer to Request Example |
 
-### list Modify Tag Array &lt;Tag&gt;
+### list Modify Tag Array <Tag>
 
 | Parameter Name | Required | Type   | Description | Example           |
 | -------------- | -------- | ------ | ----------- | ----------------- |
@@ -72,4 +71,3 @@ Below are the specific error codes for this interface. For other error codes, pl
 | 43020      | Tag name is empty                  |
 | 43022      | Tag does not exist                 |
 | 43023      | Tag color not supported            |
-

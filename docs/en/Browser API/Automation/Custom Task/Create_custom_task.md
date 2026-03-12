@@ -1,7 +1,6 @@
-
 ## Interface Description
 
-First, call the custom process query interface to obtain the browser&#039;s custom task process, and then create the task using the process ID.
+First, call the custom process query interface to obtain the browser's custom task process, and then create the task using the process ID.
 
 ## Request URL
 

@@ -16,12 +16,12 @@
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| mobileType | Yes | string | Cloud phone type, can be set&lt;/br&gt;Android 9&lt;/br&gt;Android 10&lt;/br&gt;Android 11&lt;/br&gt; Android 12&lt;/br&gt; Android 13&lt;/br&gt; Android 14&lt;/br&gt; Android 15 | Android 10 |
+| mobileType | Yes | string | Cloud phone type, can be set</br>Android 9</br>Android 10</br>Android 11</br> Android 12</br> Android 13</br> Android 14</br> Android 15 | Android 10 |
 |chargeMode|No|int|Billing mode, 0-on-demand, 1-monthly, default is on-demand|0|
 |region|No|string|Specify the computer room where the cloud phone is located. Optional parameters: cn(China), sgp(Singapore)| cn|
 |data|Yes|array[EnvRowApi]|Environment parameter array, up to 100|Reference Request Example|
 
-### Environment parameter &lt;EnvRowApi&gt;
+### Environment parameter <EnvRowApi>
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
@@ -122,7 +122,7 @@
 | envSerialNo | string | Cloud phone serial number |
 | equipmentInfo  | EquipmentInfo    | cloud phone equipment info |
 
-#### equipmentInfo Cloud phone equipment info &lt;EquipmentInfo&gt;
+#### equipmentInfo Cloud phone equipment info <EquipmentInfo>
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |

@@ -1,4 +1,3 @@
-
 | Callback Type | Event Value |
 | --- | --- |
 | Cloud phone startup callback | 1 |

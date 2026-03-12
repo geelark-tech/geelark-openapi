@@ -17,6 +17,7 @@
 | useAi | 是 |int|是否使用ai；1 ai(仅pro用户可用); 2 不是ai，自己传评论 |
 | comment | 是 |string|评论内容，最多500字，useAi为 2 时必传 |
 | links | 否 | array[string] | 指定链接 |
+| commentProbability | 否 |int|评论概率，0-100，默认为30|
 
 ## 请求示例
 ```json

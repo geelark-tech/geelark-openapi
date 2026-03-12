@@ -1,7 +1,6 @@
-
 ## Interface Description
 
-Cancel the browser task; you can cancel it while it&#039;s running or waiting to be executed.
+Cancel the browser task; you can cancel it while it's running or waiting to be executed.
 
 ## Request URL
 

@@ -17,7 +17,7 @@ Batch start cloud phones.
 | ids | Yes | array\[string\] | List of cloud phone IDs | See request example |
 | ~~hideSideBar~~ | No | bool | deprecated. Please use [the OEM custom settings API instead](https://open.geelark.com/api/phone-customization) | -|  
 | ~~displayTimer~~ | No | bool | deprecated. Please use [the OEM custom settings API instead](https://open.geelark.com/api/phone-customization)  | - |
-|width | No | int | Cloud phone display width in px | Default: 336 (allowed range: 200&lt;=width&lt;=600)|
+|width | No | int | Cloud phone display width in px | Default: 336 (allowed range: 200<=width<=600)|
 |center|No|int|Whether the cloud phone display is centered|0: not centered, 1: centered; default is 1 if not provided|
 | ~~hideLibrary~~ | No | bool |  deprecated. Please use [the OEM custom settings API instead](https://open.geelark.com/api/phone-customization) | - |
 | ~~hideMirror~~ | No | bool | deprecated. Please use [the OEM custom settings API instead](https://open.geelark.com/api/phone-customization) | - |

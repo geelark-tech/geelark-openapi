@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 - Create groups with specified **name and remark (optional)**.
@@ -18,7 +17,7 @@
 | -------------- | -------- | ---------------- | --------------------- | ----------------- |
 | list           | Yes      | array[GroupItem] | Group data list       | Refer to Request Example |
 
-### list Data List &lt;GroupItem&gt;
+### list Data List <GroupItem>
 
 | Parameter Name | Required | Type   | Description | Example |
 | -------------- | -------- | ------ | ----------- | ------- |
@@ -87,7 +86,7 @@
 | successDetails | array[SuccessDetails] | Success details      |
 | failDetails    | array[FailDetails]   | Failure details      |
 
-### successDetails Success Info &lt;SuccessDetails&gt;
+### successDetails Success Info <SuccessDetails>
 
 | Parameter Name | Type   | Description          |
 | -------------- | ------ | -------------------- |
@@ -95,7 +94,7 @@
 | name           | string | Group name           |
 | remark         | string | Remark (not shown if empty) |
 
-### failDetails Failure Info &lt;FailDetails&gt;
+### failDetails Failure Info <FailDetails>
 
 | Parameter Name | Type    | Description |
 | -------------- | ------- | ----------- |
@@ -111,4 +110,3 @@ Below are the specific error codes for this interface. For other error codes, pl
 | ---------- | ---------------------------------- |
 | 43030      | Group name is empty                |
 | 43031      | Group name already exists          |
-

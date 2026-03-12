@@ -1,4 +1,3 @@
-
 Common Commands
 ---------------
 
@@ -32,7 +31,7 @@ adb shell getprop ro.gl.serialno
 
 ### Capture the cloud phone screen and save it locally
 ```shell
-adb exec-out screencap -p &gt; /Users/geelark/Downloads/screenshot.png
+adb exec-out screencap -p > /Users/geelark/Downloads/screenshot.png
 ```
 
 ### Record the cloud phone screen and save it locally

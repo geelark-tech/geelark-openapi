@@ -14,7 +14,7 @@ create material
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| url | Yes | string | please refer to [Upload temporary files to GeeLark](https://open.geelark.com/api/upload-getUrl)   | Refer to Request Example |
+| url | Yes | string | please refer to [Upload a file to the Library](https://open.geelark.com/api/get-material-upload-url)   | Refer to Request Example |
 | tagsId | No | array[string] | tags id | Refer to Request Example |
 | fileName | No | string | file name, up to 200 characters  | Refer to Request Example |
 
@@ -56,7 +56,7 @@ create material
 | id | string | material id |
 | failDetails | array[FailDetails] | Failure details |
 
-### Failure Details &lt;FailDetails&gt;
+### Failure Details <FailDetails>
 
 | Parameter Name | Type | Description |
 | ------------ | ---------- | ------------ |
@@ -75,10 +75,3 @@ Below are specific error codes for the API. For other error codes, please refer 
 | 60004 | The file format is not supported |
 | 43022  | tag not found |
 | 40005  | The resource does not exist. Please check if the URL resource is available |
-
-
-
-
-
-
-

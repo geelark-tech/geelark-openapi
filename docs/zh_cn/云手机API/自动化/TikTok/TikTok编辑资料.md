@@ -15,9 +15,9 @@
 | scheduleAt | 是 |int| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
 | avatar | 否 |string|头像url ，请参考 [上传临时文件到GeeLark](https://open.geelark.cn/api/upload-getUrl)，上传的图片宽高比例1:1，否则会编辑失败|
-|nickName|否|string|昵称，最多50字|
-|bio|否|string|简介，最多200字|
-|site|否|string|网站，最多100字,请输入http/https开头的url链接|
+|nickName|否|string|昵称，最多30字|
+|bio|否|string|简介，最多160字|
+|site|否|string|网站，请输入http/https开头的url链接|
 
 ## 请求示例
 ```json

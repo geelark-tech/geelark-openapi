@@ -18,7 +18,7 @@
 | --- | --- | --- | --- | --- |
 | planName | No | string | Task plan name, auto-generated if not provided | testAdd |
 | remark | No | string | Remarks, up to 200 characters | task |
-| taskType | Yes | integer | Task type&lt;br&gt;1 Publish video&lt;br&gt;2 Warmup&lt;br&gt;3 Publish image set | 3 |
+| taskType | Yes | integer | Task type<br>1 Publish video<br>2 Warmup<br>3 Publish image set | 3 |
 | list | Yes | array | Task parameter array, create a maximum of 100 tasks at a time | Refer to request examples |
 
 ### Publish Video Task Parameters
@@ -46,7 +46,7 @@
 | --- | --- | --- | --- | --- |
 | scheduleAt | Yes | integer | Scheduled time, in seconds timestamp. If the value is less than the current time, the value is calculated based on the current time. | 1718744459 |
 | envId | Yes | string | Cloud phone ID | 123456654321 |
-| action | Yes | string | Warmup action&lt;br&gt;search profile - Search personal profile&lt;br&gt;search video - Search short videos&lt;br&gt;browse video - Randomly browse videos | browse video |
+| action | Yes | string | Warmup action<br>search profile - Search personal profile<br>search video - Search short videos<br>browse video - Randomly browse videos | browse video |
 | keywords | No | array[string] | Search keyword, required when searching behavior, optional when browsing behavior | Refer to request examples |
 | duration | Yes | integer | Browsing duration, in minutes | 10 |
 
@@ -150,4 +150,3 @@ The following are specific error codes for this interface. For other error codes
 | 41001 | balance not enough |
 | 43018 | The monthly cloud mobile phone is not bound to the monthly device |
 | 48004 | The app required by the task does not meet the requirements |
-

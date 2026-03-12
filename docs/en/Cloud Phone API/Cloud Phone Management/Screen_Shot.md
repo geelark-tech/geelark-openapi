@@ -1,3 +1,5 @@
+Please refer to Callback Example[TOC]
+
 ## API Description
 Get a screen shot from cloud phone
 

@@ -51,7 +51,7 @@ set material tag
 ```
 
 ## Response Data Description
-### failDetails Failure Info &lt;FailDetails&gt;
+### failDetails Failure Info <FailDetails>
 
 
 | Parameter Name | Type    | Description |
@@ -69,12 +69,3 @@ Below are specific error codes for the API. For other error codes, please refer 
 | ---------- | ---------------------------------- |
 | 43022  | tag not found |
 | 60005  | material not found |
-
-
-
-
-
-
-
-
-

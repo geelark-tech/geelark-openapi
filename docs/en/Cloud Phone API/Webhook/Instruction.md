@@ -1,4 +1,3 @@
-
 - GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](https://open.geelark.com/api/callback-type "Callback Type")
 
 ### Interface Authentication
@@ -28,7 +27,7 @@ User-defined callback interface authentication is consistent with the authentica
 When making a request, the following request headers will be carried
 
 - `traceId` Unique request ID
-- `Authorization` Set to `Bearer: &lt;The token value obtained from the GeeLark client&gt;`
+- `Authorization` Set to `Bearer: <The token value obtained from the GeeLark client>`
 
 ### Cloud Phone Start Callback Received Parameters
 
@@ -273,4 +272,3 @@ When making a request, the following request headers will be carried
 	"result": 1
 }
 ```
-

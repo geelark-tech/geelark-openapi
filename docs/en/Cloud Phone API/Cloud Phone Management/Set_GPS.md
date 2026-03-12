@@ -14,7 +14,7 @@
 | -------------- | -------- | ---------- | --------------------- | ----------------- |
 | list           | Yes      | array[GPS] | Cloud phone GPS info  | Refer to Request Example |
 
-### list Cloud Phone GPS Info &lt;GPS&gt;
+### list Cloud Phone GPS Info <GPS>
 | Parameter Name | Required | Type   | Description | Example           |
 | -------------- | -------- | ------ | ----------- | ----------------- |
 | id             | Yes      | string | Cloud phone ID | Refer to Request Example |

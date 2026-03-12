@@ -35,7 +35,7 @@ After requesting a screenshot, you can actively obtain the result through this i
     "msg": "success",
 	"data": {
         "status": 2,
-		"downloadLink": "https://zx-cloud-phone-pre.obs.cn-southwest-2.myhuaweicloud.com/envirFileExport/1851511129017700352/IMG_20241122160248.png?AccessKeyId=UFNIPAPFJX2MAGMFGRYZ&amp;Expires=1732264377&amp;Signature=dqV5JYzYDdm0wwAgkZIpDrs%2FL%2FE%3D"
+		"downloadLink": "https://zx-cloud-phone-pre.obs.cn-southwest-2.myhuaweicloud.com/envirFileExport/1851511129017700352/IMG_20241122160248.png?AccessKeyId=UFNIPAPFJX2MAGMFGRYZ&Expires=1732264377&Signature=dqV5JYzYDdm0wwAgkZIpDrs%2FL%2FE%3D"
     }
 }
 ```
@@ -51,5 +51,3 @@ After requesting a screenshot, you can actively obtain the result through this i
 ## 错误码
 
 For error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
-
-

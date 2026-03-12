@@ -1,4 +1,3 @@
-
 补丁sdk用于生成补丁模块，可以通过安装补丁接口安装到云手机，实现系统及app适配能力，目前仅支持Android 12、Andorid 13、Andorid 15系统。
 
 补丁模块安装后会实时生效，**无需**修改系统源码，**无需**设备重启，**无需**应用重启。
@@ -20,7 +19,7 @@
  +---------+
  ↓
  +---------+
- | 获取补丁 ｜&lt;----------------
+ | 获取补丁 ｜<----------------
  +---------+ ｜
  ↓ ｜
  +---------+ ｜
@@ -33,7 +32,7 @@
  ↓ ｜
  ／ ＼ |
  ／ ＼ 是 +---------+
- |更新补丁？|-----------&gt;｜ 卸载补丁 ｜
+ |更新补丁？|----------->｜ 卸载补丁 ｜
  ＼ ／ +---------+
  ＼ ／
  | 
@@ -83,7 +82,7 @@
 	```config
  buildscript {
  dependencies {
- classpath fileTree(dir: "$rootProject.ext.patchSdkDir", include: &#039;agp_*.jar&#039;)
+ classpath fileTree(dir: "$rootProject.ext.patchSdkDir", include: 'agp_*.jar')
  }
  }
  // 只修改这里的配置即可
@@ -93,7 +92,7 @@
  // 补丁版本，如果为0，则自动根据当前的epoch时间戳生成，例如1696822576
  version: 0,
  // 可以加载补丁的包名正则表达式，如果存在pkg.txt文件，则忽略这里的配置
- targetPattern: &#039;&#039;,
+ targetPattern: '',
  // 补丁加载优先级， 数越小越先加载，默认为0
  priority: 0,
  // 是否支持热加载，热加载可以在一次进程的生命周期中多次加载，卸载，加载...
@@ -141,7 +140,7 @@
  // 使用例子1：干预系统获取应用api(android.app.ApplicationPackageManager.getPackageInfoAsUser(String, int, int))，禁止返回com.abc的应用包
  try {
  // 通过反射获取 "android.app.ApplicationPackageManager" 类
- Class&lt;?&gt; pmClass = Class.forName("android.app.ApplicationPackageManager", true, appContext.getClassLoader());
+ Class<?> pmClass = Class.forName("android.app.ApplicationPackageManager", true, appContext.getClassLoader());
 
  // 使用 xposed-api，hook "android.app.ApplicationPackageManager.getPackageInfoAsUser" 方法
  // 这个方法是PackageManager.getPackageInfo()的底层实现，所以这里hook这个方法即可
@@ -213,5 +212,4 @@
  可调用上传临时文件到GeeLark接口
  然后调用安装补丁接口
  查看补丁安装信息可调用查询补丁安装状态接口，补丁id为你在app项目中build.gradle的设置的
- ![](http://showdoc.geelark.com/server/index.php?s=/api/attachment/visitFile&amp;sign=e2713d9b578da69a6e6f58b185943583)
-
+ ![](http://showdoc.geelark.com/server/index.php?s=/api/attachment/visitFile&sign=e2713d9b578da69a6e6f58b185943583)

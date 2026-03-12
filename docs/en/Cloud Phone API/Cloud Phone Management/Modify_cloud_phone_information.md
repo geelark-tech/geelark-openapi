@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 ###  Warning: Do not operate this api while calling the API to start the cloud phone.
@@ -136,7 +135,7 @@ If some tags in the tag list do not exist, there will be `failDetails` data; if 
 | -------------- | ----------------- | -------------------------- |
 | failDetails | array[FailDetails] | Tag addition failure info |
 
-### failDetails Tag Addition Failure Info &lt;FailDetails&gt;
+### failDetails Tag Addition Failure Info <FailDetails>
 
 | Parameter Name | Type | Description |
 | -------------- | ------- | ----------- |

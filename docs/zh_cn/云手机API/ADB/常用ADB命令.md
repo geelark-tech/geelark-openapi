@@ -28,7 +28,7 @@ adb shell getprop ro.gl.serialno
 
 ### 截取云手机屏幕并保存到本地
 ```shell
-adb exec-out screencap -p &gt; /Users/geelark/Downloads/screenshot.png
+adb exec-out screencap -p > /Users/geelark/Downloads/screenshot.png
 ```
 
 ### 云手机录屏并保存到本地

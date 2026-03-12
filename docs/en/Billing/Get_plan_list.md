@@ -57,4 +57,3 @@ Response Example
     ]
 }
 ```
-

@@ -44,7 +44,7 @@ Get account data
 | pageSize     | integer               | current page size     |
 
 
-### successDetails Success Information &lt;items&gt;
+### successDetails Success Information <items>
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |

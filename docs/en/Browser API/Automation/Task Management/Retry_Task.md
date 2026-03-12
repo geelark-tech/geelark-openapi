@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 Retry the browser task; you can retry if the task fails or is canceled.

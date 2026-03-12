@@ -52,4 +52,3 @@ Below are specific error codes for this interface. For other error codes, please
 | --- | --- |
 | -1 | Shutdown failed |
 | 43028 | The sub-user does not have permissions for this environment group |
-

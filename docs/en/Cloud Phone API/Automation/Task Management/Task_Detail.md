@@ -1,6 +1,6 @@
 ## API Description
 
-The first request for searchAfter does not need to be passed. If the response&#039;s logContinue is true, it indicates that the log needs to be returned in pages. At this point, the response&#039;s searchAfter can be passed as a parameter.
+The first request for searchAfter does not need to be passed. If the response's logContinue is true, it indicates that the log needs to be returned in pages. At this point, the response's searchAfter can be passed as a parameter.
 
 ## Request URL
 
@@ -17,7 +17,7 @@ The first request for searchAfter does not need to be passed. If the response&#0
 | Parameter Name | Required | Type | Description | Example |
 | ----------- | -------| -----------|----------- |----------- |
 | id       | Yes     |   string  | Task ID | 1234567898 |
-| searchAfter | No | object | Log pagination parameters | Reference request example |
+| searchAfter | No | array[integer] | Log pagination parameters | Reference request example |
 
 ## Request Example
 
@@ -36,17 +36,17 @@ The first request for searchAfter does not need to be passed. If the response&#0
 | ----------- | -----------|----------- |
 | id | string | Task ID |
 | planName | string | Task plan name |
-| taskType | integer | Task type&lt;br&gt;1 TikTok video posting&lt;br&gt;2 TikTok AI account warmup&lt;br&gt;3 TikTok carousel posting&lt;br&gt;4 TikTok account login&lt;br&gt;6 TikTok profile editing&lt;br&gt;42 Custom(Including Facebook, YouTube and other platforms) |
+| taskType | integer | Task type<br>1 TikTok video posting<br>2 TikTok AI account warmup<br>3 TikTok carousel posting<br>4 TikTok account login<br>6 TikTok profile editing<br>42 Custom(Including Facebook, YouTube and other platforms) |
 | serialName | string | Cloud phone name |
 | envId | string | Cloud phone ID |
 | scheduleAt | integer | Scheduled time, timestamp in seconds |
-| status | integer | Task status&lt;br&gt;1 Waiting&lt;br&gt;2 In progress&lt;br&gt;3 Completed&lt;br&gt;4 Failed&lt;br&gt;7 Cancelled |
+| status | integer | Task status<br>1 Waiting<br>2 In progress<br>3 Completed<br>4 Failed<br>7 Cancelled |
 | failCode | integer | Failure code, refer to task failure codes and reasons |
 | failDesc | string | Failure reason, refer to task failure codes and reasons |
 | cost | integer | The time a task takes to complete or fail (in seconds)|
 | resultImages | array[string] | When the task is completed or fails, take a screenshot of the information |
 | logs | array[string] | Task log, with time in Zone 0, returns when the task is completed or fails |
-| searchAfter | object | Log pagination parameters |
+| searchAfter | array[integer] | Log pagination parameters |
 | logContinue | bool | Is there still a log |
 
 ### Task Failure Codes and Reasons
@@ -126,9 +126,9 @@ The first request for searchAfter does not need to be passed. If the response&#0
 | 20218 | Green screen filter not found |
 | 20219 | Failed to switch rear camera |
 | 20220 | Download video file connection is empty |
-| 20221 | Couldn&#039;t decode. select anther video |
+| 20221 | Couldn't decode. select anther video |
 | 20222 | Video sound is not available |
-| 20223 | Can&#039;t select Stickers |
+| 20223 | Can't select Stickers |
 | 20224 | Stickers list not found |
 | 20225 | Stickers list failed to load |
 | 20226 | Failed to download MENTION stickers |
@@ -326,4 +326,3 @@ Error Codes
 -----------
 
 For error codes, please refer to  [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes)
-

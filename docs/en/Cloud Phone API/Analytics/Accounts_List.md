@@ -40,7 +40,7 @@ Response Data Description
 | page | integer | Current page |
 | items | array\[item\] | Account data |
 
-Response Data Description &lt;item&gt;
+Response Data Description <item>
 --------------------------------
 
 | Parameter Name | Type | Description |

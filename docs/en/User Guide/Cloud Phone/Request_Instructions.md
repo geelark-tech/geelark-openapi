@@ -11,7 +11,7 @@ Request Instructions
 When making a request, only carry the following request headers
 
 - `traceId`: Use `Version 4 UUID`
-- `Authorization` Set to `Bearer &lt;The token value obtained from the client&gt;`
+- `Authorization` Set to `Bearer <The token value obtained from the client>`
 
 Response Instructions
 
@@ -33,7 +33,7 @@ Response Instructions
 
 #### Example of Required Request Headers for Verification
 
-Assuming the team&#039;s ApiKey is `YjmFIUuq0oJgSDJ42fxLEb6R1qjjqf`, the request headers would be set as follows:
+Assuming the team's ApiKey is `YjmFIUuq0oJgSDJ42fxLEb6R1qjjqf`, the request headers would be set as follows:
 
 * `appId`: `eH6gQR4oHr3FsZpI36La01IW`
 * `traceId`: `db6094ab-3797-4186-84d5-b0b58eebad56`

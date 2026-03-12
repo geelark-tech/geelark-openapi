@@ -11,7 +11,7 @@ var traceUUid = "yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx".replace(
  /[xy]/g,
  function (c) {
  var r = (Math.random() * 16) | 0, 
- v = c == "x" ? r : (r &amp; 0x3) | 0x8; 
+ v = c == "x" ? r : (r & 0x3) | 0x8; 
  return v.toString(16); 
  }
 );
@@ -33,11 +33,11 @@ fetch(url, {
  },
  body: JSON.stringify(data),
 })
- .then((res) =&gt; res.json())
- .then((res) =&gt; {
+ .then((res) => res.json())
+ .then((res) => {
  console.log(res);
  })
- .catch((err) =&gt; {
+ .catch((err) => {
  console.error(err);
  });
 ```
@@ -59,7 +59,7 @@ var traceUUid = "yxxyxxxxyxyxxyxxyxxxyxxxyxxyxxyx".replace(
  /[xy]/g,
  function (c) {
  var r = (Math.random() * 16) | 0, // Randomly generate a number between 0 and 15
- v = c == "x" ? r : (r &amp; 0x3) | 0x8; // If c is &#039;y&#039;, only take one of 8, 9, a, b
+ v = c == "x" ? r : (r & 0x3) | 0x8; // If c is 'y', only take one of 8, 9, a, b
  return v.toString(16); // Convert the number to a hexadecimal string
  }
 );
@@ -101,11 +101,11 @@ fetch(url, {
  },
  body: JSON.stringify(data),
 })
- .then((res) =&gt; res.json())
- .then((res) =&gt; {
+ .then((res) => res.json())
+ .then((res) => {
  console.log(res);
  })
- .catch((err) =&gt; {
+ .catch((err) => {
  console.error(err);
  });
 ```

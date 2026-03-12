@@ -75,4 +75,3 @@ Below are specific error codes for this interface. For other error codes, please
 | 43027 | This browser cannot be transferred |
 | 40011 | The current user is not a paying user |
 | 43028 | The sub-user does not have permissions for this environment group |
-

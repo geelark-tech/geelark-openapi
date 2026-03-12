@@ -27,7 +27,7 @@
 | -------------- | -------- | ------------- | ----------------- | ----------------- |
 | list           | Yes      | array[TagItem] | Tag data list     | Refer to Request Example |
 
-### list Data List &lt;TagItem&gt;
+### list Data List <TagItem>
 
 | Parameter Name | Required | Type   | Description | Example                   |
 | -------------- | -------- | ------ | ----------- | ------------------------- |
@@ -152,7 +152,7 @@
 | successDetails | array[SuccessDetails] | Success details      |
 | failDetails    | array[FailDetails]   | Failure details      |
 
-### successDetails Success Info &lt;SuccessDetails&gt;
+### successDetails Success Info <SuccessDetails>
 
 | Parameter Name | Type   | Description |
 | -------------- | ------ | ----------- |
@@ -160,7 +160,7 @@
 | name           | string | Tag name    |
 | color          | string | Tag color   |
 
-### failDetails Failure Info &lt;FailDetails&gt;
+### failDetails Failure Info <FailDetails>
 
 | Parameter Name | Type    | Description |
 | -------------- | ------- | ----------- |

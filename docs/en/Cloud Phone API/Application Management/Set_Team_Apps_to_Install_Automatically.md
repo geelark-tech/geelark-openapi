@@ -49,4 +49,3 @@ Set up automatic installation for team applications. Once automatic installation
 
 
 Please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
-

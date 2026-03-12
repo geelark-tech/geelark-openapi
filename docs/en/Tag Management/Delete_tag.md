@@ -1,4 +1,3 @@
-
 ## Interface Description
 
 - Delete the corresponding tags.
@@ -56,7 +55,7 @@
 | failAmount     | integer           | Total failures       |
 | failDetails    | array[FailDetails] | Failure details      |
 
-### failDetails Failure Info &lt;FailDetails&gt;
+### failDetails Failure Info <FailDetails>
 
 | Parameter Name | Type    | Description |
 | -------------- | ------- | ----------- |

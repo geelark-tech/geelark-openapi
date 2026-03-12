@@ -16,7 +16,7 @@
 | -------------- | -------- | ---------- | --------------------- | ----------------- |
 | list           | Yes      | array[Group] | Group data            | Refer to Request Example |
 
-### list Group Data &lt;Group&gt;
+### list Group Data <Group>
 
 | Parameter Name | Required | Type   | Description | Example           |
 | -------------- | -------- | ------ | ----------- | ----------------- |

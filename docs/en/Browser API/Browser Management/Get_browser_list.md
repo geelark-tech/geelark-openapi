@@ -78,6 +78,9 @@ Query the created environment information, including agent information, agent ID
 					"userName":"jay",
 					"passWord":"password",
 					"afterStartup":3,
+					"openLastPage": 2,
+					"openSpecPage": 1,
+					"openSiteUrl": true,
 					"autoOpenUrls":["http://www.b.com"]
 				},
 				"simulateInfo":{
@@ -210,7 +213,10 @@ Query the created environment information, including agent information, agent ID
 | url | string | Platform address |
 | userName | string | Platform account |
 | passWord | string | Platform password |
-| afterStartup | int | Page to open after startup. 1 - Restore last access, 2 - Open the specified URL, 3 - Open the specified URL and the platform page simultaneously, 4 - Restore last access and the platform page simultaneously |
+| afterStartup | int | Page to open after startup. 1 - Restore last access, 2 - Open the specified URL, 3 - Open the specified URL and the platform page simultaneously, 4 - Restore last access and the platform page simultaneously. This field is obsolete. |
+| openLastPage | int | Restore last visit 1 Yes 2 No |
+| openSpecPage | int | Open specified URL 1 Yes 2 No |
+| openSiteUrl | bool | Open platform page |
 | autoOpenUrls | array[string] | Specified URL |
 
 ### Simulation Information BrowserApiSearchSimpleSimulate
@@ -272,5 +278,3 @@ Query the created environment information, including agent information, agent ID
 
 
 Please refer to [Browser Error Codes](https://open.geelark.com/api/browser-error-codes).
-
-

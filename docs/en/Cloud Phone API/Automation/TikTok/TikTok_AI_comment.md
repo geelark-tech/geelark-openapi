@@ -20,6 +20,7 @@ Request Parameters
 | useAi | Yes | int | Whether to use AI: 1 for AI (only available for Pro users); 2 for not using AI, provide your own comment |
 | comment | Yes | string | Comment content, up to 500 characters; required when useAi is 2 |
 | links | No | array[string] | Specified link |
+| commentProbability | No | int | Comment probability, 0-100, default is 30 |
 
 Request Example
 ----------------

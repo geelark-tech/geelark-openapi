@@ -1,7 +1,7 @@
 API Description
 ---------------
 
-Upload the keybox file and pass Google&#039;s integrity verification. This is currently only supported on Android 12/13/15. For Android 12/13, simply upload the keybox file. Android 15 requires the following additional steps:
+Upload the keybox file and pass Google's integrity verification. This is currently only supported on Android 12/13/15. For Android 12/13, simply upload the keybox file. Android 15 requires the following additional steps:
 1. Update Google Play and GMS to the latest version.
 2. Log in with a valid Google account.
 3. Download the Play Integrity API Checker from Google Play.
@@ -69,4 +69,3 @@ Callback Result and Example
 ---------------------------
 
 Please refer to Callback Example
-

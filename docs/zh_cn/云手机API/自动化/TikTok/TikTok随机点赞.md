@@ -14,6 +14,7 @@
 | remark | 否 |string| 备注，最多200字 |
 | scheduleAt | 是 |int| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
+| likeProbability | 否 |int|点赞概率，0-100，默认为30|
 
 ## 请求示例
 ```json
