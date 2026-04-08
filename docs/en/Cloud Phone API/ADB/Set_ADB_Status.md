@@ -19,7 +19,7 @@ Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| ids | Yes | array\[string\] | Array of cloud phone environment IDs (currently supports Android 11,12,13,14,15 ; unsupported models will be automatically filtered) | Refer to request example |
+| ids | Yes | array\[string\] | Array of cloud phone environment IDs, maximum 200 (currently supports Android 11,12,13,14,15 ; unsupported models will be automatically filtered) | Refer to request example |
 | open | Yes | bool | Open/Close | false |
 
 ## Request Example

@@ -25,7 +25,7 @@ First, call the custom process query interface to obtain the browser's custom ta
 |remark|No|string|Remark, maximum 200 characters|myRemark|
 |scheduleAt|Yes|integer|Schedule time, second-level timestamp|1741846843|
 |flowId|Yes|string|Task flow ID, the ID field returned by the task flow query interface|497652752864775437|
-|paramMap|No|object|Task flow parameters, file types must be arrays|Refer to request example|
+|paramMap|No|object|Task flow parameters, with corresponding parameter types as follows:<br>String: string<br>Batch text: array[string]<br>Number: number<br>Boolean: bool<br>File: array[string]|Refer to request example|
 
 
 ## Request Example

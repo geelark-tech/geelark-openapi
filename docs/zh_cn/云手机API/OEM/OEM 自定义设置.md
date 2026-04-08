@@ -23,8 +23,15 @@
 | title | 否 | string | 标题，限制64字节，不填或者填空保持原值不变 | 参考请求示例 |
 | logo | 否 | string | logo链接，限制255字节，不填或者填空保持原值不变 | 参考请求示例 |
 | hideHeader | 否 | bool | 是否隐藏云机顶部的header，不填默认false | true |
-|mirrorUrl|否|string|接力入口内二维码和手机打开的链接地址，限制255字节，不填或者填空保持原值不变，设置后GeeLark将在接力入口内显示该地址（如红框所示）![示例](https://material.geelark.cn/mirror_url_demo.jpg.jpg "示例")用户访问此地址时请将带上所有参数重定向到(建议使用iframe) https://mobile.geelark.cn/mobile.html|参考请求示例|
+|mirrorUrl|否|string|接力入口内二维码和手机打开的链接地址，限制255字节，不填或者填空保持原值不变，设置后GeeLark将在接力入口内显示该地址（如红框所示）![示例](https://material.geelark.cn/mirror_url_demo.jpg.jpg "示例")用户访问此地址时请带上所有参数重定向到(建议使用iframe) `https://mobile.geelark.cn/mobile.html` |参考请求示例|
 | toolBarSettings | 否 | array[ToolBarSettings] | 控制云手机侧边工具栏入口是否显示，未设置则默认全部显示 | 参考请求示例 |
+
+### mirrorUrl
+若将mirrorUrl设置为 `https://www.xxx.com/mobile.html`  则接力入口中链接将变为
+`https://www.xxx.com/mobile.html?envirId=xxx&localeCode=zh_CN&userId=xxx5&traceId=xxx&token=xxx&env=prod&qcode=true&check=success` 
+用户访问此链接时，您需要在当面页面嵌入一个iframe，并将src设置成 
+`https://mobile.geelark.cn/mobile.html?envirId=xxx&localeCode=zh_CN&userId=xxx5&traceId=xxx&token=xxx&env=prod&qcode=true&check=success` 
+即可打开云手机
 
 ### ToolBarSettings
 | 参数名 | 类型 | 说明 |
@@ -44,12 +51,13 @@
 *   `detection`：(网络)检测
 *   `quality`：清晰度
 *   `restart`：重启
-*   `apk`：应用(管理)
+*   `appStore`：应用(管理)
 *   `qcode`：二维码
 *   `export`: 导出
 *   `timing`: 计时
 *   `liveStreaming`：直播(/录播)
 *   `clear`: 清理
+*   `teamApp`: 团队应用
 
 ## 请求示例
 ```json

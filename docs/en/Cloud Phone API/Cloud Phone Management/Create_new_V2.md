@@ -18,7 +18,7 @@
 | --- | --- | --- | --- | --- |
 | mobileType | Yes | string | Cloud phone type, can be set</br>Android 9</br>Android 10</br>Android 11</br> Android 12</br> Android 13</br> Android 14</br> Android 15 | Android 10 |
 |chargeMode|No|int|Billing mode, 0-on-demand, 1-monthly, default is on-demand|0|
-|region|No|string|Specify the computer room where the cloud phone is located. Optional parameters: cn(China), sgp(Singapore)| cn|
+|region|No|string|Specify the computer room where the cloud phone is located. Optional parameters: cn(China), sgp(Singapore), us(United States, only Android 15 is supported)| cn|
 |data|Yes|array[EnvRowApi]|Environment parameter array, up to 100|Reference Request Example|
 
 ### Environment parameter <EnvRowApi>
@@ -28,6 +28,7 @@
 |profileName|Yes|string|Cloud Phone Name|myPhone|
 |proxyInformation|No|string|Proxy information, supports http, https, socks5 types|socks5://AD00xx004:3000xxx0002@100.200.200.100:30000|
 |refreshUrl|No|string|Proxy refresh url|http://someaddr|
+|proxyQueryChannel|No|integer|Proxy detection channel, takes effect when using proxyInformation, 1-ip-api, 2-IP2Location, default is 2|2|
 |proxyNumber|No|integer|The serial number of the added proxy|1|
 |dynamicProxy|No|string|Saved dynamic proxy, can be set IPHTML/kookeey/Luminati(BrightData)/rolaip/Proxyma/DECODO/NodeMaven/kookeeyMobile|NodeMaven|
 |dynamicProxyLocation|No|string| Dynamic proxy country, required when specifying a dynamic proxy. Please refer to [the list of dynamic proxy country codes for possible values.](https://singapore-upgrade.geelark.com/apiResource/proxy-country.txt) | us |
@@ -55,6 +56,7 @@
     {
       "profileName": "myPhone",
       "proxyInformation": "socks5://AD00xx004:3000xxx0002@100.200.200.100:30000",
+	  "proxyQueryChannel": 1,
       "mobileLanguage": "default",
       "profileGroup": "myGroup",
       "profileTags": ["myTag"],

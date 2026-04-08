@@ -20,8 +20,8 @@ Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| detect\_type | Yes | string | IP lookup source, supports only `IP-API` or `IP2Location` | IP2Location |
-| proxy\_type | Yes | string | Proxy type, supports only `socks5`, `http`, or `https` | socks5 |
+| proxyQueryChannel | Yes | string | IP lookup source, supports only `IP-API` or `IP2Location` | IP2Location |
+| proxyType | Yes | string | Proxy type, supports only `socks5`, `http`, or `https` | socks5 |
 | server | Yes | string | Host | 185.162.130.86 |
 | port | Yes | int | Port number | 11000 |
 | username | No | string | Proxy username | username |
@@ -31,8 +31,8 @@ Request Example
 ---------------
 ```json
 {
-	"detect_type": "IP2Location",
-	"proxy_type": "socks5",
+	"proxyQueryChannel": "IP2Location",
+	"proxyType": "socks5",
 	"server": "185.162.130.86",
 	"port": 10000,
 	"username": "username",

@@ -19,6 +19,7 @@ Request Parameters
 | id | Yes | string | Cloud phone ID |
 | description | Yes | string | Caption, up to 500 characters |
 | video | Yes | string | Video, to upload videos, please refer to [Upload Temporary Files to GeeLark](https://open.geelark.com/api/upload-getUrl)|
+| page | No |string|page|
 
 Request Example
 ----------------

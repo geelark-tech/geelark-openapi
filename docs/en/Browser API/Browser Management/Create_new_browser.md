@@ -26,6 +26,9 @@ Create a new browser, support configuration of platform account password and coo
 | accountPlatform | No | string | Account platform. Only supports https://www.tiktok.com/ and https://www.facebook.com/ | https://www.tiktok.com/ |
 | accountUsername | No | string | Account username | myUser |
 | accountPassword | No | string | Account password | myPass |
+| accountTOTPSecret | No | string | Account 2FA key | 7J64V3P3E77J3LKNUGSZ5QANTLRLTKVL |
+| openLastPage | No | int | Whether to restore the last visit, 1-Yes, 2-No, default is No | 1 |
+| openSpecPage | No | int | Whether to open the specified URL, 1-Yes, 2-No, default is No | 1 |
 | openTabs | No | string | Opens specified web pages. Separate multiple tabs with ;. | http://www.b.com |
 | browserOs | Yes | int | Operating system, 1-win, 2-mac | 1 |
 | browserUa | No | string | userAgent, if not passed, a random value will be used | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.7103.93 Safari/537.36 |
@@ -38,6 +41,15 @@ Create a new browser, support configuration of platform account password and coo
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
+| timeZone | Yes | object | Time zone | - |
+| timeZone.switcher | Yes | int | 1: Matched by IP address, 2: Custom, 3: Local time zone | 2 |
+| timeZone.value | Yes | string | Custom value, refer to [Browser Timezone](https://singapore-upgrade.geelark.cn/apiResource/browser_timezone.txt) | GMT-12:00 Etc/GMT+12 |
+| language | Yes | object | Language | - |
+| language.switcher | Yes | int | 1: Matched by IP address, 2: Custom | 2 |
+| language.value | Yes | string | Custom value, multiple values separated by commas, refer to [Browser Language](https://singapore-upgrade.geelark.cn/apiResource/browser_language.txt) | Albanian |
+| resolution | Yes | object | Resolution | - |
+| resolution.switcher | Yes | int | 1: Random, 2: Custom, 3: Default | 2 |
+| resolution.value | Yes | string | Custom value, refer to [browser resolution](https://singapore-upgrade.geelark.cn/apiResource/browser_resolution.txt) | 750*1334 |
 | webRtc | yes | object | WebRTC | - |
 | webRtc.switcher | yes | int | 1: Privacy, 2: Replace, 3: True, 4: Disable | 1 |
 | geoLocation | yes | object | Geolocation | - |
@@ -109,6 +121,18 @@ Create a new browser, support configuration of platform account password and coo
 		"typeId":-1
 	},
 	"simulateConfig":{
+		"timeZone": {
+			"switcher": 2,
+			"value": "GMT-12:00 Etc/GMT+12"
+		},
+		"language": {
+			"switcher": 2,
+			"value": "Albanian"
+		},
+		"resolution": {
+			"switcher": 2,
+			"value": "750*1334"
+		},
 		"webRtc":{
 			"switcher":1
 		},

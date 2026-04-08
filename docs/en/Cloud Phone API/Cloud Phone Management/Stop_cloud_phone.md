@@ -14,7 +14,7 @@ Batch shut down cloud phones.
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| ids | Yes | array\[string\] | List of cloud phone IDs | See request example |
+| ids | Yes | array\[string\] | List of cloud phone IDs, maximum 200 | See request example |
 
 ## Request Example
 

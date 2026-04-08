@@ -22,7 +22,7 @@ Request Parameters
 | scheduleAt | Yes | int | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | flowId | Yes | string | Task flow id(The ID field of the Task flow query response) |
-| paramMap | No | object | Task flow parameter, the file type should be an array |
+| paramMap | No | object | Task flow parameters, with corresponding parameter types as follows:<br>String: string<br>Batch text: array[string]<br>Number: number<br>Boolean: bool<br>File: array[string] |
 
 Request Example
 ----------------

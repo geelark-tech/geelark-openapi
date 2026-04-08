@@ -19,6 +19,7 @@ Request Parameters
 | id | Yes | string | Cloud phone ID |
 | email | Yes | string | Email, up to 64 characters |
 | password | Yes | string | Password, up to 64 characters |
+|code2fa|No|string|2fa code|
 
 Request Example
 ----------------

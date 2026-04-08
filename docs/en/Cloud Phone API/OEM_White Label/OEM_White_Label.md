@@ -28,6 +28,13 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 |mirrorUrl|No|string|The QR code and the url opened on the phone's browser in the "Mirror" entrance, limited to 255 characters. if set this value, GeeLark will display the url in the "Mirror" entrance (as shown picture blow).![demo](https://singapore-upgrade.geelark.cn/en_mirror_url_demo.jpg "demo") When open this url, please redirect to https://mobile.geelark.com/mobile.html with all parameters (it is recommended to use a iframe) )|Refer to Request Example|
 | toolBarSettings | No | array[ToolBarSettings] | Control whether the toolbar entrance on the side of the cloud phone should displayed. If not set, all will be displayed by default. | See request example |
 
+### mirrorUrl
+If set the 'mirrorUrl' as `https://www.xxx.com/mobile.html`  the link in 'Mirror' entrance will be 
+`https://www.xxx.com/mobile.html?envirId=xxx&localeCode=en_US&userId=xxx5&traceId=xxx&token=xxx&env=prod&qcode=true&check=success` 
+When users access this link, you need to embed an iframe on the current page and set the src attribute to 
+`https://mobile.geelark.com/mobile.html?envirId=xxx&localeCode=en_US&userId=xxx5&traceId=xxx&token=xxx&env=prod&qcode=true&check=success` 
+Then user can open this profile
+
 ### ToolBarSettings
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -46,12 +53,13 @@ Customize the brand name, brand logo, sidebar entrance, QR code domain name, etc
 *   `detection`: Network detection
 *   `quality`: Video quality
 *   `restart`: Restart
-*   `apk`: Application (management)
+*   `appStore`: Application (management)
 *   `qcode`: QR code
 *   `export`: Export
 *   `timing`: Timer
 *   `liveStreaming`: Live streaming (recording)
 *   `clear`: Clear
+*   `teamApp`: Team's applications
 
 
 ## Request Example

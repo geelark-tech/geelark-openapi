@@ -16,6 +16,7 @@
 | id | 是 |string|云手机id |
 | email | 是 |string|email，最多64字 |
 | password | 是 |string|密码，最多64字 |
+|code2fa|否|string|2fa code|
 
 ## 请求示例
 ```json

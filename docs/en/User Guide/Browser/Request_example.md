@@ -3,7 +3,7 @@
 ```js
 const url = "http://localhost:40185/api/v1/browser/start"; // Sample request address
 
-
+const appToken = "your appToken";
 
 var data = {
  "id": "123456789xxxx"
@@ -13,6 +13,7 @@ fetch(url, {
  method: "POST",
  headers: {
  "Content-Type": "application/json",
+ "Authorization": "Bearer " + appToken,
  },
  body: JSON.stringify(data),
 })

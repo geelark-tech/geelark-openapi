@@ -25,6 +25,8 @@ Duplicate proxies will not be added.
 | port | Yes | integer | Proxy port | 8000 |
 | username | No | string | Proxy username | admin |
 | password | No | string | Proxy password | admin |
+| proxyQueryChannel | No | integer | Detection channels: 1. IPApi; 2. IP2Location; default is IP2Location | 2 |
+
 
 ## Request Examples
 
@@ -36,7 +38,8 @@ Duplicate proxies will not be added.
 			"server": "192.3.8.1",
 			"port": 8000,
 			"username": "admin",
-			"password": "admin"
+			"password": "admin",
+			"proxyQueryChannel" : 1
 		}
 	]
 }

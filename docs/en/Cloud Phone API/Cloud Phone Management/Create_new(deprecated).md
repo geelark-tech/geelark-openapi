@@ -21,7 +21,7 @@
 | remark | No | string | Remarks, up to 1500 characters | 12ABCDEF |
 | groupName | No | string | Group name, created automatically if not existing, up to 50 characters | group1 |
 | tagsName | No | array\[string\] | Tag names, created automatically if not existing. The maximum length of a single label is 30 characters | See request example |
-| region|No|string|Specify where the cloud phone is located, optional parameters：cn, sgp| cn|
+| region|No|string|Specify where the cloud phone is located, optional parameters：cn, sgp, us(only Android 15 is supported)| cn|
 | chargeMode | No | int | charge mode | 0 pay per minute, 1 monthly subscription; default is pay per minute | 
 |language|No|string|Language of the cloud phone|baseOnIP/default (default is English)，If this parameter is not provided, it will default to English|
 | surfaceBrandName | No | string | Mobile phone brand, obtain the value corresponding to the Android version from the brand list interface, and the brand model should be transmitted at the same time | samsung |

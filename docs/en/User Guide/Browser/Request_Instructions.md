@@ -4,6 +4,7 @@
 - All interface requests are initiated using `POST`.
 - All request bodies are in `json` format. Please set the `Content-Type` request header to `application/json`.
 - API rate limit: 200 times/min, 24,000 times/hour
+- Token verification required
 - Preparation before use:
 	Check whether the client is open and logged in.
 

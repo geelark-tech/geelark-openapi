@@ -27,6 +27,9 @@ Modify environment information, support updating account passwords and cookies, 
 | accountPlatform | No | string | Account platform. Will not be changed if not passed. Only supports https://www.tiktok.com/, https://www.facebook.com/ | https://www.tiktok.com/ |
 | accountUsername | No | string | Account username. Valid only when accountPlatform is valid. | myUser |
 | accountPassword | No | string | Account password. Valid only when accountPlatform is valid. | myPass |
+| accountTOTPSecret | No | string | Account 2FA key, only effective if accountPlatform is valid. If not provided, it will not be changed; if empty, it will be left blank. | 7J64V3P3E77J3LKNUGSZ5QANTLRLTKVL |
+| openLastPage | No | int | Restore last access, 1-Yes, 2-No | 1 |
+| openSpecPage | No | int | Open specified URL, 1-Yes, 2-No | 1 |
 | openTabs | No | string | Opens the specified webpages. Separate multiple pages with ";". If not passed, no changes will be made. | http://www.b.com |
 | browserOs | No | int | Operating system. If not passed, no changes will be made. 1-win, 2-mac | 1 |
 | browserUa | No | string | UserAgent. If not passed, no changes will be made. | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.7103.93 Safari/537.36 |
@@ -39,6 +42,15 @@ Modify environment information, support updating account passwords and cookies, 
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
+| timeZone | Yes | object | Time zone | - |
+| timeZone.switcher | Yes | int | 1: Matched by IP address, 2: Custom, 3: Local time zone | 2 |
+| timeZone.value | Yes | string | Custom value, refer to [Browser Timezone](https://singapore-upgrade.geelark.cn/apiResource/browser_timezone.txt) | GMT-12:00 Etc/GMT+12 |
+| language | Yes | object | Language | - |
+| language.switcher | Yes | int | 1: Matched by IP address, 2: Custom | 2 |
+| language.value | Yes | string | Custom value, multiple values separated by commas, refer to [Browser Language](https://singapore-upgrade.geelark.cn/apiResource/browser_language.txt) | Albanian |
+| resolution | Yes | object | Resolution | - |
+| resolution.switcher | Yes | int | 1: Random, 2: Custom, 3: Default | 2 |
+| resolution.value | Yes | string | Custom value, refer to [browser resolution](https://singapore-upgrade.geelark.cn/apiResource/browser_resolution.txt) | 750*1334 |
 | webRtc | yes | object | WebRTC | - |
 | webRtc.switcher | yes | int | 1: Privacy, 2: Replace, 3: True, 4: Disable | 1 |
 | geoLocation | yes | object | Geolocation | - |
@@ -106,6 +118,18 @@ Modify environment information, support updating account passwords and cookies, 
 {
 	"id":"497548067550006541",
 	"simulateConfig":{
+		"timeZone": {
+			"switcher": 2,
+			"value": "GMT-12:00 Etc/GMT+12"
+		},
+		"language": {
+			"switcher": 2,
+			"value": "Albanian"
+		},
+		"resolution": {
+			"switcher": 2,
+			"value": "750*1334"
+		},
 		"webRtc":{
 			"switcher":1
 		},

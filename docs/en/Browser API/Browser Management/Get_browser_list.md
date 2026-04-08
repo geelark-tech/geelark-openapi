@@ -77,6 +77,7 @@ Query the created environment information, including agent information, agent ID
 					"url":"https://www.tiktok.com/",
 					"userName":"jay",
 					"passWord":"password",
+					"totpSecret": "",
 					"afterStartup":3,
 					"openLastPage": 2,
 					"openSpecPage": 1,
@@ -90,7 +91,8 @@ Query the created environment information, including agent information, agent ID
 					"ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.6943.141 Safari/537.36",
 					"uaVersion":"133",
 					"timeZone":{
-						"switcher":2
+						"switcher":2,
+						"value": "GMT-12:00 Etc/GMT+12"
 					},
 					"webRtc":{
 						"switcher":1
@@ -103,10 +105,12 @@ Query the created environment information, including agent information, agent ID
 						"accuracy":1
 					},
 					"language":{
-						"switcher":1
+						"switcher":2,
+						"value": "Albanian"
 					},
 					"resolution":{
-						"switcher":2
+						"switcher":2,
+						"value": "750*1334"
 					},
 					"font":{
 						"switcher":2
@@ -213,6 +217,7 @@ Query the created environment information, including agent information, agent ID
 | url | string | Platform address |
 | userName | string | Platform account |
 | passWord | string | Platform password |
+| totpSecret | string | 2FA key |
 | afterStartup | int | Page to open after startup. 1 - Restore last access, 2 - Open the specified URL, 3 - Open the specified URL and the platform page simultaneously, 4 - Restore last access and the platform page simultaneously. This field is obsolete. |
 | openLastPage | int | Restore last visit 1 Yes 2 No |
 | openSpecPage | int | Open specified URL 1 Yes 2 No |
@@ -229,7 +234,8 @@ Query the created environment information, including agent information, agent ID
 | ua | string | User agent |
 | uaVersion | string | Browser version, 0 represents all |
 | timeZone | object | Time zone |
-| timeZone.switcher | int | 1: Match based on IP address, 2: Custom |
+| timeZone.switcher | int | 1: IP-based matching, 2: Custom, 3: Local timezone |
+| timeZone.value | string | Custom value |
 | webRtc | object | WebRTC |
 | webRtc.switcher | int | 1: Privacy, 2: Replace, 3: Real, 4: Disable |
 | geoLocation | object | Geolocation |
@@ -240,8 +246,10 @@ Query the created environment information, including agent information, agent ID
 | geoLocation.accuracy | int | Accuracy (meters) |
 | language | object | Language |
 | language.switcher | int | 1: IP-based matching, 2: Custom |
+| language.value | string | A custom value, multiple values separated by commas |
 | resolution | object | Resolution |
-| resolution.switcher | int | 1: Random, 2: Custom |
+| resolution.switcher | int | 1: random, 2: custom, 3: default |
+| resolution.value | string | custom value |
 | font | object | Font |
 | font.switcher | int | 1: Default, 2: Custom |
 | canvas | object | Canvas |

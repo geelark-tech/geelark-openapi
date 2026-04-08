@@ -16,6 +16,7 @@
 | id | 是 |string|云手机id |
 | description | 是 |string|文案，最多500字 |
 | video | 是 |string|视频，上传视频请参考 [上传临时文件到GeeLark](https://open.geelark.cn/api/upload-getUrl)  |
+| page | 否 |string|页面|
 
 ## 请求示例
 

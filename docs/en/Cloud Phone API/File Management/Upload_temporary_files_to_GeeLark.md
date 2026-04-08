@@ -3,7 +3,7 @@
 API Description
 ---------------
 
-Upload temporary files to GeeLark (Expires in 3 days)
+Upload temporary files to GeeLark (Expires in 3 days),if need to save for a longer time, please upload it to the [Library](https://open.geelark.com/api/get-material-upload-url "Library").
 
 Request URL
 -----------

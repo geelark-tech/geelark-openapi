@@ -21,16 +21,17 @@
 
 ## Request Parameters
 
-| Parameter Name | Required | Type | Description | Example |
-| -------------- | -------- | ------------- | ------------------------- | ------- |
-| id | Yes | string | Cloud phone ID | |
-| name | No | string | New cloud phone name, up to 100 characters | |
-| remark | No | string | New cloud phone remark, up to 1500 characters | |
-| groupID | No | string | New cloud phone group ID | |
-| tagIDs | No | array[string] | New cloud phone tag IDs | |
-| proxyConfig | No | Proxy | New cloud phone proxy config | |
-| proxyId | No | string | Proxy Id | |
-| phoneNumber | No | string | custom phone number | |
+| Parameter Name | Required | Type | Description |
+| -------------- | -------- | ------------- | ------------------------- |
+| id | Yes | string | Cloud phone ID |
+| name | No | string | New cloud phone name, up to 100 characters |
+| remark | No | string | New cloud phone remark, up to 1500 characters |
+| groupID | No | string | New cloud phone group ID |
+| tagIDs | No | array[string] | New cloud phone tag IDs |
+| proxyConfig | No | Proxy | New cloud phone proxy config |
+|proxyQueryChannel|No|integer|Proxy detection channel, takes effect when using proxyConfig, 1-ip-api, 2-IP2Location, default is 2|
+| proxyId | No | string | Proxy Id |
+| phoneNumber | No | string | custom phone number |
 
 ### proxyConfig Static Proxy Parameters
 
@@ -87,6 +88,7 @@ Dynamic proxy settings can be configured on the client side first, and then by s
  "remark": "api remark",
  "tagIDs": ["528989565877355520", "528989565877289984"],
  "groupID": "528995439832269824",
+ "proxyQueryChannel": 1,
  "proxyConfig": {
  "typeId": 1,
  "server": "123.123.123.123",

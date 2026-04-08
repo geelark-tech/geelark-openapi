@@ -60,6 +60,8 @@
 | videoDesc | No | string | Video description. Maximum 4000 characters | This is an image set video |
 | videoId | No | string | Same video ID | 722856939 ,How to get the video ID: https://help.geelark.com/video-id-product-id|
 | videoTitle | No | string | Gallery Title. Maximum 90 characters | This is a gallery title |
+| productId | No | string | product id | 7498614361651,How to get the product ID: https://help.geelark.com/video-id-product-id|
+| productTitle | No | string | Product display title | Title |
 | maxTryTimes | No | integer | Maximum number of automatic retries. The value ranges from 0 to 3. The default value is 3 | 1 |
 | timeoutMin | No | integer | Time-out period. The value ranges from 30 to 80 (unit minute). The default value is 80 | 30 |
 | sameVideoVolume | No | integer | Same video volume, 0-100 | 30 |

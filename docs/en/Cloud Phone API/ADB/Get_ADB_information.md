@@ -18,7 +18,7 @@ Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| ids | Yes | array\[string\] | Array of cloud phone IDs | \["526209711930868736"\] |
+| ids | Yes | array\[string\] | Array of cloud phone IDs, maximum 200 | \["526209711930868736"\] |
 
 Request Example
 ---------------

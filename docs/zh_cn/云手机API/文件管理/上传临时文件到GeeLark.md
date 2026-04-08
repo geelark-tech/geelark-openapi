@@ -1,7 +1,7 @@
 # 一、获取上传文件的临时地址uploadUrl
 ## 接口说明
 
-上传临时文件到GeeLark，文件有效期3天
+上传临时文件到GeeLark，文件有效期3天，如需保存更长时间，请上传至[素材中心](https://open.geelark.cn/api/get-material-upload-url "素材中心")。
 
 ## 请求URL
 
