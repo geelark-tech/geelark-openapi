@@ -400,7 +400,7 @@ When an error occurs, the response will include an error code and message. For d
 ### 基础地址
 
 ```
-https://openapi.geelark.com
+https://openapi.geelark.cn
 ```
 
 ### 认证方式
