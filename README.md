@@ -393,7 +393,7 @@ When an error occurs, the response will include an error code and message. For d
 
 ---
 
-# 中文文档 API Reference {#中文文档-api-reference}
+## 中文文档 API Reference
 
 ## 请求说明
 
