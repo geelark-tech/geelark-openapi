@@ -60,7 +60,7 @@
 | id | string   | 云手机id  |
 | ip | string   | 连接ip  |
 | port | string   | 端口  |
-| pwd | string   | 密码  |
+| pwd | string   | 用于glogin认证的密码  |
 
 
 ## 错误码

@@ -4,7 +4,7 @@ Request Instructions
 * All API requests must be initiated using `POST`.
 * All request bodies should be in `JSON` format. Please set the request header `Content-Type` to `application/json`.
 * There are two verification methods, including key verification and token verification.
-* Per API rate limit: 200 requests per minute, 24,000 requests per hour
+* Per API rate limit: 200 requests per minute, 24,000 requests per hour，After exceeding the limit, this API will be restricted for 2 hours, and it will be automatically unblocked after 2 hours.
 
 ### Token verification
 

@@ -57,6 +57,8 @@ Cloud Phone
 43029 Selected cloud phone model is under maintenance, please try again later
 43036 Cloud phone is running and cannot perform this operation
 43037 Accessibility hiding is not supported
+43038 The device model has been deleted
+43039 Currently unavailable; maintenance in progress
 49001 ADB is not enabled
 49002 Device model does not support ADB
 50001 Device model does not support shell

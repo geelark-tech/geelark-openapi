@@ -254,6 +254,8 @@ The first request for searchAfter does not need to be passed. If the response's 
 | 20901 | No delete button found |
 | 21001 | Top button not found |
 | 20267 | Custom template task publishing failed |
+| 29995 | Currently unavailable; maintenance in progress |
+| 29996 | Proxy detection failed |
 | 29997 | Insufficient balance |
 | 29998 | The cloud phone has been deleted |
 | 29999 | Unknown error |

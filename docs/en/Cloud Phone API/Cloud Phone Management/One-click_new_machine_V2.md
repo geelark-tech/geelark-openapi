@@ -1,7 +1,7 @@
 API Description
 -----------------
 
-One-click new machine v2 interface, directly return the execution result.
+- Generate a new cloud phone, Applications and data will be cleared
 
 Request URL
 -----------

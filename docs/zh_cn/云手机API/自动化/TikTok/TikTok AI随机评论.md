@@ -18,6 +18,7 @@
 | comment | 是 |string|评论内容，最多500字，useAi为 2 时必传 |
 | links | 否 | array[string] | 指定链接 |
 | commentProbability | 否 |int|评论概率，0-100，默认为30|
+| searchKeywords | 否 | array[string] | 搜索关键词 |
 
 ## 请求示例
 ```json

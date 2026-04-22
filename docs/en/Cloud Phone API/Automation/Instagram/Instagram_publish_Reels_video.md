@@ -23,6 +23,7 @@ Request Parameters
 | sameStyleVoice | No | int | Same volume, range 0-100 |
 | originalVoice | No | int | Original volume, range 0-100 |
 | aiTag | No | bool | AI tag, defaults to false. |
+| needShareLink | No | bool | Whether to retrieve the sharing link, the default is false. |
 
 Request Example
 ----------------

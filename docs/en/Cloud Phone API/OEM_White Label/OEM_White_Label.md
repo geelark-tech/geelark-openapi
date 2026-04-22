@@ -40,6 +40,7 @@ Then user can open this profile
 | --- | --- | --- |
 | toolBar | string | Toolbar item name. Refer to the item descriptions below. |
 | visible | bool | Whether to display the item. If omitted or set to false, the item will not be displayed. |
+| iconUrl | string | Icon URL, maximum length 255 bytes; if not provided or left empty, the original value will remain unchanged; supported formats: SVG, PNG, JPG (SVG is recommended). Recommended size: 16×16 |
 
 #### Toolbar Item Descriptions
 *   `networkQuality`: Network quality indicator

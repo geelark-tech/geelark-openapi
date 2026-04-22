@@ -21,6 +21,7 @@ Request Parameters
 | comment | Yes | string | Comment content, up to 500 characters; required when useAi is 2 |
 | links | No | array[string] | Specified link |
 | commentProbability | No | int | Comment probability, 0-100, default is 30 |
+| searchKeywords |  No | array[string] | Search keywords |
 
 Request Example
 ----------------

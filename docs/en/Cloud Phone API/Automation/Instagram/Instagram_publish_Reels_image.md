@@ -22,6 +22,7 @@ Request Parameters
 | sameStyleUrl | No | string | Same URL |
 | aiTag | No | bool | AI tag, defaults to false. |
 | publishPost | No | bool | Posting a POST request defaults to false. |
+| needShareLink | No | bool | Whether to retrieve the sharing link, the default is false. |
 
 Request Example
 ----------------

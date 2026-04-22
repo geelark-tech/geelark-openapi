@@ -4,6 +4,15 @@ Common Commands
 GeeLark Cloud Phone supports all Android **adb** commands. Below are some frequently used commands.  
 To enable adb, please refer to: [https://help.geelark.com/adb](https://help.geelark.com/adb)
 
+### Connect adb
+For Windows users, open Command Prompt, or for macOS users, open Terminal. Type "adb connect *IP address for connection*" to connect to your desired IP address.
+Next, enter the login command with your connection code: adb -s *IP address for connection* shell glogin f850ef
+```shell
+adb connect 124.71.210.176:21781
+adb shell glogin f850ef
+```
+
+
 ### Upload a file from your local computer to the cloud phone
 
 ```shell

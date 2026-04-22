@@ -1,3 +1,19 @@
+### 2026.04.22
+#### Cloud Phone
+- Instagram posts Reels videos and supports sharing links.
+- Instagram posts Reels photo albums and supports sharing links.
+- TikTok AI-generated random comments support keyword search.
+- Added interface for retrieving cloud phone network settings
+- Added interface for modifying cloud phone network settings
+- OEM API supports custom configuration of the iconUrl
+
+#### Browser
+- Added interface for cloning browser
+
+### 2026.04.13
+#### Cloud Phone
+- Added a clone cloud phone API
+
 ### 2026.04.08
 #### Cloud Phone
 - Creating and modifying cloud phone information supports setting proxy detection channels.

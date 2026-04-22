@@ -19,6 +19,7 @@
 | sameStyleUrl | 否 | string | 同款URL |
 | aiTag | 否 | bool | AI标签，默认为false |
 | publishPost | 否 | bool | 发布Post，默认为false |
+| needShareLink | 否 | bool | 是否需要获取分享链接，默认false |
 
 ## 请求示例
 ```json

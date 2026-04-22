@@ -39,7 +39,7 @@ Response Data Description
 | id | string | Cloud phone ID |
 | ip | string | Connection IP |
 | port | string | Port |
-| pwd | string | Password |
+| pwd | string | The password for glogin |
 
 Response Example
 ----------------

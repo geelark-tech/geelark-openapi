@@ -21,13 +21,14 @@ Global Error Codes
 | 40014 | Hourly API request limit exceeded. Access is locked for 2 hours |
 | 40015 | Permission denied |
 | 50000 | Internal server error |
-| 90000 | Request parameter verification failed. |
-| 90001 | User is not authenticated |
-| 90002 | ID does not exist |
-| 90003 | Insufficient cache capacity |
-| 90004 | Access denied |
-| 90005 | Linux system is not supported |
-| 90006 | Permission denied to start or stop |
+| 90000 | Invalid argument. |
+| 90001 | User not logged in. |
+| 90002 | id not found. |
+| 90003 | Insufficient disk space. |
+| 90004 | API permission denied. |
+| 90005 | Not supported on Linux. |
+| 90006 | Permission denied to start or close. |
+| 90007 | Missing 'Authorization' in the header. |
 
 * * *
 

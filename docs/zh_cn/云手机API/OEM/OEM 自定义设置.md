@@ -38,13 +38,14 @@
 | --- | --- | --- |
 | toolBar | string | 设置项名称，请参考下面的设置项说明 |
 | visible | bool | 是否显示，不填或者填false则为不显示 |
+| iconUrl | string | icon url，限制255字节，不填或者填空保持原值不变；icon支持的格式:svg、png、jpg，建议使用svg，建议尺寸：16x16 |
 
 #### 设置项说明
 *   `networkQuality`: 网络质量信号灯
 *   `rotate`：旋转
 *   `screenshot`：截图
 *   `upload`：文件上传
-*   `library`: 资源库，只有在 `upload` 显示的时候，设置为隐藏才有效
+*   `library`: 素材中心，只有在 `upload` 显示的时候，设置为隐藏才有效
 *   `volumeUp`：音量+
 *   `volumeDown`：音量-
 *   `speedUp`：加速

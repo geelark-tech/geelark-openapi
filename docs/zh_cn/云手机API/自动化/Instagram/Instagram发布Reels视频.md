@@ -20,6 +20,7 @@
 | sameStyleVoice | 否 | int | 同款音量，范围是0-100 |
 | originalVoice | 否 | int | 原声音量，范围是0-100 |
 | aiTag | 否 | bool | AI标签，默认为false |
+| needShareLink | 否 | bool | 是否需要获取分享链接，默认false |
 
 ## 请求示例
 ```json

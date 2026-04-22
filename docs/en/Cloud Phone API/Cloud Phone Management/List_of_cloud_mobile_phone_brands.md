@@ -14,7 +14,7 @@
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| androidVer | Yes | integer | android version, 10-15 | 10 |
+| androidVer | Yes | integer | android version, 10-16 | 10 |
 
 ## Request Example
 

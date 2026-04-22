@@ -1,5 +1,5 @@
 ## Interface Description
-- Set/update the GPS information of cloud phones, including longitude and latitude.
+- Set/update the GPS information of cloud phones, including longitude and latitude, Not supported on Android 16 for now.
 - Longitude range: `[-180.0, 180.0]`
 - Latitude range: `[-90.0, 90.0]`
 
