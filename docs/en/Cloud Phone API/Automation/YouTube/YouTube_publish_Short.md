@@ -15,13 +15,14 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | title | Yes | string | Title, up to 100 characters |
 | video | Yes | string | Video,  to upload videos, please refer to [Upload Temporary Files to GeeLark](https://open.geelark.com/api/upload-getUrl) |
 | sameStyleUrl | No | string | Same style URL, up to 500 characters |
-| sameStyleVoice | Yes | int | Same style volume, 0-100. If you do not want to send the same URL, just send 0 |
-| originalVoice | Yes | int | Original voice volume, 0-100. If you do not want to send the same URL, just send 0 |
+| sameStyleVoice | Yes | integer | Same style volume, 0-100. If you do not want to send the same URL, just send 0 |
+| originalVoice | Yes | integer | Original voice volume, 0-100. If you do not want to send the same URL, just send 0 |
+| isDisclosureMandatory | No | bool | Whether to force disclosure, defaults to false |
 
 Request Example
 ----------------

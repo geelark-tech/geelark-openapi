@@ -12,7 +12,7 @@
 | --- | --- | --- | --- | --- |
 | id | Yes | string | Account ID | 565523829426802069 |
 | account | No | string | Platform account, maximum 64 characters | myAccount |
-| channel | No | int | Platform | 0: TikTok 1: YouTube 2: Instagram |
+| channel | No | integer | Platform | 0: TikTok 1: YouTube 2: Instagram |
 | remark | No | string | Remark | myRemark |
 
 ## Request Example

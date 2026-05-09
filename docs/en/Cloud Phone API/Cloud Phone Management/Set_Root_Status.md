@@ -13,7 +13,7 @@ Set root status, please start the cloud phone before setting root status.
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| ids | Yes |array[string] | List of cloud phone IDs ( currently supports Android 12,13,14,15 ) | Refer to request example |
+| ids | Yes |array[string] | List of cloud phone IDs ( currently supports Android 12,13,14,15,16) | Refer to request example |
 | open | Yes | bool | open/close | false |
 
 

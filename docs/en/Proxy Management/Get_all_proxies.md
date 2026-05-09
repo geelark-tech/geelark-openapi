@@ -44,7 +44,7 @@ Get all proxies
 | Parameter Name | Type | Description |
 | --- | --- | --- |
 | id | string | Proxy ID |
-| serialNo | int | Proxy serial number |
+| serialNo | integer | Proxy serial number |
 | scheme | string | Proxy types，socks5，http，https |
 | server | string | Proxy address |
 | port | integer | Proxy port |

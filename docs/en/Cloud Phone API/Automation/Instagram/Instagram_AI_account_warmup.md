@@ -15,9 +15,9 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
-| browseVideo | No | int | Number of videos viewed, 1-100 |
+| browseVideo | No | integer | Number of videos viewed, 1-100 |
 | keyword | No | string | Search keyword |
 
 Request Example

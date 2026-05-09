@@ -15,7 +15,7 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | description | Yes | string | Caption, up to 500 characters |
 | video | Yes | string | Video, to upload videos, please refer to [Upload Temporary Files to GeeLark](https://open.geelark.com/api/upload-getUrl)|

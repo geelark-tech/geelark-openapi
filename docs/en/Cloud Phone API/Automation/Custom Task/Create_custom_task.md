@@ -19,7 +19,7 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | flowId | Yes | string | Task flow id(The ID field of the Task flow query response) |
 | paramMap | No | object | Task flow parameters, with corresponding parameter types as follows:<br>String: string<br>Batch text: array[string]<br>Number: number<br>Boolean: bool<br>File: array[string] |

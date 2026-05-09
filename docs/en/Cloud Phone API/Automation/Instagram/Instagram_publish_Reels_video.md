@@ -15,13 +15,13 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
 | description | Yes | string | Caption, up to 2200 characters |
 | video | Yes | \[\]string | Videos, up to 10, to upload videos, please refer to [Upload Temporary Files to GeeLark](https://open.geelark.com/api/upload-getUrl)|
 | sameStyleUrl | No | string | Same URL |
-| sameStyleVoice | No | int | Same volume, range 0-100 |
-| originalVoice | No | int | Original volume, range 0-100 |
+| sameStyleVoice | No | integer | Same volume, range 0-100 |
+| originalVoice | No | integer | Original volume, range 0-100 |
 | aiTag | No | bool | AI tag, defaults to false. |
 | needShareLink | No | bool | Whether to retrieve the sharing link, the default is false. |
 

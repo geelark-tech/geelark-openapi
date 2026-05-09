@@ -53,7 +53,7 @@ Retrieve the status of cloud phones.
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
-| code | int | Failure code 42001: Cloud phone does not exist |
+| code | integer | Failure code 42001: Cloud phone does not exist |
 | id | string | ID of the failed cloud phone |
 | msg | string | Failure message |
 

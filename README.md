@@ -160,6 +160,7 @@ When an error occurs, the response will include an error code and message. For d
 
 - [Facebook auto login](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_auto_login.md)
 - [Facebook maintenance](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_maintenance.md)
+- [Facebook Reels maintenance](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_Reels_maintenance.md)
 - [Facebook post content](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_post_content.md)
 - [Facebook publish Reels video](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_publish_Reels_video.md)
 - [Facebook auto comment](./docs/en/Cloud%20Phone%20API/Automation/Facebook/Facebook_auto_comment.md)
@@ -286,6 +287,7 @@ When an error occurs, the response will include an error code and message. For d
 - [Balance Inquiry](./docs/en/Billing/Balance_Inquiry.md)
 - [Billing transaction detail](./docs/en/Billing/Billing_transaction_detail.md)
 - [Change plan](./docs/en/Billing/Change_plan.md)
+- [Buy Time add-on](./docs/en/Billing/Buy_Time_add-on.md)
 - [Get plan list](./docs/en/Billing/Get_plan_list.md)
 - [Get the current subscription plan information](./docs/en/Billing/Get_the_current_subscription_plan_information.md)
 - [Renew plan](./docs/en/Billing/Renew_plan.md)
@@ -306,6 +308,8 @@ When an error occurs, the response will include an error code and message. For d
 - [Check API interface status](./docs/en/Browser%20API/Browser%20Management/Check_API_interface_status.md)
 - [Clear browser cache](./docs/en/Browser%20API/Browser%20Management/Clear_browser_cache.md)
 - [Clone browser](./docs/en/Browser%20API/Browser%20Management/Clone_browser.md)
+- [Download and update the kernel](./docs/en/Browser%20API/Browser%20Management/Download_and_update_the_kernel.md)
+- [Query kernel](./docs/en/Browser%20API/Browser%20Management/Query_kernel.md)
 - [Browser Mobile Grouping](./docs/en/Browser%20API/Browser%20Management/Browser_Mobile_Grouping.md)
 - [Transfer browsers](./docs/en/Browser%20API/Browser%20Management/Transfer_browsers.md)
 - [Get browser bookmarks](./docs/en/Browser%20API/Browser%20Management/Get_browser_bookmarks.md)
@@ -553,6 +557,7 @@ Authorization: Bearer YOUR_API_TOKEN
 ##### Facebook
 
 - [Facebook养号](./docs/zh_cn/云手机API/自动化/Facebook/Facebook养号.md)
+- [Facebook Reels 养号](./docs/zh_cn/云手机API/自动化/Facebook/Facebook%20Reels%20养号.md)
 - [Facebook发布Reels视频](./docs/zh_cn/云手机API/自动化/Facebook/Facebook发布Reels视频.md)
 - [Facebook发布内容](./docs/zh_cn/云手机API/自动化/Facebook/Facebook发布内容.md)
 - [Facebook发送私信](./docs/zh_cn/云手机API/自动化/Facebook/Facebook发送私信.md)
@@ -692,6 +697,7 @@ Authorization: Bearer YOUR_API_TOKEN
 - [查询计费流水](./docs/zh_cn/支付/查询计费流水.md)
 - [续期套餐](./docs/zh_cn/支付/续期套餐.md)
 - [获取套餐列表](./docs/zh_cn/支付/获取套餐列表.md)
+- [购买时长包](./docs/zh_cn/支付/购买时长包.md)
 
 ---
 
@@ -711,6 +717,8 @@ Authorization: Bearer YOUR_API_TOKEN
 - [浏览器移动分组](./docs/zh_cn/浏览器API/浏览器管理/浏览器移动分组.md)
 - [清除浏览器缓存](./docs/zh_cn/浏览器API/浏览器管理/清除浏览器缓存.md)
 - [克隆浏览器](./docs/zh_cn/浏览器API/浏览器管理/克隆浏览器.md)
+- [下载更新内核](./docs/zh_cn/浏览器API/浏览器管理/下载更新内核.md)
+- [查询内核](./docs/zh_cn/浏览器API/浏览器管理/查询内核.md)
 - [获取浏览器列表](./docs/zh_cn/浏览器API/浏览器管理/获取浏览器列表.md)
 - [设置浏览器书签](./docs/zh_cn/浏览器API/浏览器管理/设置浏览器书签.md)
 - [转让浏览器](./docs/zh_cn/浏览器API/浏览器管理/转让浏览器.md)

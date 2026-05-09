@@ -15,9 +15,9 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
-| followProbability | Yes | int | Pay attention to probability, 0-100|
+| followProbability | Yes | integer | Pay attention to probability, 0-100|
 
 Request Example
 ----------------

@@ -20,11 +20,11 @@ Response Body Description
 | ----------- | -----------|----------- |
 | id | string   | profiles id |
 | price  |  float   | price for one month of the profiles |
-| level | int   |profiles level 0Base 1Pro |
-| envNum | int   |profiles max environment number |
-| freeTime | int   |profiles free use minute |
-| openEnvNumOneDay | int   | environment open max number in one day |
-| createEnvNumOneDay | int   | create new environment  max number in one day |
+| level | integer   |profiles level 0Base 1Pro |
+| envNum | integer   |profiles max environment number |
+| freeTime | integer   |profiles free use minute |
+| openEnvNumOneDay | integer   | environment open max number in one day |
+| createEnvNumOneDay | integer   | create new environment  max number in one day |
 
 
 Response Example

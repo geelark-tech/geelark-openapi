@@ -18,7 +18,7 @@ Request Parameters
 | page | Yes | integer | Page number | 1 |
 | pageSize | Yes | integer | Number of items per page (1–100) | 10 |
 | account | No | string | Account name | tk\_acc |
-| channel | No | int | Platform, if not provided all platforms are included | 0: TikTok 1: YouTube 2: Instagram |
+| channel | No | integer | Platform, if not provided all platforms are included | 0: TikTok 1: YouTube 2: Instagram |
 | userAccount | No | string | Operator account | abc@gmail.com |
 
 Request Example
@@ -47,11 +47,11 @@ Response Data Description <item>
 | --- | --- | --- |
 | id | string | Account ID |
 | account | string | Account |
-| channel | int | Platform: 0: TikTok 1: YouTube 2: Instagram |
+| channel | integer | Platform: 0: TikTok 1: YouTube 2: Instagram |
 | remark | string | Remark |
 | operator | string | Username of the last operator |
-| created\_time | int | Creation time |
-| updated\_time | int | Last update time |
+| created\_time | integer | Creation time |
+| updated\_time | integer | Last update time |
 
 Response Example
 ----------------

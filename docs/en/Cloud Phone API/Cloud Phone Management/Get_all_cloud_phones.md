@@ -28,7 +28,7 @@ Retrieve the list of cloud phones.
 | remark | No | string | Cloud phone remark | test |
 | groupName | No | string | Cloud phone group name | test group |
 | tags | No | array\[string\] | List of cloud phone tag names | See example |
-| chargeMode | No | int | charge mode | 0 pay per minute, 1 monthly subscription; If this field is left empty, all charge mode will be queried. | 
+| chargeMode | No | integer | charge mode | 0 pay per minute, 1 monthly subscription; If this field is left empty, all charge mode will be queried. | 
 | openStatus        |  no     |   integer  | Power state  | 0 Close；1 On |
 | proxyIds        |  no     |  array[string]   | List of proxy IDs. The maximum array length is 10. |  ["5213214343124321"]  |
 | serialNos        |  no     |  array[string]   | List of cloud phone serial number. The maximum array length is 100. |  ["238"]  |
@@ -69,14 +69,15 @@ Retrieve the list of cloud phones.
 | serialNo | string | Cloud phone serial number |
 | group | Group | Cloud phone group information |
 | remark | string | Cloud phone remark |
-| status | int | Cloud phone status<br/>0 - Started<br/>1 - Starting<br/>2 - Shut down |
+| status | integer | Cloud phone status<br/>0 - Started<br/>1 - Starting<br/>2 - Shut down |
 | tags | array\[Tag\] | List of cloud phone tags |
 | equipmentInfo  | EquipmentInfo    | cloud phone equipment info |
 | proxy | Proxy | Proxy info |
-| chargeMode | int | charge mode: 0 pay per minute, 1 monthly subscription| 
+| chargeMode | integer | charge mode: 0 pay per minute, 1 monthly subscription| 
 | hasBind | bool | Is the device bound to a monthly subscription |
-| monthlyExpire | int | Monthly subscription expiration time, timestamp in seconds |
-| rpaStatus | int | Whether RPA is running: 1 = running, 0 = not running |
+| monthlyExpire | integer | Monthly subscription expiration time, timestamp in seconds |
+| rpaStatus | integer | Whether RPA is running: 1 = running, 0 = not running |
+|createTime|integer|Cloud phone creation time, second-level timestamp|
 
 ### group Group Information <Group>
 
@@ -98,7 +99,7 @@ Retrieve the list of cloud phones.
 | ----------- | -----------|----------- |
 | countryName | string | country name, please refer to the [Country Name Reference Table](https://material.geelark.com/t_region.xls) |
 | phoneNumber | string | phone number |
-| enableSim | int | is Sim enable : 0 unable 1 enable |
+| enableSim | integer | is Sim enable : 0 unable 1 enable |
 | imei | string | IMEI |
 | osVersion | string | system version |
 | wifiBssid | string | Wi-Fi MAC Address |
@@ -119,7 +120,7 @@ Retrieve the list of cloud phones.
 | ----------- | -----------|----------- |
 | type | string | Proxy type (socks5, http, https) |
 | server | string | Proxy server |
-| port | int | Proxy port|
+| port | integer | Proxy port|
 | username | string | Proxy username |
 | password | string | Proxy password |
 

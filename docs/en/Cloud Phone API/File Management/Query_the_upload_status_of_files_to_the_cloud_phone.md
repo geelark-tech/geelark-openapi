@@ -49,7 +49,7 @@ Response Data Description
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
-| status | int | 0: Failed to retrieve; 1: Uploading; 2: Upload successful; 3: Upload failed |
+| status | integer | 0: Failed to retrieve; 1: Uploading; 2: Upload successful; 3: Upload failed |
 
 Error Codes
 -----------

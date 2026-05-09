@@ -1,3 +1,17 @@
+### 2026.05.09
+#### Billing
+- Added buy time add-on interface
+
+### 2026.05.06
+#### Cloud Phone
+- The API for retrieving a list of cloud phones returns the creation time.
+- YouTube adds a parameter to Short tasks now allowing users to make them publicly accessible.
+- Added Facebook Reels account nurturing task posting interface.
+
+#### Browser
+- Added a query kernel interface
+- Added a download and update the kernel interface
+
 ### 2026.04.22
 #### Cloud Phone
 - Instagram posts Reels videos and supports sharing links.
@@ -9,6 +23,7 @@
 
 #### Browser
 - Added interface for cloning browser
+- Launch browser API supports WebHook callback.
 
 ### 2026.04.13
 #### Cloud Phone

@@ -12,7 +12,7 @@
 | --- | --- | --- | --- |
 | name | 否 |string| 任务名称，最多128字 |
 | remark | 否 |string| 备注，最多200字 |
-| scheduleAt | 是 |int| 计划时间（时间戳）|
+| scheduleAt | 是 |integer| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
 | description | 是 |string|文案，最多500字 |
 | video | 是 |string|视频，上传视频请参考 [上传临时文件到GeeLark](https://open.geelark.cn/api/upload-getUrl)  |

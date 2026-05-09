@@ -51,7 +51,7 @@ Response Data Description
 | appId | string | Application ID |
 | appName | string | Application name |
 | appVersionId | string | Application version ID |
-| installStatus | int | Installation status: 0-Installing, 1-Installed, 2-Failed, 3-Uninstalling, 4-Uninstalled, 5-Uninstall Failed, others-Not Installed |
+| installStatus | integer | Installation status: 0-Installing, 1-Installed, 2-Failed, 3-Uninstalling, 4-Uninstalled, 5-Uninstall Failed, others-Not Installed |
 | installTime | string | Installation time |
 | packageName | string | Application package name |
 | versionCode | string | Application version code |

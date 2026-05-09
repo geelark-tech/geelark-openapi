@@ -17,7 +17,7 @@
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | mobileType | Yes | string | Cloud phone type, can be set</br>Android 9</br>Android 10</br>Android 11</br> Android 12</br> Android 13</br> Android 14</br> Android 15</br>Android 16 | Android 10 |
-|chargeMode|No|int|Billing mode, 0-on-demand, 1-monthly, default is on-demand|0|
+|chargeMode|No|integer|Billing mode, 0-on-demand, 1-monthly, default is on-demand|0|
 |region|No|string|Specify the computer room where the cloud phone is located. Optional parameters: cn(China), sgp(Singapore), us(United States, only Android 15 is supported)| cn|
 |data|Yes|array[EnvRowApi]|Environment parameter array, up to 100|Reference Request Example|
 
@@ -130,7 +130,7 @@
 | ----------- | -----------|----------- |
 | countryName | string | country name |
 | phoneNumber | string | phone number |
-| enableSim | int | is Sim enable : 0 unable 1 enable |
+| enableSim | integer | is Sim enable : 0 unable 1 enable |
 | imei | string | IMEI |
 | osVersion | string | system version |
 | wifiBssid | string | Wi-Fi MAC Address |

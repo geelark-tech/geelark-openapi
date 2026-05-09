@@ -12,9 +12,9 @@
 | --- | --- | --- | --- |
 | name | 否 |string| 任务名称，最多128字 |
 | remark | 否 |string| 备注，最多200字 |
-| scheduleAt | 是 |int| 计划时间（时间戳）|
+| scheduleAt | 是 |integer| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
-| followProbability | 是 |int|关注概率，0-100|
+| followProbability | 是 |integer|关注概率，0-100|
 
 ## 请求示例
 ```json

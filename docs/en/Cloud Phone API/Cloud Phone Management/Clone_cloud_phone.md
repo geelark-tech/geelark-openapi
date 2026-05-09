@@ -14,7 +14,7 @@
 | Parameter Name | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 |envId|Yes|string|The ID of the cloud phone to be cloned|
-|amount|Yes|int|The number of clones, ranging from 1 to 100|
+|amount|Yes|integer|The number of clones, ranging from 1 to 100|
 |groupId|No|string|The ID of the target group. If not specified, the phone will be placed in an ungrouped area|
 |cloneName|No|bool|Whether to clone the name|
 |cloneRemark|No|bool|Whether to clone the remark|

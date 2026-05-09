@@ -44,7 +44,7 @@ After requesting a screenshot, you can actively obtain the result through this i
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |
-| status | int | 0 Acquisition failed；1 In progress；2 Execution succeeded；3 Execution failed |
+| status | integer | 0 Acquisition failed；1 In progress；2 Execution succeeded；3 Execution failed |
 | downloadLink | downloadLink | screen shot download link |
 
 

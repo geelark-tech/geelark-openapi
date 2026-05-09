@@ -6,6 +6,8 @@ Modify cloud phone network settings, including access blacklist
 
 Maximum three blacklisted domains. Settings take effect immediately; the cloud phone will be unable to access domains on the blacklist.
 
+Only supports Android 9/10/11/12/13/15 cloud phones.
+
 ## Request URL
 
 - `https://openapi.geelark.com/open/v1/phone/netConfig/set`

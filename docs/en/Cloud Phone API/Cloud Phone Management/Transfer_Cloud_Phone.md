@@ -57,8 +57,8 @@
 
 | Parameter Name | Type | Description |
 | ----------- | -----------|----------- |
-| successCount | int | success count|
-| failCount | int | fail count|
+| successCount | integer | success count|
+| failCount | integer | fail count|
 | failEnvIds | array[string] | transfer failed cloud phone id (currently in use or does not exist)|
 
 

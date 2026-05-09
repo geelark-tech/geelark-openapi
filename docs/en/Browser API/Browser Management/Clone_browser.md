@@ -15,7 +15,7 @@
 | Parameter Name | Required | Type | Description |
 | --- | --- | --- | --- |
 |envId|Yes|string|Browser ID to clone|
-|amount|Yes|int|Number of clones, range 1-100|
+|amount|Yes|integer|Number of clones, range 1-100|
 |groupId|No|string|Target group ID, if not specified, it will be placed in an ungrouped group|
 |cloneName|No|bool|Whether to clone the name|
 |cloneRemark|No|bool|Whether to clone the remark|

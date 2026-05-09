@@ -48,7 +48,7 @@ Response Data Description
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
-| status | int |  0: Uploading; 1: Upload successful; 2: Upload failed |
+| status | integer |  0: Uploading; 1: Upload successful; 2: Upload failed |
 
 Error Codes
 -----------

@@ -56,7 +56,7 @@ Get the list of apps available for installation on the cloud phone.
 | Parameter Name | Type | Description |
 | --- | --- | --- |
 | id | string | App version ID |
-| installStatus | int | Installation status: 0 - Installing, 1 - Installed, 2 - Installation Failed, 3 - Uninstalling, 4 - Uninstalled, 5 - Uninstallation Failed, others - Not Installed |
+| installStatus | integer | Installation status: 0 - Installing, 1 - Installed, 2 - Installation Failed, 3 - Uninstalling, 4 - Uninstalled, 5 - Uninstallation Failed, others - Not Installed |
 | versionCode | string | App version code |
 | versionName | string | App version name |
 

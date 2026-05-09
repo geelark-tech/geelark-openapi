@@ -28,7 +28,7 @@ Query Application Upload Status
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| status | int | Status (0: in the process of being uploaded; 1: uploaded successfully; 2: upload failed; 3: not approved in review) |
+| status | integer | Status (0: in the process of being uploaded; 1: uploaded successfully; 2: upload failed; 3: not approved in review) |
 | appName | string | Application name |
 | appIcon | string | Application icon |
 | appId | string | Application ID |

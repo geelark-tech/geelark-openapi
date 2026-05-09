@@ -16,7 +16,7 @@ Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | ----------- | -------| -----------|----------- |--------- |
-|days|yes|int|renewal duration：30/90/180/360 day| 30 |
+|days|yes|integer|renewal duration：30/90/180/360 day| 30 |
 |promoCode|no|string|promo code| PromoCode |
 
 Request Example

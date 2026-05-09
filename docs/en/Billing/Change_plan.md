@@ -17,9 +17,9 @@ Request Parameters
 | Parameter | Required | Type | Description | Example |
 | ----------- | -------| -----------|----------- |--------- |
 | profilesId   | yes     |   string  | profiles id，it can be obtained through the 'get plan list' API | 497540679501610040 |
-|parallelsNum|yes|int|the parallels number should be greater than or equal to the parallels number of the current plan| 1 |
-|monthlyRentalNum|yes|int|the monthly rental number should be greater than or equal to the monthly rental number of the current plan| 1  |
-|days|no|int| Parameter was required when the plan was expired, renewal duration：30/90/180/360 day| 30 |
+|parallelsNum|yes|integer|the parallels number should be greater than or equal to the parallels number of the current plan| 1 |
+|monthlyRentalNum|yes|integer|the monthly rental number should be greater than or equal to the monthly rental number of the current plan| 1  |
+|days|no|integer| Parameter was required when the plan was expired, renewal duration：30/90/180/360 day| 30 |
 |promoCode|no|string|promo code| PromoCode |
 
 Request Example

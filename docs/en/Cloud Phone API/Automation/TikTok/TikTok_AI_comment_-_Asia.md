@@ -15,12 +15,12 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
-| useAi | Yes | int | Whether to use AI: 1 for AI (only available for Pro users); 2 for not using AI, provide your own comment |
+| useAi | Yes | integer | Whether to use AI: 1 for AI (only available for Pro users); 2 for not using AI, provide your own comment |
 | comment | Yes | string | Comment content, up to 500 characters; required when useAi is 2 |
 | links | No | array[string] | Specified link |
-| commentProbability | No | int | Comment probability, 0-100, default is 30 |
+| commentProbability | No | integer | Comment probability, 0-100, default is 30 |
 | searchKeywords |  No | array[string] | Search keywords |
 
 Request Example

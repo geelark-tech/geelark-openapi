@@ -22,7 +22,7 @@ Response Body Description
 | --- | --- | --- |
 | balance | float | Balance |
 | giftMoney | float | Gifted amount |
-| availableTimeAddOn | int   | Remaining time add-on |
+| availableTimeAddOn | integer   | Remaining time add-on |
 
 Response Example
 ----------------

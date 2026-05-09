@@ -15,7 +15,7 @@ Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| channel | Yes | int | Platform | 0: TikTok, 1: YouTube, 2: Instagram |
+| channel | Yes | integer | Platform | 0: TikTok, 1: YouTube, 2: Instagram |
 | accountsData | Yes | array\[accountsData\] | Account information. The array supports up to 200 elements | See request example |
 
 ### accountsData
@@ -44,10 +44,10 @@ Response Parameters
 
 | Parameter | Required | Type | Description |
 | --- | --- | --- | --- |
-| bizCode | Yes | int | Business status code: 0 = all successful; 1 = the current number of accounts exceeds the limit; 2 = partially successful, with failed items exceeding the limit |
-| successCount | Yes | int | Number of successfully added accounts |
-| failCount | Yes | int | Number of failed additions |
-| repeatCount | Yes | int | Number of duplicate additions |
+| bizCode | Yes | integer | Business status code: 0 = all successful; 1 = the current number of accounts exceeds the limit; 2 = partially successful, with failed items exceeding the limit |
+| successCount | Yes | integer | Number of successfully added accounts |
+| failCount | Yes | integer | Number of failed additions |
+| repeatCount | Yes | integer | Number of duplicate additions |
 
 Response Example
 ----------------

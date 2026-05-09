@@ -31,6 +31,7 @@
 | proxyConfig | No | Proxy | New cloud phone proxy config |
 |proxyQueryChannel|No|integer|Proxy detection channel, takes effect when using proxyConfig, 1-ip-api, 2-IP2Location, default is 2|
 | proxyId | No | string | Proxy Id |
+|chargeMode|No|integer|Billing mode, 0-on-demand, 1-monthly, default is on-demand|0|
 | phoneNumber | No | string | custom phone number |
 
 ### proxyConfig Static Proxy Parameters

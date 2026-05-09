@@ -35,7 +35,7 @@ Response Data Description
 ### items
 | Parameter Name | Type | Description |
 | --- | --- | --- |
-| code | int | Error code: 0 indicates success; for other codes, refer to the error code table |
+| code | integer | Error code: 0 indicates success; for other codes, refer to the error code table |
 | id | string | Cloud phone ID |
 | ip | string | Connection IP |
 | port | string | Port |

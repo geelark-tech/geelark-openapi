@@ -57,8 +57,8 @@ Transfer the browser to another team.
 
 | Parameter Name | Type | Description |
 | --- | --- | --- |
-| successCount | int | Number of successful transfers |
-| failCount | int | Number of failed transfers |
+| successCount | integer | Number of successful transfers |
+| failCount | integer | Number of failed transfers |
 | failEnvIds | array[string] | IDs of environments where transfers failed, including those in use or non-existent environments |
 
 

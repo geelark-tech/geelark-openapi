@@ -15,7 +15,7 @@ Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| channel | Yes | int | Platform | 0: TikTok, 1: YouTube, 2: Instagram |
+| channel | Yes | integer | Platform | 0: TikTok, 1: YouTube, 2: Instagram |
 | account | Yes | string | Account name, maximum length 64 characters | See request example |
 
 Request Example

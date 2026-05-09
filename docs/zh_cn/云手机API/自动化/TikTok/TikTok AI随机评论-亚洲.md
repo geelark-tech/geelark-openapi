@@ -12,12 +12,12 @@
 | --- | --- | --- | --- |
 | name | 否 |string| 任务名称，最多128字 |
 | remark | 否 |string| 备注，最多200字 |
-| scheduleAt | 是 |int| 计划时间（时间戳）|
+| scheduleAt | 是 |integer| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
-| useAi | 是 |int|是否使用ai；1 ai(仅pro用户可用); 2 不是ai，自己传评论 |
+| useAi | 是 |integer|是否使用ai；1 ai(仅pro用户可用); 2 不是ai，自己传评论 |
 | comment | 是 |string|评论内容，最多500字，useAi为 2 时必传 |
 | links | 否 | array[string] | 指定链接 |
-| commentProbability | 否 |int|评论概率，0-100，默认为30|
+| commentProbability | 否 |integer|评论概率，0-100，默认为30|
 | searchKeywords | 否 | array[string] | 搜索关键词 |
 
 ## 请求示例

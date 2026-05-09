@@ -12,13 +12,13 @@
 | --- | --- | --- | --- |
 | name | 否 |string| 任务名称，最多128字 |
 | remark | 否 |string| 备注，最多200字 |
-| scheduleAt | 是 |int| 计划时间（时间戳）|
+| scheduleAt | 是 |integer| 计划时间（时间戳）|
 | id | 是 |string|云手机id |
 | description | 是 |string|文案，最多2200字 |
 | video | 是 |[]string|视频，最多10个视频，上传视频请参考 [上传临时文件到GeeLark](https://open.geelark.cn/api/upload-getUrl) |
 | sameStyleUrl | 否 | string | 同款URL |
-| sameStyleVoice | 否 | int | 同款音量，范围是0-100 |
-| originalVoice | 否 | int | 原声音量，范围是0-100 |
+| sameStyleVoice | 否 | integer | 同款音量，范围是0-100 |
+| originalVoice | 否 | integer | 原声音量，范围是0-100 |
 | aiTag | 否 | bool | AI标签，默认为false |
 | needShareLink | 否 | bool | 是否需要获取分享链接，默认false |
 

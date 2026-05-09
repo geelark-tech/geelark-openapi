@@ -15,9 +15,9 @@ Request Parameters
 | --- | --- | --- | --- |
 | name | No | string | Task name, up to 128 characters |
 | remark | No | string | Remarks, up to 200 characters |
-| scheduleAt | Yes | int | Scheduled time (timestamp) |
+| scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
-| browsePostsNum | Yes | int | Estimated number of posts to browse, minimum 1, maximum 100 |
+| browsePostsNum | Yes | integer | Estimated number of posts to browse, minimum 1, maximum 100 |
 | keyword | Yes | \[\]string | Keywords, up to 10, each keyword up to 150 characters |
 
 Request Example

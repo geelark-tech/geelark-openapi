@@ -16,7 +16,7 @@ Query all tasks scheduled within the past 7 days.
 
 | Parameter   | Required | Type   | Description                       | Example               |
 | --- | --- | --- | --- | --- |
-| size         | No       | int     | Number of records per page, maximum is 100 | 100                   |
+| size         | No       | integer     | Number of records per page, maximum is 100 | 100                   |
 | lastId       | No       | string | The `id` of the last item from the previous page’s `data.items` array | "574376043897425896" |
 | ids | No | array[string] | Task IDs, maximum 100 | ["574376043897425896"] |
 
@@ -255,7 +255,10 @@ Query all tasks scheduled within the past 7 days.
 | 20804 | Edit input box not found |
 | 20901 | No delete button found |
 | 21001 | Top button not found |
-| 20267 | Custom template task publishing failed |
+| 20267 | Custom error codes |
+| 29992 | Environment startup failed, please try clearing the cache. |
+| 29993 | System error, please restart the cloud phone and try again. |
+| 29994 | Network unstable, please try again later. |
 | 29995 | Currently unavailable; maintenance in progress |
 | 29996 | Proxy detection failed |
 | 29997 | Insufficient balance |

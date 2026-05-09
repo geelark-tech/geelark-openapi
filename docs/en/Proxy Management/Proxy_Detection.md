@@ -23,7 +23,7 @@ Request Parameters
 | proxyQueryChannel | Yes | string | IP lookup source, supports only `IP-API` or `IP2Location` | IP2Location |
 | proxyType | Yes | string | Proxy type, supports only `socks5`, `http`, or `https` | socks5 |
 | server | Yes | string | Host | 185.162.130.86 |
-| port | Yes | int | Port number | 11000 |
+| port | Yes | integer | Port number | 11000 |
 | username | No | string | Proxy username | username |
 | password | No | string | Proxy password | pass |
 

@@ -44,4 +44,4 @@ Response Body Data Description
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| status | int | Task status: 1 = In progress, 2 = Successful, 3 = Failed |
+| status | integer | Task status: 1 = In progress, 2 = Successful, 3 = Failed |

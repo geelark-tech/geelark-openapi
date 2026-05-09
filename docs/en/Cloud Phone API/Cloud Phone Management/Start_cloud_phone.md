@@ -15,8 +15,8 @@ Batch start cloud phones.
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | ids | Yes | array\[string\] | List of cloud phone IDs, maximum 200 | See request example |
-|width | No | int | Cloud phone display width in px | Default: 336 (allowed range: 200<=width<=600)|
-|center|No|int|Whether the cloud phone display is centered|0: not centered, 1: centered; default is 1 if not provided|
+|width | No | integer | Cloud phone display width in px | Default: 336 (allowed range: 200<=width<=600)|
+|center|No|integer|Whether the cloud phone display is centered|0: not centered, 1: centered; default is 1 if not provided|
 |energySavingMode|No|integer|Whether to enable energy-saving mode. When enabled, the cloud phone will automatically shut down after 30 minutes of inactivity.|0: Disabled, 1: Enabled; default is 0 if not provided|
 |materialTagIds|No|array[string]|Material tag ID array, supporting up to 10 elements. When this parameter is provided, the Cloud Phone Library opened by the API will only display materials corresponding to the specified tags. If omitted or empty, all materials are shown by default. This parameter requires [OEM permissions](https://open.geelark.com/api/phone-customization) to take effect.|["611460279938623025"]|
 
