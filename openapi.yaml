@@ -1,0 +1,4616 @@
+openapi: 3.0.3
+info:
+  title: GeeLark API
+  description: |
+    GeeLark provides Cloud Phone and Browser automation APIs for social media management.
+
+    ## API Overview
+    - **Cloud Phone API**: Control cloud phones, manage proxies, groups, tags, materials, and automate tasks
+    - **Browser API**: Manage browser environments with fingerprint spoofing for web automation
+    - **Billing API**: Manage subscription plans and billing
+
+    ## Authentication
+    - Token verification: `Authorization: Bearer <token>`
+    - Key verification: `appId`, `traceId`, `ts`, `nonce`, `sign`
+
+    ## Rate Limiting
+    - 200 requests per minute
+    - 24,000 requests per hour
+
+    ## Response Format
+    ```json
+    {
+      "traceId": "string",
+      "code": 0,
+      "msg": "success",
+      "data": {}
+    }
+    ```
+  version: "1.0"
+  contact:
+    name: GeeLark Support
+    url: https://www.geelark.com
+
+servers:
+  - url: https://openapi.geelark.com/open/v1
+    description: Cloud Phone API Server
+  - url: http://localhost:40185/api/v1
+    description: Browser API (requires local client)
+
+tags:
+  - name: Cloud Phone Management
+    description: Cloud phone lifecycle management (create, start, stop, delete, clone)
+  - name: Cloud Phone Settings
+    description: Configure GPS, network, screen, ADB, etc.
+  - name: Application Management
+    description: Install, uninstall, start, stop applications
+  - name: File Management
+    description: Upload files to cloud phones and keybox management
+  - name: Library
+    description: Material center for managing images, videos, and tags
+  - name: Automation
+    description: Social media automation tasks (TikTok, Facebook, Instagram, etc.)
+  - name: Task Management
+    description: Query, cancel, retry automation tasks
+  - name: Browser Management
+    description: Browser environment management with fingerprint spoofing
+  - name: Group Management
+    description: Organize cloud phones and browsers into groups
+  - name: Tag Management
+    description: Tag cloud phones and browsers for categorization
+  - name: Proxy Management
+    description: Manage proxy configurations
+  - name: Billing
+    description: Subscription plans and billing operations
+  - name: Webhook
+    description: Webhook configuration for task callbacks
+  - name: Analytics
+    description: Account analytics data management
+
+paths:
+  # ==================== Cloud Phone Management ====================
+  /phone/list:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Get all cloud phones
+      description: Retrieve the list of cloud phones with filtering and pagination
+      operationId: getAllCloudPhones
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CloudPhoneListRequest'
+            example:
+              page: 1
+              pageSize: 10
+              openStatus: 1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CloudPhoneListResponse'
+
+  /phone/addNew:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Create new cloud phones
+      description: |
+        Create one or more cloud phones.
+        - Basic plan: supports creating 1 cloud phone at a time
+        - Pro plan: supports batch creation (up to 100)
+      operationId: createCloudPhones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCloudPhoneRequest'
+            example:
+              mobileType: "Android 12"
+              chargeMode: 0
+              data:
+                - profileName: "myPhone"
+                  proxyInformation: "socks5://user:pass@100.200.200.100:30000"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCloudPhoneResponse'
+      x-readme:
+        samples:
+          - language: python
+            code: |
+              import requests
+              response = requests.post(
+                'https://openapi.geelark.com/open/v1/phone/addNew',
+                headers={'Authorization': 'Bearer YOUR_TOKEN'},
+                json={
+                  'mobileType': 'Android 12',
+                  'data': [{'profileName': 'myPhone'}]
+                }
+              )
+
+  /phone/start:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Start cloud phones
+      description: Batch start cloud phones and return remote access URLs
+      operationId: startCloudPhones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartCloudPhoneRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartCloudPhoneResponse'
+
+  /phone/stop:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Stop cloud phones
+      description: Batch stop running cloud phones
+      operationId: stopCloudPhones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StopCloudPhoneRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchOperationResponse'
+
+  /phone/delete:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Delete cloud phones
+      description: Delete cloud phones by IDs
+      operationId: deleteCloudPhones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteCloudPhoneRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchOperationResponse'
+
+  /phone/clone:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Clone cloud phone
+      description: Clone an existing cloud phone configuration
+      operationId: cloneCloudPhone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CloneCloudPhoneRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CloneCloudPhoneResponse'
+
+  /phone/status:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Query cloud phone status
+      description: Get current status of cloud phones
+      operationId: queryCloudPhoneStatus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                  description: Cloud phone IDs
+                  maxItems: 200
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryStatusResponse'
+
+  /phone/screenshot:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Take screenshot
+      description: Capture screenshot of cloud phone screen
+      operationId: takeScreenshot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScreenshotResponse'
+
+  /phone/screenshot/result:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Get screenshot result
+      description: Retrieve screenshot image URL after capture
+      operationId: getScreenshotResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScreenshotResultResponse'
+
+  /phone/gps/set:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Set GPS location
+      description: Modify GPS location of cloud phone
+      operationId: setGps
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetGpsRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/gps/get:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Get GPS location
+      description: Retrieve current GPS location of cloud phone
+      operationId: getGps
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetGpsResponse'
+
+  /phone/network:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Modify network settings
+      description: Configure proxy and network settings
+      operationId: modifyNetworkSettings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModifyNetworkRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/network/get:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Get network settings
+      description: Retrieve current network configuration
+      operationId: getNetworkSettings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetNetworkResponse'
+
+  /phone/netType/set:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Set network type
+      description: Switch between Wi-Fi and mobile network
+      operationId: setNetType
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetNetTypeRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/root/set:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Set root status
+      description: Enable or disable root access
+      operationId: setRootStatus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetRootStatusRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/accessibility/hide:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Hide accessibility
+      description: Hide accessibility service indicator
+      operationId: hideAccessibility
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+                hide:
+                  type: integer
+                  enum: [0, 1]
+                  description: 0=show, 1=hide
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/deviceId/get:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Get device ID
+      description: Retrieve device identifier information
+      operationId: getDeviceId
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceIdResponse'
+
+  /phone/brand/list:
+    post:
+      tags: [Cloud Phone Management]
+      summary: List cloud phone brands
+      description: Get available cloud phone brand models
+      operationId: listCloudPhoneBrands
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mobileType:
+                  type: string
+                  description: Android version filter (e.g., "Android 12")
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrandListResponse'
+
+  /phone/group/move:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Move cloud phone to group
+      description: Transfer cloud phone to another group
+      operationId: moveCloudPhoneToGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveToGroupRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/transfer:
+    post:
+      tags: [Cloud Phone Management]
+      summary: Transfer cloud phone
+      description: Transfer cloud phone ownership to another user
+      operationId: transferCloudPhone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransferCloudPhoneRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== ADB ====================
+  /phone/adb/status/set:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Set ADB status
+      description: Enable or disable ADB debugging
+      operationId: setAdbStatus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetAdbStatusRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/adb/info:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Get ADB information
+      description: Retrieve ADB connection details
+      operationId: getAdbInfo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdbInfoResponse'
+
+  /phone/shell/execute:
+    post:
+      tags: [Cloud Phone Settings]
+      summary: Execute shell command
+      description: Run shell commands on cloud phone
+      operationId: executeShellCommand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteShellRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecuteShellResponse'
+
+  # ==================== Application Management ====================
+  /phone/app/list:
+    post:
+      tags: [Application Management]
+      summary: Get installed applications
+      description: List all installed applications on cloud phone
+      operationId: getInstalledApps
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Cloud phone ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppListResponse'
+
+  /phone/app/start:
+    post:
+      tags: [Application Management]
+      summary: Start application
+      description: Launch an application on cloud phone
+      operationId: startApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppOperationRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/app/stop:
+    post:
+      tags: [Application Management]
+      summary: Stop application
+      description: Force stop an application
+      operationId: stopApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppOperationRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/app/install:
+    post:
+      tags: [Application Management]
+      summary: Install application
+      description: Install application from uploaded APK or Google Play
+      operationId: installApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstallAppRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /phone/app/uninstall:
+    post:
+      tags: [Application Management]
+      summary: Uninstall application
+      description: Remove application from cloud phone
+      operationId: uninstallApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UninstallAppRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== File Management ====================
+  /phone/file/upload:
+    post:
+      tags: [File Management]
+      summary: Upload files to cloud phone
+      description: Upload files (images, videos, documents) to cloud phone
+      operationId: uploadFilesToPhone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadFileRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadFileResponse'
+
+  /phone/file/uploadStatus:
+    post:
+      tags: [File Management]
+      summary: Query upload status
+      description: Check file upload progress
+      operationId: queryUploadStatus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - taskId
+              properties:
+                taskId:
+                  type: string
+                  description: Upload task ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadStatusResponse'
+
+  /phone/keybox/upload:
+    post:
+      tags: [File Management]
+      summary: Upload keybox file
+      description: Upload keybox (accounts) file for multi-account management
+      operationId: uploadKeyboxFile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadKeyboxRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /material/temp/upload:
+    post:
+      tags: [Library]
+      summary: Upload temporary files
+      description: Upload files to GeeLark material center
+      operationId: uploadTempFiles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadMaterialRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadMaterialResponse'
+
+  # ==================== Library ====================
+  /material/search:
+    post:
+      tags: [Library]
+      summary: Search materials
+      description: Search materials (images, videos) from material center
+      operationId: searchMaterials
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchMaterialRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchMaterialResponse'
+
+  /material/create:
+    post:
+      tags: [Library]
+      summary: Create material
+      description: Add material to library
+      operationId: createMaterial
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMaterialResponse'
+
+  /material/delete:
+    post:
+      tags: [Library]
+      summary: Delete material
+      description: Remove material from library
+      operationId: deleteMaterial
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /material/tag/search:
+    post:
+      tags: [Library]
+      summary: Search material tags
+      description: Search tags in material center
+      operationId: searchMaterialTags
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchTagRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchTagResponse'
+
+  /material/tag/create:
+    post:
+      tags: [Library]
+      summary: Create material tag
+      description: Create new tag in material center
+      operationId: createMaterialTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTagResponse'
+
+  /material/tag/delete:
+    post:
+      tags: [Library]
+      summary: Delete material tag
+      description: Delete tag from material center
+      operationId: deleteMaterialTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /material/tag/set:
+    post:
+tags: [Library]
+      summary: Set material tag
+      description: Assign tags to materials
+      operationId: setMaterialTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetMaterialTagRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== Group Management ====================
+  /group/list:
+    post:
+      tags: [Group Management]
+      summary: Query groups
+      description: Get all groups
+      operationId: queryGroups
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  minimum: 1
+                pageSize:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupListResponse'
+
+  /group/add:
+    post:
+      tags: [Group Management]
+      summary: Create groups
+      description: Create one or more groups
+      operationId: createGroups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGroupRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGroupResponse'
+
+  /group/update:
+    post:
+      tags: [Group Management]
+      summary: Modify group
+      description: Update group name or remark
+      operationId: modifyGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModifyGroupRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /group/delete:
+    post:
+      tags: [Group Management]
+      summary: Delete groups
+      description: Delete groups by IDs
+      operationId: deleteGroups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== Tag Management ====================
+  /tag/list:
+    post:
+      tags: [Tag Management]
+      summary: Query tags
+      description: Get all tags
+      operationId: queryTags
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  minimum: 1
+                pageSize:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagListResponse'
+
+  /tag/add:
+    post:
+      tags: [Tag Management]
+      summary: Create tags
+      description: Create one or more tags
+      operationId: createTags
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTagResponse'
+
+  /tag/update:
+    post:
+      tags: [Tag Management]
+      summary: Modify tag
+      description: Update tag name or color
+      operationId: modifyTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModifyTagRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /tag/delete:
+    post:
+      tags: [Tag Management]
+      summary: Delete tags
+      description: Delete tags by IDs
+      operationId: deleteTags
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== Proxy Management ====================
+  /proxy/list:
+    post:
+      tags: [Proxy Management]
+      summary: Get all proxies
+      description: List all proxy configurations
+      operationId: getAllProxies
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProxyListRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProxyListResponse'
+
+  /proxy/add:
+    post:
+      tags: [Proxy Management]
+      summary: Add proxies
+      description: Add one or more proxy configurations
+      operationId: addProxies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddProxyRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchProxyResponse'
+
+  /proxy/update:
+    post:
+      tags: [Proxy Management]
+      summary: Update proxy
+      description: Update proxy configuration
+      operationId: updateProxy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProxyRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /proxy/delete:
+    post:
+      tags: [Proxy Management]
+      summary: Delete proxies
+      description: Delete proxies by IDs
+      operationId: deleteProxies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /proxy/check:
+    post:
+      tags: [Proxy Management]
+      summary: Proxy detection
+      description: Test proxy connectivity and location
+      operationId: detectProxy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Proxy ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProxyCheckResponse'
+
+  # ==================== Task Management ====================
+  /rpa/task/query:
+    post:
+      tags: [Task Management]
+      summary: Query tasks
+      description: Get task execution results
+      operationId: queryTasks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryTaskRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryTaskResponse'
+
+  /rpa/task/batchQuery:
+    post:
+      tags: [Task Management]
+      summary: Batch query tasks
+      description: Get multiple task details
+      operationId: batchQueryTasks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ids
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                  maxItems: 100
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchQueryTaskResponse'
+
+  /rpa/task/detail:
+    post:
+      tags: [Task Management]
+      summary: Get task detail
+      description: Get detailed task information
+      operationId: getTaskDetail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Task ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskDetailResponse'
+
+  /rpa/task/cancel:
+    post:
+      tags: [Task Management]
+      summary: Cancel task
+      description: Cancel a pending or running task
+      operationId: cancelTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Task ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /rpa/task/retry:
+    post:
+      tags: [Task Management]
+      summary: Retry task
+      description: Retry a failed task
+      operationId: retryTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  description: Task ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetryTaskResponse'
+
+  # ==================== TikTok Automation ====================
+  /rpa/task/tiktokLogin:
+    post:
+      tags: [Automation]
+      summary: TikTok login
+      description: Login to TikTok account
+      operationId: tiktokLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokLoginRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokPublish:
+    post:
+      tags: [Automation]
+      summary: Publish TikTok video
+      description: Upload and publish video to TikTok
+      operationId: tiktokPublish
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokPublishRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokRandomStar:
+    post:
+      tags: [Automation]
+      summary: TikTok random like
+      description: Auto-like TikTok videos randomly
+      operationId: tiktokRandomStar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokRandomStarRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokFollow:
+    post:
+      tags: [Automation]
+      summary: TikTok follow
+      description: Auto-follow users on TikTok
+      operationId: tiktokFollow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokFollowRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokAiComment:
+    post:
+      tags: [Automation]
+      summary: TikTok AI comment
+      description: Auto-generate and post AI comments
+      operationId: tiktokAiComment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokAiCommentRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokPrivateMessage:
+    post:
+      tags: [Automation]
+      summary: Send TikTok private message
+      description: Send DM on TikTok
+      operationId: sendTiktokPrivateMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokPrivateMessageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/tiktokProfileEdit:
+    post:
+      tags: [Automation]
+      summary: Edit TikTok profile
+      description: Update TikTok profile information
+      operationId: editTiktokProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TikTokProfileEditRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  # ==================== Facebook Automation ====================
+  /rpa/task/facebookLogin:
+    post:
+      tags: [Automation]
+      summary: Facebook login
+      description: Login to Facebook account
+      operationId: facebookLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookLoginRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/facebookPost:
+    post:
+      tags: [Automation]
+      summary: Facebook post
+      description: Create Facebook post with text and media
+      operationId: facebookPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookPostRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/facebookReels:
+    post:
+      tags: [Automation]
+      summary: Facebook Reels
+      description: Upload video as Facebook Reels
+      operationId: facebookReels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookReelsRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/facebookPrivateMessage:
+    post:
+      tags: [Automation]
+      summary: Facebook private message
+      description: Send Facebook Messenger message
+      operationId: facebookPrivateMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookPrivateMessageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  # ==================== Instagram Automation ====================
+  /rpa/task/instagramLogin:
+    post:
+      tags: [Automation]
+      summary: Instagram login
+      description: Login to Instagram account
+      operationId: instagramLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstagramLoginRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/instagramReelsImage:
+    post:
+      tags: [Automation]
+      summary: Instagram post image
+      description: Post image to Instagram
+      operationId: instagramPostImage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstagramReelsImageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/instagramReelsVideo:
+    post:
+      tags: [Automation]
+      summary: Instagram Reels video
+      description: Upload video to Instagram Reels
+      operationId: instagramReelsVideo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstagramReelsVideoRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/instagramPrivateMessage:
+    post:
+      tags: [Automation]
+      summary: Instagram DM
+      description: Send Instagram direct message
+      operationId: instagramPrivateMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstagramPrivateMessageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  /rpa/task/instagramProfileEdit:
+    post:
+      tags: [Automation]
+      summary: Edit Instagram profile
+      description: Update Instagram profile
+      operationId: editInstagramProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstagramProfileEditRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+
+  # ==================== Billing ====================
+  /pay/plan/list:
+    post:
+      tags: [Billing]
+      summary: Get plan list
+      description: Get available subscription plans
+      operationId: getPlanList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanListResponse'
+
+  /pay/plan/current:
+    post:
+      tags: [Billing]
+      summary: Get current subscription
+      description: Get current subscription information
+      operationId: getCurrentPlan
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentPlanResponse'
+
+  /pay/plan/upgrade:
+    post:
+      tags: [Billing]
+      summary: Change/upgrade plan
+      description: Upgrade subscription plan
+      operationId: changePlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePlanRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /pay/renew:
+    post:
+      tags: [Billing]
+      summary: Renew subscription
+      description: Renew subscription plan
+      operationId: renewPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenewPlanRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /pay/balance:
+    post:
+      tags: [Billing]
+      summary: Balance inquiry
+      description: Get account balance
+      operationId: getBalance
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceResponse'
+
+  /pay/time/addon:
+    post:
+      tags: [Billing]
+      summary: Buy time add-on
+      description: Purchase additional usage time
+      operationId: buyTimeAddon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuyTimeAddonRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # ==================== Webhook ====================
+  /webhook/set:
+    post:
+      tags: [Webhook]
+      summary: Set webhook URL
+      description: Configure webhook callback URL
+      operationId: setWebhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetWebhookRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /webhook/get:
+    post:
+      tags: [Webhook]
+      summary: Get webhook URL
+      description: Retrieve configured webhook URL
+      operationId: getWebhook
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWebhookResponse'
+
+  # ==================== Browser API ====================
+  /browser/create:
+    post:
+      tags: [Browser Management]
+      summary: Create browser
+      description: Create new browser environment with fingerprint settings
+      operationId: createBrowser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBrowserRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateBrowserResponse'
+
+  /browser/list:
+    post:
+      tags: [Browser Management]
+      summary: Get browser list
+      description: List all browser environments
+      operationId: getBrowserList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BrowserListRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrowserListResponse'
+
+  /browser/start:
+    post:
+      tags: [Browser Management]
+      summary: Launch browser
+      description: Start browser environment
+      operationId: launchBrowser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LaunchBrowserRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LaunchBrowserResponse'
+
+  /browser/close:
+    post:
+      tags: [Browser Management]
+      summary: Close browser
+      description: Close running browser environment
+      operationId: closeBrowser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /browser/delete:
+    post:
+      tags: [Browser Management]
+      summary: Delete browser
+      description: Delete browser environment
+      operationId: deleteBrowser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /browser/clone:
+    post:
+      tags: [Browser Management]
+      summary: Clone browser
+      description: Clone existing browser environment
+      operationId: cloneBrowser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CloneBrowserRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CloneBrowserResponse'
+
+  /browser/status:
+    post:
+      tags: [Browser Management]
+      summary: Check browser status
+      description: Get browser running status
+      operationId: checkBrowserStatus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrowserStatusResponse'
+
+  /browser/transfer:
+    post:
+      tags: [Browser Management]
+      summary: Transfer browsers
+      description: Transfer browsers to another group
+      operationId: transferBrowsers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransferBrowsersRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /browser/kernel/download:
+    post:
+      tags: [Browser Management]
+      summary: Download and update kernel
+      description: Download or update browser kernel
+      operationId: downloadKernel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                version:
+                  type: string
+                  description: Kernel version (optional, latest if not specified)
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /browser/kernel/query:
+    post:
+      tags: [Browser Management]
+      summary: Query kernel
+      description: Get available browser kernel versions
+      operationId: queryKernel
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KernelQueryResponse'
+
+# ==================== Components ====================
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: API Token obtained from GeeLark client
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: appId
+      description: Team AppId for signature verification
+
+  schemas:
+    # ==================== Common ====================
+    ApiResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+          description: Request trace ID
+        code:
+          type: integer
+          description: Response code (0=success)
+        msg:
+          type: string
+          description: Response message
+
+    BatchOperationResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            successDetails:
+              type: array
+              items:
+                type: object
+            failDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/FailDetail'
+
+    FailDetail:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Error code
+        id:
+          type: string
+          description: Resource ID
+        msg:
+          type: string
+          description: Error message
+
+    TaskResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            taskId:
+              type: string
+              description: Task ID
+
+    PaginationRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+          minimum: 1
+          default: 1
+          description: Page number
+        pageSize:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+          description: Items per page
+
+    PaginationResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        list:
+          type: array
+          items:
+            type: object
+
+    # ==================== Cloud Phone ====================
+    CloudPhoneListRequest:
+      allOf:
+        - $ref: '#/components/schemas/PaginationRequest'
+        - type: object
+          properties:
+            ids:
+              type: array
+              items:
+                type: string
+              description: Filter by cloud phone IDs
+            serialName:
+              type: string
+              description: Filter by name
+            groupName:
+              type: string
+              description: Filter by group name
+            tags:
+              type: array
+              items:
+                type: string
+              description: Filter by tag names
+            openStatus:
+              type: integer
+              enum: [0, 1]
+              description: 0=off, 1=on
+
+    CloudPhoneListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CloudPhone'
+
+    CloudPhone:
+      type: object
+      properties:
+        id:
+          type: string
+        serialName:
+          type: string
+        serialNo:
+          type: string
+        status:
+          type: integer
+          enum: [0, 1, 2]
+          description: 0=stopped, 1=starting, 2=running
+        chargeMode:
+          type: integer
+          enum: [0, 1]
+          description: 0=pay-per-use, 1=monthly
+        group:
+          $ref: '#/components/schemas/Group'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        equipmentInfo:
+          $ref: '#/components/schemas/EquipmentInfo'
+        proxy:
+          $ref: '#/components/schemas/Proxy'
+
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        remark:
+          type: string
+
+    Tag:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        color:
+          type: integer
+          enum: [0, 1, 2, 3, 4, 5]
+          description: 0=white, 1=red, 2=blue, 3=green, 4=yellow, 5=purple
+
+    EquipmentInfo:
+      type: object
+      properties:
+        countryName:
+          type: string
+        phoneNumber:
+          type: string
+        enableSim:
+          type: integer
+          enum: [0, 1]
+        imei:
+          type: string
+        osVersion:
+          type: string
+        wifiBssid:
+          type: string
+        mac:
+          type: string
+        bluetoothMac:
+          type: string
+        timeZone:
+          type: string
+        deviceBrand:
+          type: string
+        deviceModel:
+          type: string
+        netType:
+          type: integer
+          enum: [0, 1]
+          description: 0=Wi-Fi, 1=mobile
+
+    Proxy:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [socks5, http, https]
+        server:
+          type: string
+        port:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+
+    CreateCloudPhoneRequest:
+      type: object
+      required:
+        - mobileType
+        - data
+      properties:
+        mobileType:
+          type: string
+          enum: [Android 9, Android 10, Android 11, Android 12, Android 13, Android 14, Android 15, Android 16]
+        chargeMode:
+          type: integer
+          enum: [0, 1]
+          default: 0
+          description: 0=pay-per-use, 1=monthly
+        region:
+          type: string
+          enum: [cn, sgp, us]
+          description: Data center location
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvRowApi'
+          maxItems: 100
+
+    EnvRowApi:
+      type: object
+      required:
+        - profileName
+      properties:
+        profileName:
+          type: string
+        proxyInformation:
+          type: string
+          description: Proxy URL (socks5://, http://, https://)
+        proxyQueryChannel:
+          type: integer
+          enum: [1, 2]
+          default: 2
+        dynamicProxy:
+          type: string
+          description: Dynamic proxy provider name
+        dynamicProxyLocation:
+          type: string
+        mobileRegion:
+          type: string
+        mobileLanguage:
+          type: string
+        profileGroup:
+          type: string
+        profileTags:
+          type: array
+          items:
+            type: string
+        profileNote:
+          type: string
+        surfaceBrandName:
+          type: string
+        surfaceModelName:
+          type: string
+        netType:
+          type: integer
+          enum: [0, 1]
+
+    CreateCloudPhoneResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/CreateResultDetail'
+
+    CreateResultDetail:
+      type: object
+      properties:
+        index:
+          type: integer
+        code:
+          type: integer
+        msg:
+          type: string
+        id:
+          type: string
+        profileName:
+          type: string
+        envSerialNo:
+          type: string
+        equipmentInfo:
+          $ref: '#/components/schemas/EquipmentInfo'
+
+    StartCloudPhoneRequest:
+      type: object
+      required:
+        - ids
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+          maxItems: 200
+        width:
+          type: integer
+          minimum: 200
+          maximum: 600
+          default: 336
+        center:
+          type: integer
+          enum: [0, 1]
+          default: 1
+        energySavingMode:
+          type: integer
+          enum: [0, 1]
+          default: 0
+        materialTagIds:
+          type: array
+          items:
+            type: string
+
+    StartCloudPhoneResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            successDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/StartSuccessDetail'
+            failDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/FailDetail'
+
+    StartSuccessDetail:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          description: Remote access URL
+        chargingMethod:
+          type: string
+
+    StopCloudPhoneRequest:
+      type: object
+      required:
+        - ids
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+          maxItems: 200
+
+    DeleteCloudPhoneRequest:
+      type: object
+      required:
+        - ids
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+          maxItems: 200
+
+    CloneCloudPhoneRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          description: Source cloud phone ID
+        cloneCount:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 1
+        autoStart:
+          type: integer
+          enum: [0, 1]
+          default: 0
+
+    CloneCloudPhoneResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/CreateResultDetail'
+
+    QueryStatusResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              status:
+                type: integer
+              url:
+                type: string
+
+    ScreenshotResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            taskId:
+              type: string
+
+    ScreenshotResultResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+            screenshotUrl:
+              type: string
+
+    SetGpsRequest:
+      type: object
+      required:
+        - id
+        - latitude
+        - longitude
+      properties:
+        id:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        accuracy:
+          type: number
+          default: 10
+
+    ModifyNetworkRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        proxyInformation:
+          type: string
+        proxyQueryChannel:
+          type: integer
+
+    GetNetworkResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            proxyType:
+              type: string
+            proxyServer:
+              type: string
+            proxyPort:
+              type: integer
+
+    SetNetTypeRequest:
+      type: object
+      required:
+        - id
+        - netType
+      properties:
+        id:
+          type: string
+        netType:
+          type: integer
+          enum: [0, 1]
+          description: 0=Wi-Fi, 1=mobile
+
+    SetRootStatusRequest:
+      type: object
+      required:
+        - id
+        - rootStatus
+      properties:
+        id:
+          type: string
+        rootStatus:
+          type: integer
+          enum: [0, 1]
+
+    DeviceIdResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            imei:
+              type: string
+            androidId:
+              type: string
+            mac:
+              type: string
+
+    BrandListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              brandName:
+                type: string
+              models:
+                type: array
+                items:
+                  type: string
+
+    MoveToGroupRequest:
+      type: object
+      required:
+        - ids
+        - groupId
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+        groupId:
+          type: string
+
+    TransferCloudPhoneRequest:
+      type: object
+      required:
+        - id
+        - userId
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+          description: Target user ID
+
+    # ==================== ADB ====================
+    SetAdbStatusRequest:
+      type: object
+      required:
+        - id
+        - status
+      properties:
+        id:
+          type: string
+        status:
+          type: integer
+          enum: [0, 1]
+
+    AdbInfoResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            adbStatus:
+              type: integer
+            adbAddress:
+              type: string
+            debugPort:
+              type: integer
+
+    ExecuteShellRequest:
+      type: object
+      required:
+        - id
+        - command
+      properties:
+        id:
+          type: string
+        command:
+          type: string
+
+    ExecuteShellResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            output:
+              type: string
+
+    # ==================== Application ====================
+    AppOperationRequest:
+      type: object
+      required:
+        - id
+        - packageName
+      properties:
+        id:
+          type: string
+        packageName:
+          type: string
+
+    AppListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              packageName:
+                type: string
+              appName:
+                type: string
+              versionName:
+                type: string
+              versionCode:
+                type: integer
+
+    InstallAppRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        fileId:
+          type: string
+          description: File ID from material center
+        packageUrl:
+          type: string
+          description: Google Play URL or APK download URL
+
+    UninstallAppRequest:
+      type: object
+      required:
+        - id
+        - packageName
+      properties:
+        id:
+          type: string
+        packageName:
+          type: string
+
+    # ==================== File ====================
+    UploadFileRequest:
+      type: object
+      required:
+        - id
+        - fileId
+      properties:
+        id:
+          type: string
+        fileId:
+          type: string
+        path:
+          type: string
+          default: /sdcard/Download
+
+    UploadFileResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            taskId:
+              type: string
+
+    UploadStatusResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            status:
+              type: string
+              enum: [pending, uploading, success, failed]
+            progress:
+              type: integer
+              description: Upload progress percentage
+
+    UploadKeyboxRequest:
+      type: object
+      required:
+        - id
+        - keyboxId
+      properties:
+        id:
+          type: string
+        keyboxId:
+          type: string
+
+    UploadMaterialRequest:
+      type: object
+      required:
+        - fileUrl
+        - fileType
+      properties:
+        fileUrl:
+          type: string
+        fileType:
+          type: integer
+          enum: [1, 2]
+          description: 1=image, 2=video
+        fileName:
+          type: string
+
+    UploadMaterialResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            fileId:
+              type: string
+
+    # ==================== Library ====================
+    SearchMaterialRequest:
+      allOf:
+        - $ref: '#/components/schemas/PaginationRequest'
+        - type: object
+          properties:
+            fileName:
+              type: string
+            tagsId:
+              type: array
+              items:
+                type: string
+            source:
+              type: integer
+              enum: [0, 1, 2, 3, 4, 5]
+            fileType:
+              type: array
+              items:
+                type: integer
+                enum: [1, 2]
+            ids:
+              type: array
+              items:
+                type: string
+
+    SearchMaterialResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            list:
+              type: array
+              items:
+                $ref: '#/components/schemas/MaterialData'
+
+    MaterialData:
+      type: object
+      properties:
+        id:
+          type: string
+        createdTime:
+          type: integer
+        fileName:
+          type: string
+        fileSize:
+          type: integer
+        fileUrl:
+          type: string
+        fileType:
+          type: integer
+          enum: [1, 2]
+        width:
+          type: integer
+        height:
+          type: integer
+        source:
+          type: integer
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        userName:
+          type: string
+
+    CreateMaterialRequest:
+      type: object
+      required:
+        - fileId
+        - fileName
+      properties:
+        fileId:
+          type: string
+        fileName:
+          type: string
+        tagsId:
+          type: array
+          items:
+            type: string
+
+    CreateMaterialResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+
+    SearchTagRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        name:
+          type: string
+
+    SearchTagResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            list:
+              type: array
+              items:
+                $ref: '#/components/schemas/MaterialTag'
+
+    MaterialTag:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        color:
+          type: integer
+          enum: [0, 1, 2, 3, 4, 5]
+
+    CreateTagRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        color:
+          type: integer
+          enum: [0, 1, 2, 3, 4, 5]
+          default: 0
+
+    CreateTagResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+
+    SetMaterialTagRequest:
+      type: object
+      required:
+        - materialIds
+        - tagIds
+      properties:
+        materialIds:
+          type: array
+          items:
+            type: string
+        tagIds:
+          type: array
+          items:
+            type: string
+
+    # ==================== Group Management ====================
+    GroupListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            list:
+              type: array
+              items:
+                $ref: '#/components/schemas/GroupData'
+
+    GroupData:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        remark:
+          type: string
+        createTime:
+          type: integer
+
+    CreateGroupRequest:
+      type: object
+      required:
+        - list
+      properties:
+        list:
+          type: array
+          items:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+                maxLength: 50
+              remark:
+                type: string
+                maxLength: 500
+
+    CreateGroupResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            successDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/Group'
+            failDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/FailDetail'
+
+    ModifyGroupRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        remark:
+          type: string
+
+    # ==================== Tag Management ====================
+    TagListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            list:
+              type: array
+              items:
+                $ref: '#/components/schemas/TagData'
+
+    TagData:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        color:
+          type: integer
+          enum: [0, 1, 2, 3, 4, 5]
+        createTime:
+          type: integer
+
+    CreateTagRequest:
+      type: object
+      required:
+        - list
+      properties:
+        list:
+          type: array
+          items:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+                maxLength: 30
+              color:
+                type: string
+                enum: [white, red, blue, green, yellow, purple]
+
+    CreateTagResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            successDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/Tag'
+            failDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/FailDetail'
+
+    ModifyTagRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        color:
+          type: string
+          enum: [white, red, blue, green, yellow, purple]
+
+    # ==================== Proxy Management ====================
+    ProxyListRequest:
+      allOf:
+        - $ref: '#/components/schemas/PaginationRequest'
+        - type: object
+          properties:
+            ids:
+              type: array
+              items:
+                type: string
+            scheme:
+              type: string
+              enum: [socks5, http, https]
+
+    ProxyListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            list:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProxyData'
+
+    ProxyData:
+      type: object
+      properties:
+        id:
+          type: string
+        scheme:
+          type: string
+        server:
+          type: string
+        port:
+          type: integer
+        username:
+          type: string
+        status:
+          type: integer
+          enum: [0, 1, 2]
+          description: 0=unavailable, 1=available, 2=checking
+        createTime:
+          type: integer
+
+    AddProxyRequest:
+      type: object
+      required:
+        - list
+      properties:
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProxyAddItem'
+          maxItems: 100
+
+    ProxyAddItem:
+      type: object
+      required:
+        - scheme
+        - server
+        - port
+      properties:
+        scheme:
+          type: string
+          enum: [socks5, http, https]
+        server:
+          type: string
+        port:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        proxyQueryChannel:
+          type: integer
+          enum: [1, 2]
+          default: 2
+
+    BatchProxyResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            totalAmount:
+              type: integer
+            successAmount:
+              type: integer
+            failAmount:
+              type: integer
+            successDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  index:
+                    type: integer
+                  id:
+                    type: string
+            failDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/FailDetail'
+
+    UpdateProxyRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        scheme:
+          type: string
+        server:
+          type: string
+        port:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        proxyQueryChannel:
+          type: integer
+
+    ProxyCheckResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+country:
+              type: string
+            city:
+              type: string
+            ip:
+              type: string
+
+    # ==================== Task Management ====================
+    QueryTaskRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        envId:
+          type: string
+        status:
+          type: integer
+          enum: [1, 2, 3, 4, 7]
+          description: 1=waiting, 2=running, 3=completed, 4=failed, 7=cancelled
+        taskType:
+          type: integer
+
+    QueryTaskResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/TaskData'
+
+    TaskData:
+      type: object
+      properties:
+        id:
+          type: string
+        planName:
+          type: string
+        taskType:
+          type: integer
+        serialName:
+          type: string
+        envId:
+          type: string
+        scheduleAt:
+          type: integer
+        status:
+          type: integer
+        failCode:
+          type: integer
+        failDesc:
+          type: string
+        cost:
+          type: integer
+        shareLink:
+          type: string
+
+    BatchQueryTaskResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/TaskData'
+
+    TaskDetailResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+            planName:
+              type: string
+            taskType:
+              type: integer
+            envId:
+              type: string
+            status:
+              type: integer
+            scheduleAt:
+              type: integer
+            startAt:
+              type: integer
+            endAt:
+              type: integer
+            cost:
+              type: integer
+            params:
+              type: object
+            result:
+              type: object
+            failCode:
+              type: integer
+            failDesc:
+              type: string
+
+    RetryTaskResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            taskId:
+              type: string
+
+    # ==================== TikTok Automation ====================
+    TikTokLoginRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - account
+        - password
+      properties:
+        name:
+          type: string
+          maxLength: 128
+        remark:
+          type: string
+          maxLength: 200
+        scheduleAt:
+          type: integer
+          description: Scheduled time (timestamp)
+        id:
+          type: string
+          description: Cloud phone ID
+        account:
+          type: string
+          maxLength: 64
+        password:
+          type: string
+          maxLength: 64
+
+    TikTokPublishRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - fileId
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        fileId:
+          type: string
+          description: Video file ID from material center
+        title:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        privacyLevel:
+          type: integer
+          enum: [0, 1, 2]
+          description: 0=public, 1=friends, 2=private
+        comment:
+          type: integer
+          enum: [0, 1]
+          default: 1
+        duet:
+          type: integer
+          enum: [0, 1]
+          default: 0
+        stitch:
+          type: integer
+          enum: [0, 1]
+          default: 0
+
+    TikTokRandomStarRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        likeProbability:
+          type: integer
+          minimum: 0
+          maximum: 100
+          default: 30
+
+    TikTokFollowRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        keyword:
+          type: string
+        followCount:
+          type: integer
+          default: 10
+
+    TikTokAiCommentRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        keyword:
+          type: string
+        commentCount:
+          type: integer
+          default: 10
+        aiPrompt:
+          type: string
+
+    TikTokPrivateMessageRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - targetUsername
+        - message
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        targetUsername:
+          type: string
+        message:
+          type: string
+
+    TikTokProfileEditRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        username:
+          type: string
+        bio:
+          type: string
+        avatarFileId:
+          type: string
+
+    # ==================== Facebook Automation ====================
+    FacebookLoginRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - account
+        - password
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        account:
+          type: string
+        password:
+          type: string
+
+    FacebookPostRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        content:
+          type: string
+        fileIds:
+          type: array
+          items:
+            type: string
+
+    FacebookReelsRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - fileId
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        fileId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+
+    FacebookPrivateMessageRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - targetId
+        - message
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        targetId:
+          type: string
+        message:
+          type: string
+
+    # ==================== Instagram Automation ====================
+    InstagramLoginRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - account
+        - password
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        account:
+          type: string
+        password:
+          type: string
+
+    InstagramReelsImageRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - fileId
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        fileId:
+          type: string
+        caption:
+          type: string
+        hashtags:
+          type: array
+          items:
+            type: string
+
+    InstagramReelsVideoRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - fileId
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        fileId:
+          type: string
+        caption:
+          type: string
+        hashtags:
+          type: array
+          items:
+            type: string
+
+    InstagramPrivateMessageRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+        - targetUsername
+        - message
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        targetUsername:
+          type: string
+        message:
+          type: string
+
+    InstagramProfileEditRequest:
+      type: object
+      required:
+        - id
+        - scheduleAt
+      properties:
+        name:
+          type: string
+        remark:
+          type: string
+        scheduleAt:
+          type: integer
+        id:
+          type: string
+        username:
+          type: string
+        bio:
+          type: string
+        avatarFileId:
+          type: string
+
+    # ==================== Billing ====================
+    PlanListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              planId:
+                type: string
+              planName:
+                type: string
+              price:
+                type: number
+              features:
+                type: array
+                items:
+                  type: string
+
+    CurrentPlanResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            planId:
+              type: string
+            planName:
+              type: string
+            expireTime:
+              type: integer
+            status:
+              type: integer
+
+    ChangePlanRequest:
+      type: object
+      required:
+        - profilesId
+        - parallelsNum
+        - monthlyRentalNum
+      properties:
+        profilesId:
+          type: string
+        parallelsNum:
+          type: integer
+          minimum: 1
+        monthlyRentalNum:
+          type: integer
+          minimum: 1
+        days:
+          type: integer
+          enum: [30, 90, 180, 360]
+        promoCode:
+          type: string
+
+    RenewPlanRequest:
+      type: object
+      required:
+        - profilesId
+        - days
+      properties:
+        profilesId:
+          type: string
+        days:
+          type: integer
+          enum: [30, 90, 180, 360]
+        promoCode:
+          type: string
+
+    BalanceResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            balance:
+              type: number
+
+    BuyTimeAddonRequest:
+      type: object
+      required:
+        - minutes
+      properties:
+        minutes:
+          type: integer
+          description: Minutes to purchase
+
+    # ==================== Webhook ====================
+    SetWebhookRequest:
+      type: object
+      required:
+        - webhookUrl
+      properties:
+        webhookUrl:
+          type: string
+          format: uri
+
+    GetWebhookResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            webhookUrl:
+              type: string
+            events:
+              type: array
+              items:
+                type: string
+
+    # ==================== Browser ====================
+    CreateBrowserRequest:
+      type: object
+      required:
+        - serialName
+        - browserOs
+      properties:
+        serialName:
+          type: string
+          maxLength: 100
+        groupId:
+          type: string
+        tagIds:
+          type: array
+          items:
+            type: string
+        remark:
+          type: string
+          maxLength: 1500
+        cookie:
+          type: string
+        accountPlatform:
+          type: string
+          enum: [https://www.tiktok.com/, https://www.facebook.com/]
+        accountUsername:
+          type: string
+        accountPassword:
+          type: string
+        accountTOTPSecret:
+          type: string
+        openLastPage:
+          type: integer
+          enum: [1, 2]
+          default: 2
+        openSpecPage:
+          type: integer
+          enum: [1, 2]
+          default: 2
+        openTabs:
+          type: string
+        browserOs:
+          type: integer
+          enum: [1, 2]
+          description: 1=Windows, 2=macOS
+        browserUa:
+          type: string
+        simulateConfig:
+          $ref: '#/components/schemas/SimulateConfig'
+        proxyId:
+          type: string
+        proxyConfig:
+          $ref: '#/components/schemas/BrowserProxyConfig'
+        browserStartArg:
+          type: string
+
+    SimulateConfig:
+      type: object
+      required:
+        - timeZone
+        - language
+        - resolution
+        - webRtc
+        - geoLocation
+        - canvas
+        - webglImage
+        - hardware
+        - audioContext
+        - mediaDevice
+        - clientRects
+        - speechVoise
+        - hardwareConcurrency
+        - memoryDevice
+        - doNotTrack
+        - bluetooth
+        - battery
+        - portScanProtection
+      properties:
+        timeZone:
+          $ref: '#/components/schemas/SwitchConfig'
+        language:
+          $ref: '#/components/schemas/SwitchConfig'
+        resolution:
+          $ref: '#/components/schemas/SwitchConfig'
+        webRtc:
+          $ref: '#/components/schemas/SwitchConfig'
+        geoLocation:
+          $ref: '#/components/schemas/GeoLocationConfig'
+        canvas:
+          $ref: '#/components/schemas/SwitchConfig'
+        webglImage:
+          $ref: '#/components/schemas/SwitchConfig'
+        hardware:
+          $ref: '#/components/schemas/SwitchConfig'
+        audioContext:
+          $ref: '#/components/schemas/SwitchConfig'
+        mediaDevice:
+          $ref: '#/components/schemas/SwitchConfig'
+        clientRects:
+          $ref: '#/components/schemas/SwitchConfig'
+        speechVoise:
+          $ref: '#/components/schemas/SwitchConfig'
+        hardwareConcurrency:
+          type: integer
+        memoryDevice:
+          type: integer
+        doNotTrack:
+          type: integer
+          enum: [0, 1, 2]
+        bluetooth:
+          $ref: '#/components/schemas/SwitchConfig'
+        battery:
+          $ref: '#/components/schemas/SwitchConfig'
+        portScanProtection:
+          $ref: '#/components/schemas/PortScanConfig'
+
+    SwitchConfig:
+      type: object
+      required:
+        - switcher
+      properties:
+        switcher:
+          type: integer
+        value:
+          type: string
+
+    GeoLocationConfig:
+      type: object
+      required:
+        - switcher
+      properties:
+        switcher:
+          type: integer
+        baseOnIp:
+          type: boolean
+        longitude:
+          type: number
+        latitude:
+          type: number
+        accuracy:
+          type: number
+
+    PortScanConfig:
+      type: object
+      required:
+        - switcher
+      properties:
+        switcher:
+          type: integer
+        value:
+          type: string
+
+    BrowserProxyConfig:
+      type: object
+      properties:
+        typeId:
+          type: integer
+          enum: [-1, 1, 2, 3, 20, 21, 22, 23]
+          description: "-1=direct, 1=socks5, 2=http, 3=https, 20=IPIDEA, 21=IPHTML, 22=kookeey, 23=Lumatuo"
+        server:
+          type: string
+        port:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        country:
+          type: string
+        region:
+          type: string
+        city:
+          type: string
+        useProxyCfg:
+          type: boolean
+        protocol:
+          type: integer
+          enum: [1, 2]
+          description: 1=socks5, 2=http
+
+    CreateBrowserResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+
+    BrowserListRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        ids:
+          type: array
+          items:
+            type: string
+        groupId:
+          type: string
+        tagIds:
+          type: array
+          items:
+            type: string
+
+    BrowserListResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            page:
+              type: integer
+            pageSize:
+              type: integer
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/BrowserData'
+
+    BrowserData:
+      type: object
+      properties:
+        id:
+          type: string
+        serialName:
+          type: string
+        status:
+          type: integer
+          enum: [0, 1, 2]
+          description: 0=offline, 1=starting, 2=running
+        group:
+          $ref: '#/components/schemas/Group'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        accountUsername:
+          type: string
+        accountPlatform:
+          type: string
+        browserOs:
+          type: integer
+        createTime:
+          type: integer
+
+    LaunchBrowserRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        webhook:
+          type: string
+          format: uri
+          description: Callback URL for async notification
+
+    LaunchBrowserResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            debugPort:
+              type: integer
+
+    CloneBrowserRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        cloneCount:
+          type: integer
+          default: 1
+        autoStart:
+          type: integer
+          enum: [0, 1]
+          default: 0
+
+    CloneBrowserResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            ids:
+              type: array
+              items:
+                type: string
+
+    BrowserStatusResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+            debugPort:
+              type: integer
+            ipCheckPass:
+              type: boolean
+
+    TransferBrowsersRequest:
+      type: object
+      required:
+        - ids
+        - groupId
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+        groupId:
+          type: string
+
+    KernelQueryResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              version:
+                type: string
+              releaseDate:
+                type: string
+              isLatest:
+                type: boolean
+
+    # ==================== Error Codes ====================
+    ErrorCode:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Error code
+        msg:
+          type: string
+          description: Error message
+
+    GlobalErrorCodes:
+      type: object
+      description: Global error codes applicable to all APIs
+      properties:
+        - code: 0
+          description: Success
+        - code: 40000
+          description: Unknown error
+        - code: 40001
+          description: Failed to read request body
+        - code: 40002
+          description: traceId is empty
+        - code: 40003
+          description: Signature verification failed
+        - code: 40004
+          description: Parameter validation failed
+        - code: 40005
+          description: Resource not found
+        - code: 40006
+          description: Partial success for batch operation
+        - code: 40007
+          description: Request rate limited
+        - code: 40008
+          description: Pagination parameter error
+        - code: 40009
+          description: Batch operation failed completely
+        - code: 40011
+          description: Available to paid users only
+        - code: 40012
+          description: API is deprecated
+        - code: 41001
+          description: Insufficient balance
+        - code: 47002
+          description: Too many concurrent requests
+
+security:
+  - BearerAuth: []
