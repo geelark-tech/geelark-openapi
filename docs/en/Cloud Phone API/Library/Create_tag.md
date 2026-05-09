@@ -15,7 +15,7 @@ create material tag
 | Parameter Name | Required | Type          | Description           | Example           |
 | --- | --- | --- | --- | --- |
 | name | Yes | string | tag name（Up to 30 characters） | Refer to Request Example  |
-| color | No | int |  tag color: 0 White 1 Red 2 Blue 3 Green 4 Yellow 5 Purple | Refer to Request Example|
+| color | No | integer |  tag color: 0 White 1 Red 2 Blue 3 Green 4 Yellow 5 Purple | Refer to Request Example|
 
 ## Request Example
 ```json

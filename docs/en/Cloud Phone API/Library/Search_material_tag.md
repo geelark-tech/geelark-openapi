@@ -14,8 +14,8 @@ search material tag
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
-| page | No | int | page | Refer to Request Example  |
-| pageSize | No | int | page size （max: 200） | Refer to Request Example  |
+| page | No | integer | page | Refer to Request Example  |
+| pageSize | No | integer | page size （max: 200） | Refer to Request Example  |
 | name | No | string | search tag name | Refer to Request Example  |
 
 
@@ -55,18 +55,18 @@ search material tag
 
 | Parameter Name | Type              | Description          |
 | ----------- | -----------|----------- 
-| total | int | total data |
-| page | int |current page  |
-| pageSize | int | current page size  |
+| total | integer | total data |
+| page | integer |current page  |
+| pageSize | integer | current page size  |
 | list | array[TagData] | tag data |
 
 ## TagData Data Description
 
 | Parameter Name | Type              | Description          |
 | ----------- | -----------|----------- |
-| id | int | tag id |
-| name | int |tag id  |
-| color | int | tag color: 0 White 1 Red 2 Blue 3 Green 4 Yellow 5 Purple |
+| id | integer | tag id |
+| name | integer |tag id  |
+| color | integer | tag color: 0 White 1 Red 2 Blue 3 Green 4 Yellow 5 Purple |
 
 
 ## Error Codes

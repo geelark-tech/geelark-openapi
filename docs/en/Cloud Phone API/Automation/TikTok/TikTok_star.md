@@ -17,7 +17,7 @@ Request Parameters
 | remark | No | string | Remarks, up to 200 characters |
 | scheduleAt | Yes | integer | Scheduled time (timestamp) |
 | id | Yes | string | Cloud phone ID |
-| likeProbability | No | int | Probability of liking, 0-100, default is 30 |
+| likeProbability | No | integer | Probability of liking, 0-100, default is 30 |
 
 Request Example
 ----------------

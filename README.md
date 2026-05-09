@@ -60,8 +60,8 @@ When an error occurs, the response will include an error code and message. For d
 
 #### Cloud Phone Management
 
-- [Create new V2](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/Create_new_V2.md)
 - [One-click new machine V2](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/One-click_new_machine_V2.md)
+- [Create new V2](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/Create_new_V2.md)
 - [Delete cloud phone](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/Delete_cloud_phone.md)
 - [Clone cloud phone](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/Clone_cloud_phone.md)
 - [Get all cloud phones](./docs/en/Cloud%20Phone%20API/Cloud%20Phone%20Management/Get_all_cloud_phones.md)
@@ -367,12 +367,6 @@ When an error occurs, the response will include an error code and message. For d
 
 ---
 
-### Proxy Detection
-
-- [Proxy Detection](./docs/en/Proxy%20Detection/Proxy_Detection.md)
-
----
-
 ### Error Codes
 
 - [Cloud Phone Error Codes](./docs/en/Error%20Codes/Cloud_Phone_Error_Codes.md)
@@ -408,7 +402,7 @@ When an error occurs, the response will include an error code and message. For d
 ### 基础地址
 
 ```
-https://openapi.geelark.cn
+https://openapi.geelark.com
 ```
 
 ### 认证方式
@@ -470,7 +464,6 @@ Authorization: Bearer YOUR_API_TOKEN
 - [截图](./docs/zh_cn/云手机API/云手机管理/截图.md)
 - [截图结果获取](./docs/zh_cn/云手机API/云手机管理/截图结果获取.md)
 - [批量导入联系人](./docs/zh_cn/云手机API/云手机管理/批量导入联系人.md)
-- [新建云手机(已弃用)](./docs/zh_cn/云手机API/云手机管理/新建云手机(已弃用).md)
 - [新建云手机V2](./docs/zh_cn/云手机API/云手机管理/新建云手机V2.md)
 - [查询云手机状态](./docs/zh_cn/云手机API/云手机管理/查询云手机状态.md)
 - [移动分组](./docs/zh_cn/云手机API/云手机管理/移动分组.md)
@@ -705,31 +698,31 @@ Authorization: Bearer YOUR_API_TOKEN
 
 #### 浏览器管理
 
+- [新建浏览器](./docs/zh_cn/浏览器API/浏览器管理/新建浏览器.md)
 - [修改浏览器](./docs/zh_cn/浏览器API/浏览器管理/修改浏览器.md)
-- [关闭浏览器](./docs/zh_cn/浏览器API/浏览器管理/关闭浏览器.md)
 - [删除浏览器](./docs/zh_cn/浏览器API/浏览器管理/删除浏览器.md)
 - [启动浏览器](./docs/zh_cn/浏览器API/浏览器管理/启动浏览器.md)
-- [新建浏览器](./docs/zh_cn/浏览器API/浏览器管理/新建浏览器.md)
-- [查询浏览器书签](./docs/zh_cn/浏览器API/浏览器管理/查询浏览器书签.md)
-- [查询环境cookies](./docs/zh_cn/浏览器API/浏览器管理/查询环境cookies.md)
-- [检查API接口状态](./docs/zh_cn/浏览器API/浏览器管理/检查API接口状态.md)
+- [关闭浏览器](./docs/zh_cn/浏览器API/浏览器管理/关闭浏览器.md)
+- [获取浏览器列表](./docs/zh_cn/浏览器API/浏览器管理/获取浏览器列表.md)
 - [检查浏览器状态](./docs/zh_cn/浏览器API/浏览器管理/检查浏览器状态.md)
-- [浏览器移动分组](./docs/zh_cn/浏览器API/浏览器管理/浏览器移动分组.md)
+- [检查API接口状态](./docs/zh_cn/浏览器API/浏览器管理/检查API接口状态.md)
 - [清除浏览器缓存](./docs/zh_cn/浏览器API/浏览器管理/清除浏览器缓存.md)
 - [克隆浏览器](./docs/zh_cn/浏览器API/浏览器管理/克隆浏览器.md)
 - [下载更新内核](./docs/zh_cn/浏览器API/浏览器管理/下载更新内核.md)
 - [查询内核](./docs/zh_cn/浏览器API/浏览器管理/查询内核.md)
-- [获取浏览器列表](./docs/zh_cn/浏览器API/浏览器管理/获取浏览器列表.md)
-- [设置浏览器书签](./docs/zh_cn/浏览器API/浏览器管理/设置浏览器书签.md)
+- [浏览器移动分组](./docs/zh_cn/浏览器API/浏览器管理/浏览器移动分组.md)
 - [转让浏览器](./docs/zh_cn/浏览器API/浏览器管理/转让浏览器.md)
+- [查询浏览器书签](./docs/zh_cn/浏览器API/浏览器管理/查询浏览器书签.md)
+- [设置浏览器书签](./docs/zh_cn/浏览器API/浏览器管理/设置浏览器书签.md)
+- [查询环境cookies](./docs/zh_cn/浏览器API/浏览器管理/查询环境cookies.md)
 
 #### 自动化
 
 ##### 任务管理
 
-- [取消任务](./docs/zh_cn/浏览器API/自动化/任务管理/取消任务.md)
 - [查询任务](./docs/zh_cn/浏览器API/自动化/任务管理/查询任务.md)
 - [查询任务详情](./docs/zh_cn/浏览器API/自动化/任务管理/查询任务详情.md)
+- [取消任务](./docs/zh_cn/浏览器API/自动化/任务管理/取消任务.md)
 - [重试任务](./docs/zh_cn/浏览器API/自动化/任务管理/重试任务.md)
 
 ##### 自定义任务
@@ -740,8 +733,8 @@ Authorization: Bearer YOUR_API_TOKEN
 ##### TikTok
 
 - [TikTok 搜索视频、点赞评论](./docs/zh_cn/浏览器API/自动化/TikTok/TikTok%20搜索视频、点赞评论.md)
-- [TikTok 点赞、评论视频](./docs/zh_cn/浏览器API/自动化/TikTok/TikTok%20点赞、评论视频.md)
 - [TikTok 点赞指定视频](./docs/zh_cn/浏览器API/自动化/TikTok/TikTok%20点赞指定视频.md)
+- [TikTok 点赞、评论视频](./docs/zh_cn/浏览器API/自动化/TikTok/TikTok%20点赞、评论视频.md)
 
 ##### Facebook
 
@@ -757,8 +750,8 @@ Authorization: Bearer YOUR_API_TOKEN
 
 ##### X (Twitter)
 
-- [X(Twitter) 推文点赞，转发](./docs/zh_cn/浏览器API/自动化/X(Twitter)/X(Twitter)%20推文点赞，转发.md)
 - [X(Twitter) 转发推文，发布推文](./docs/zh_cn/浏览器API/自动化/X(Twitter)/X(Twitter)%20转发推文，发布推文.md)
+- [X(Twitter) 推文点赞，转发](./docs/zh_cn/浏览器API/自动化/X(Twitter)/X(Twitter)%20推文点赞，转发.md)
 
 ##### YouTube
 
@@ -771,12 +764,6 @@ Authorization: Bearer YOUR_API_TOKEN
 ##### 其他任务
 
 - [Cookie 机器人](./docs/zh_cn/浏览器API/自动化/其他任务/Cookie%20机器人.md)
-
----
-
-### 代理检测
-
-- [代理检测](./docs/zh_cn/代理检测/代理检测.md)
 
 ---
 
