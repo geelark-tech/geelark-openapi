@@ -1,20 +1,26 @@
-API Description
----------------
+## API Description
 
-Retrieve the list of applications installed on the cloud phone.
+API: Get installed applications.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/app/list`
+* `https://openapi.geelark.com/open/v1/app/list`
 
-Request Method
---------------
+## Request Method
 
-*   POST
+* POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
@@ -22,8 +28,7 @@ Request Parameters
 | page | Yes | integer | Page number, minimum is 1 | 1 |
 | pageSize | Yes | integer | Number of items per page, minimum is 1, maximum is 100 | 10 |
 
-Request Example
----------------
+## Request Example
 
 ```json
 {
@@ -33,32 +38,7 @@ Request Example
 }
 ```
 
-Response Data Description
--------------------------
-
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| total | integer | Total number of items |
-| page | integer | Page number |
-| pageSize | integer | Page size |
-| items | array\[AppInfo\] | Array of application data |
-
-### AppInfo
-
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| appIcon | string | Application icon URL |
-| appId | string | Application ID |
-| appName | string | Application name |
-| appVersionId | string | Application version ID |
-| installStatus | integer | Installation status: 0-Installing, 1-Installed, 2-Failed, 3-Uninstalling, 4-Uninstalled, 5-Uninstall Failed, others-Not Installed |
-| installTime | string | Installation time |
-| packageName | string | Application package name |
-| versionCode | string | Application version code |
-| versionName | string | Application version name |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -86,11 +66,15 @@ Response Example
 }
 ```
 
-Error Codes
------------
+## Response Data Description
 
-The following are specific error codes for this API. For other error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-| Error Code | Description |
-| --- | --- |
-| 42001 | The corresponding cloud phone does not exist |
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

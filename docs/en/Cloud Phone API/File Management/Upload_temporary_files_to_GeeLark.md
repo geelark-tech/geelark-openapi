@@ -1,30 +1,32 @@
-#1. Obtain a temporary upload URL "uploadUrl" for the file.
+## API Description
 
-API Description
----------------
+API: Upload temporary files to GeeLark.
 
-Upload temporary files to GeeLark (Expires in 3 days),if need to save for a longer time, please upload it to the [Library](https://open.geelark.com/api/get-material-upload-url "Library").
-
-Request URL
------------
+## Request URL
 
 * `https://openapi.geelark.com/open/v1/upload/getUrl`
 
-Request Method
---------------
+## Request Method
 
 * POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | fileType | Yes | string | File type, Currently supported: "jpg", "jpeg", "png", "gif", "bmp", "webp","heif", "heic", "mp4", "webm","xml", "apk", "xapk" |"mp4"|
 
-Request Example
----------------
-
+## Request Example
 
 ```json
 {
@@ -32,16 +34,7 @@ Request Example
 }
 ```
 
-Response Data Description
--------------------------
-
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| uploadUrl | string | URL for uploading the file (valid for 30 minutes) |
-| resourceUrl | string | URL to access the resource |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -55,58 +48,15 @@ Response Example
 }
 ```
 
-Error Codes
------------
+## Response Data Description
 
-For error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes)
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-# 2.Upload the file using "uploadUrl" (after a successful upload, the file can be accessed via resourceUrl).
+## Error Codes
 
-Upload Usage Example
------------
-
-### linux
-``` shell
-curl -X PUT --upload-file ./upload_test.mp4 "uploadUrl"
-```
-
-### Go
-```go
-// upload file path
-filePath := "/Users/xxx/Desktop/upload_test.mp4"
-
-// open file
-file, err := os.Open(filePath)
-if err != nil {
- fmt.Println("Error opening file:", err)
- return
-}
-
-// create http client
-url := "uploadUrl"
-req, err := http.NewRequest("PUT", url, file)
-if err != nil {
- fmt.Println("Error creating request:", err)
- return
-}
-
-// send request
-client := &http.Client{}
-resp, err := client.Do(req)
-if err != nil {
- fmt.Println("Error sending request:", err)
- return
-}
-defer resp.Body.Close()
-
-// handle response
-if resp.StatusCode == http.StatusOK {
- fmt.Println("File uploaded successfully!")
-} else {
- fmt.Println("Error uploading file:", resp.Status)
-}
-```
-## Postman
-Please note that the header cannot pass any extra fields!
-![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&sign=55a9c6fd741b6c9b78e71e4beb948dd3)
-![](http://doc.geelark.cn/server/index.php?s=/api/attachment/visitFile&sign=e9ccd1ef2db200455f61ce465a989b20)
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

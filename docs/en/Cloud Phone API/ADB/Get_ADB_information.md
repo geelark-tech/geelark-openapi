@@ -1,27 +1,32 @@
-API Description
----------------
+## API Description
 
-Retrieve ADB Information
+API: Get ADB information.
 
-Request URL
------------
+## Request URL
 
 * `https://openapi.geelark.com/open/v1/adb/getData`
 
-Request Method
---------------
+## Request Method
 
 * POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | ids | Yes | array\[string\] | Array of cloud phone IDs, maximum 200 | \["526209711930868736"\] |
 
-Request Example
----------------
+## Request Example
 
 ```json
 {
@@ -29,20 +34,7 @@ Request Example
 }
 ```
 
-
-Response Data Description
--------------------------
-### items
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| code | integer | Error code: 0 indicates success; for other codes, refer to the error code table |
-| id | string | Cloud phone ID |
-| ip | string | Connection IP |
-| port | string | Port |
-| pwd | string | The password for glogin |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -70,14 +62,15 @@ Response Example
 }
 ```
 
-Error Codes
------------
+## Response Data Description
 
-The following are specific error codes for this API. For other error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-| Error Code | Description |
-| --- | --- |
-| 42001 | Cloud phone does not exist |
-| 42002 | Cloud phone is not running |
-| 49001 | ADB is not enabled |
-| 49002 | The device does not support ADB |
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

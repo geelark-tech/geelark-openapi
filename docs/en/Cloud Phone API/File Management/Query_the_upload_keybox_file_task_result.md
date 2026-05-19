@@ -1,36 +1,40 @@
-API Description
----------------
+## API Description
 
-After calling the upload Keybox file interface, get the execution result through the returned taskId
+API: Query the upload keybox file task result.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/phone/keyboxUpload/result`
+* `https://openapi.geelark.com/open/v1/phone/keyboxUpload/result`
 
-Request Method
---------------
+## Request Method
 
-*   POST
+* POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | taskId | Yes | string | Task ID | Refer to request example |
 
-Request Example
----------------
+## Request Example
+
 ```json
 {
     "taskId": "528715748189668352"
 }
 ```
 
-Response Example
-----------------
-
+## Response Example
 
 ```json
 {
@@ -43,14 +47,15 @@ Response Example
 }
 ```
 
-Response Data Description
--------------------------
+## Response Data Description
 
-| Parameter Name | Type | Description |
+| Field | Type | Description |
 | --- | --- | --- |
-| status | integer |  0: Uploading; 1: Upload successful; 2: Upload failed |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-Error Codes
------------
+## Error Codes
 
-For error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

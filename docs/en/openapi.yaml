@@ -4577,10 +4577,21 @@ country:
           type: string
           description: Error message
 
-    GlobalErrorCodes:
+    GlobalErrorCodeEntry:
       type: object
-      description: Global error codes applicable to all APIs
+      required: [code, description]
       properties:
+        code:
+          type: integer
+        description:
+          type: string
+
+    GlobalErrorCodes:
+      type: array
+      description: Global error codes applicable to all APIs (reference only)
+      items:
+        $ref: '#/components/schemas/GlobalErrorCodeEntry'
+      example:
         - code: 0
           description: Success
         - code: 40000

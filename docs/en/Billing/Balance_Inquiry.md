@@ -1,32 +1,34 @@
-API Description
----------------
+## API Description
 
 Query account balance, this API has a rate limit of 10 requests per minute.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/pay/wallet`
-    
+* `https://openapi.geelark.com/open/v1/pay/wallet`
 
-Request Method
---------------
+## Request Method
 
-*   POST
-    
+* POST
 
-Response Body Description
--------------------------
+## Authentication
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| balance | float | Balance |
-| giftMoney | float | Gifted amount |
-| availableTimeAddOn | integer   | Remaining time add-on |
+All requests are `POST` with `Content-Type: application/json`.
 
-Response Example
-----------------
+Required headers:
 
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
+
+_No request body parameters._
+
+## Request Example
+
+_See parameter table._
+
+## Response Example
 
 ```json
 {
@@ -40,3 +42,15 @@ Response Example
 	}
 }
 ```
+
+## Response Data Description
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| balance | float | Balance |
+| giftMoney | float | Gifted amount |
+| availableTimeAddOn | integer   | Remaining time add-on |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

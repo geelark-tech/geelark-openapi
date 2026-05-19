@@ -1,4 +1,4 @@
-- GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](https://open.geelark.com/api/callback-type "Callback Type")
+- GeeLark will push some operation results to developers via Webhook. After setting the Webhook URL, developers can handle these events, For common callback types, please refer to:[Callback Type](./Callback_Type.md "Callback Type")
 
 ### Interface Authentication
 User-defined callback interface authentication is consistent with the authentication for requesting the Geelark API.
@@ -64,12 +64,12 @@ When making a request, the following request headers will be carried
 
 #### Example of Upload files to the cloud phone Callback Received Parameters
 
-```
+```json
 {
     "type": 4,
     "id": "528715748189668352",
 	"taskId": "128715748189668352",
-    "result": true,
+    "result": true
 }
 ```
 
@@ -85,7 +85,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Cloud phone screenshot callback Received Parameters
 
-```
+```json
 {
     "type": 5,
     "id": "528715748189668352",
@@ -106,7 +106,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Task completion Callback Received Parameters
 
-```
+```json
 {
     "type": 6,
 	"taskId": "528715748189668352",
@@ -148,7 +148,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Cloud Phone Serial Name Change Callback Parameter
 
-```
+```json
 {
 	"type": 9,
 	"items": [
@@ -170,7 +170,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Cloud Phone Delete Callback Parameter
 
-```
+```json
 {
 	"type": 10,
 	"items": [
@@ -191,7 +191,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Cloud Phone Tag Change Callback Parameters
 
-```
+```json
 {
 	"type": 11,
 	"envIds" : ["583502967211075086"]
@@ -208,7 +208,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Task Creation Callback Parameter Receiver
 
-```
+```json
 {
     "type": 12,
 	"taskIds": ["528715748189668352"],
@@ -226,7 +226,7 @@ When making a request, the following request headers will be carried
 
 #### Example of Task Cancellation Callback Parameter Receiver
 
-```
+```json
 {
     "type": 13,
 	"taskIds": ["528715748189668352"],
@@ -243,7 +243,7 @@ When making a request, the following request headers will be carried
 | status | Status: 0 = Failed, 1 = Successful |
 
 #### Example of Callback Parameters for Cloud Phone Batch Import Contacts
-```
+```json
 {
     "type": 14,
 	"taskId": "528715748189168352",
@@ -263,7 +263,7 @@ When making a request, the following request headers will be carried
 
 #### Example of receiving parameters during cloud phone app installation callback
 
-```
+```json
 {
 	"type": 15,
 	"packageName": "com.example.app",

@@ -1,15 +1,26 @@
-Request URL
------------
+## API Description
+
+Create an automation task: TikTok AI comment (Asia). Returns `taskId` in `data`.
+
+## Request URL
 
 * `https://openapi.geelark.com/open/v1/rpa/task/tiktokRandomCommentAsia`
 
-Request Method
---------------
+## Request Method
 
 * POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description |
 | --- | --- | --- | --- |
@@ -23,8 +34,8 @@ Request Parameters
 | commentProbability | No | integer | Comment probability, 0-100, default is 30 |
 | searchKeywords |  No | array[string] | Search keywords |
 
-Request Example
-----------------
+## Request Example
+
 ```json
 {
  "name":"test",
@@ -36,8 +47,7 @@ Request Example
 }
 ```
 
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -49,3 +59,28 @@ Response Example
     }
 }
 ```
+
+## Response Data Description
+
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+### `data` fields (typical for automation tasks)
+
+| Field | Type | Description |
+| --- | --- | --- |
+| taskId | string | Task ID — see Related APIs below; optional Webhook callback type `6` |
+
+## Related APIs
+
+- [Query task](../Task%20Management/Query_task.md)
+- [Task Detail](../Task%20Management/Task_Detail.md)
+- [Cancel task](../Task%20Management/Cancel_task.md)
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

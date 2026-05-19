@@ -1,37 +1,34 @@
-API Description
----------------
+## API Description
 
-Get the current subscription plan information.  
-Rate limit: **1 request per minute**
+Get the current subscription plan information.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/pay/plan/info`
-    
+* `https://openapi.geelark.com/open/v1/pay/plan/info`
 
-Request Method
---------------
+## Request Method
 
-*   `POST`
-    
+* POST
 
-Response Parameters
--------------------
+## Authentication
 
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| plan | integer | Subscription type: 0 = Base, 1 = Pro |
-| profiles | integer | Total number of profiles |
-| monthlyRental | integer | Number of monthly rental devices |
-| parallels | integer | No extra charge as long as the number of cloud phone profiles opened at the same time does not exceed your parallel limit. |
-| expirationTime | integer | Plan expiration timestamp |
-| monthlyFee | float | Monthly billing amount |
-| availableProfiles | integer | Number of available profiles |
-|availableMonthlyRentals|integer| Number of available monthly rental devices  |
+All requests are `POST` with `Content-Type: application/json`.
 
-Response Example
-----------------
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
+
+_No request body parameters._
+
+## Request Example
+
+_See parameter table._
+
+## Response Example
 
 ```json
 {
@@ -50,3 +47,20 @@ Response Example
     }
 }
 ```
+
+## Response Data Description
+
+| Parameter Name | Type | Description |
+| --- | --- | --- |
+| plan | integer | Subscription type: 0 = Base, 1 = Pro |
+| profiles | integer | Total number of profiles |
+| monthlyRental | integer | Number of monthly rental devices |
+| parallels | integer | No extra charge as long as the number of cloud phone profiles opened at the same time does not exceed your parallel limit. |
+| expirationTime | integer | Plan expiration timestamp |
+| monthlyFee | float | Monthly billing amount |
+| availableProfiles | integer | Number of available profiles |
+|availableMonthlyRentals|integer| Number of available monthly rental devices  |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

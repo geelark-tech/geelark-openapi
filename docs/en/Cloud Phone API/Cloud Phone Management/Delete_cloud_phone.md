@@ -1,27 +1,33 @@
-API Description
------------------
+## API Description
 
-Batch Delete Cloud Phones
+API: Delete cloud phone.
 
-Request URL
------------
+## Request URL
 
 * `https://openapi.geelark.com/open/v1/phone/delete`
 
-Request Method
---------------
+## Request Method
 
 * POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | ids | Yes | array\[string\] | List of cloud phone IDs, Limit to 100 elements | Refer to the request example |
 
-Request Example
----------------
+## Request Example
+
 ```json
 {
     "ids":[
@@ -31,26 +37,7 @@ Request Example
 }
 ```
 
-Response Data Description
--------------------------
-
-| Parameter | Type | Description |
-| --- | --- | --- |
-| totalAmount | integer | Total number of requested IDs |
-| successAmount | integer | Total number of successful IDs |
-| failAmount | integer | Total number of failed IDs |
-| failDetails | array\[FailDetails\] | Failure details |
-
-### Failure Details <FailDetails>
-
-| Parameter | Type | Description |
-| --- | --- | --- |
-| code | integer | Error code |
-| id | integer | Cloud phone ID |
-| msg | string | Error message |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -77,14 +64,15 @@ Response Example
 }
 ```
 
-Error Codes
------------
+## Response Data Description
 
-Below are specific error codes for the API. For other error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-| Error Code | Description |
-| --- | --- |
-| 42001 | Cloud phone does not exist |
-| 43009 | Cloud phone is started, cannot delete |
-| 43010 | Cloud phone is starting, cannot delete |
-| 43021 | The cloud phone is in use, please try again later |
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

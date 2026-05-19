@@ -4,27 +4,50 @@
 
 Welcome to the official GeeLark API documentation. This repository contains comprehensive API references for GeeLark's cloud-based services.
 
+## OpenAPI Specification (machine-readable)
+
+| Resource | Path | Notes |
+| --- | --- | --- |
+| **OpenAPI 3.0 (EN)** | [`docs/en/openapi.yaml`](./docs/en/openapi.yaml) | English descriptions |
+| **OpenAPI 3.0 (ZH)** | [`docs/zh_cn/openapi.yaml`](./docs/zh_cn/openapi.yaml) | Chinese descriptions |
+| **Coverage report** | [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md) | Which paths are in OpenAPI vs Markdown only |
+| **Page template** | [`docs/DOC_TEMPLATE.md`](./docs/DOC_TEMPLATE.md) / [`docs/DOC_TEMPLATE.zh.md`](./docs/DOC_TEMPLATE.zh.md) | EN / ZH page layout |
+
+> **Coverage notice:** `docs/en/openapi.yaml` documents a **subset** of the full API (see coverage report). Automation/RPA and other endpoints may exist only as Markdown under `docs/en/`. For agents and integrations, use Markdown as the source of truth when an endpoint is not listed in OpenAPI.
+
 ## Request Instructions
 
 ### Base URL
+
+Cloud Phone / platform APIs:
 
 ```
 https://openapi.geelark.com
 ```
 
+(Browser local client APIs use a separate base URL — see [Browser Request Instructions](./docs/en/User%20Guide/Browser/Request_Instructions.md).)
+
 ### Authentication
 
-All API requests require authentication via an API Token. Include your API Token in the request header:
+Every request must use **POST** + **JSON** and include a **`traceId`** header (Version 4 UUID). Two verification modes are supported:
+
+| Mode | Required headers | Details |
+| --- | --- | --- |
+| **Token** | `traceId`, `Authorization: Bearer YOUR_API_TOKEN` | [Request example](./docs/en/User%20Guide/Cloud%20Phone/Request_example.md) |
+| **Key** | `traceId`, `appId`, `ts`, `nonce`, `sign` | [Request Instructions](./docs/en/User%20Guide/Cloud%20Phone/Request_Instructions.md) |
 
 ```
 Authorization: Bearer YOUR_API_TOKEN
+traceId: YOUR_UUID_V4
 ```
+
+Rate limits (per API): **200 requests/minute**, **24,000/hour**; exceeding limits may lock the API for 2 hours. See [Request Instructions](./docs/en/User%20Guide/Cloud%20Phone/Request_Instructions.md).
 
 ### Request Format
 
 - All request bodies should be in JSON format
 - Set `Content-Type: application/json` header for POST requests
-- All timestamps are in UTC (RFC 3339 format)
+- All timestamps are in UTC unless an endpoint specifies Unix seconds
 
 ### Response Format
 
@@ -393,31 +416,62 @@ When an error occurs, the response will include an error code and message. For d
 
 - [Change Log](./docs/en/Change_log.md)
 
+## Maintaining documentation
+
+After editing API Markdown or `docs/en/openapi.yaml`, run:
+
+```bash
+python3 scripts/p0_doc_maintenance.py
+```
+
+This regenerates [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md), normalizes **English and Chinese** API pages (`docs/en`, `docs/zh_cn`), and fixes known JSON example issues.
+
 ---
 
 ## 中文文档 API Reference
+
+## OpenAPI 规范（机器可读）
+
+| 资源 | 路径 | 说明 |
+| --- | --- | --- |
+| **OpenAPI 3.0（中文）** | [`docs/zh_cn/openapi.yaml`](./docs/zh_cn/openapi.yaml) | 中文描述 |
+| **OpenAPI 3.0（英文）** | [`docs/en/openapi.yaml`](./docs/en/openapi.yaml) | 英文描述 |
+| **覆盖范围报告** | [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md) | OpenAPI 与 Markdown 差异 |
+| **页面模板** | [`docs/DOC_TEMPLATE.zh.md`](./docs/DOC_TEMPLATE.zh.md) | 中文接口页结构 |
+
+> **覆盖说明：** `docs/en/openapi.yaml` / `docs/zh_cn/openapi.yaml` 仅包含**部分**接口（详见覆盖报告）。自动化/RPA 等接口可能只在 Markdown 中提供，未收录进 OpenAPI 时请以 Markdown 为准。
 
 ## 请求说明
 
 ### 基础地址
 
+云手机等平台接口：
+
 ```
-https://openapi.geelark.com
+https://openapi.geelark.cn
 ```
 
 ### 认证方式
 
-所有 API 请求都需要通过 API Token 进行认证。请在请求头中包含您的 API Token：
+所有请求均为 **POST** + **JSON**，且必须携带 **`traceId`**（UUID v4）。支持 Token 与 Key 两种校验：
+
+| 方式 | 必需请求头 | 说明 |
+| --- | --- | --- |
+| **Token** | `traceId`、`Authorization: Bearer YOUR_API_TOKEN` | [请求示例](./docs/zh_cn/使用指南/云手机/请求示例.md) |
+| **Key** | `traceId`、`appId`、`ts`、`nonce`、`sign` | [接口调用说明](./docs/en/User%20Guide/Cloud%20Phone/Request_Instructions.md) |
 
 ```
 Authorization: Bearer YOUR_API_TOKEN
+traceId: YOUR_UUID_V4
 ```
+
+限流（按接口）：**200 次/分钟**、**24000 次/小时**；超限可能锁定 2 小时。
 
 ### 请求格式
 
 - 所有请求体应使用 JSON 格式
 - POST 请求请设置 `Content-Type: application/json` 请求头
-- 所有时间戳均为 UTC 时间（RFC 3339 格式）
+- 时间戳字段以各接口说明为准（常见为 Unix 秒级时间戳）
 
 ### 响应格式
 

@@ -1,17 +1,26 @@
-Request URL
------------
+## API Description
 
-*   `https://openapi.geelark.com/open/v1/analytics/accounts/list`
-    
+API: Accounts List.
 
-Request Method
---------------
+## Request URL
 
-*   POST
-    
+* `https://openapi.geelark.com/open/v1/analytics/accounts/list`
 
-Request Parameters
-------------------
+## Request Method
+
+* POST
+
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
@@ -21,8 +30,8 @@ Request Parameters
 | channel | No | integer | Platform, if not provided all platforms are included | 0: TikTok 1: YouTube 2: Instagram |
 | userAccount | No | string | Operator account | abc@gmail.com |
 
-Request Example
----------------
+## Request Example
+
 ```json
 {
     "page":1,
@@ -31,30 +40,7 @@ Request Example
 }
 ```
 
-Response Data Description
--------------------------
-
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| total | integer | Total count |
-| page | integer | Current page |
-| items | array\[item\] | Account data |
-
-Response Data Description <item>
---------------------------------
-
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| id | string | Account ID |
-| account | string | Account |
-| channel | integer | Platform: 0: TikTok 1: YouTube 2: Instagram |
-| remark | string | Remark |
-| operator | string | Username of the last operator |
-| created\_time | integer | Creation time |
-| updated\_time | integer | Last update time |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -78,3 +64,16 @@ Response Example
     }
 }
 ```
+
+## Response Data Description
+
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

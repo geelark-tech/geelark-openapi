@@ -1,17 +1,26 @@
-Request URL
------------
+## API Description
 
-*   `https://openapi.geelark.com/open/v1/analytics/accounts/add`
-    
+API: Add Accounts.
 
-Request Method
---------------
+## Request URL
 
-*   POST
-    
+* `https://openapi.geelark.com/open/v1/analytics/accounts/add`
 
-Request Parameters
-------------------
+## Request Method
+
+* POST
+
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
@@ -25,8 +34,7 @@ Request Parameters
 | account | Yes | string | Account name, maximum length 64 characters | See request example |
 | remark | No | string | Remark information | See request example |
 
-Request Example
----------------
+## Request Example
 
 ```json
 {
@@ -39,18 +47,8 @@ Request Example
     ]
 }
 ```
-Response Parameters
--------------------
 
-| Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
-| bizCode | Yes | integer | Business status code: 0 = all successful; 1 = the current number of accounts exceeds the limit; 2 = partially successful, with failed items exceeding the limit |
-| successCount | Yes | integer | Number of successfully added accounts |
-| failCount | Yes | integer | Number of failed additions |
-| repeatCount | Yes | integer | Number of duplicate additions |
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -65,3 +63,16 @@ Response Example
 	}
 }
 ```
+
+## Response Data Description
+
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

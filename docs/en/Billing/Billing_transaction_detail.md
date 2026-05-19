@@ -1,20 +1,26 @@
-[toc]
+## API Description
 
-API Description
----------------
+API: Billing transaction detail.
 
-Query billing transaction detail
+## Request URL
 
-Request URL
------------
-- `https://openapi.geelark.com/open/v1/billing/transaction/detail`
+* `https://openapi.geelark.com/open/v1/billing/transaction/detail`
 
-Request Method
---------------
-- POST
+## Request Method
 
-Request Parameters
-------------------
+* POST
+
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | ----------- | -------| -----------|----------- |--------- |
@@ -24,8 +30,7 @@ Request Parameters
 | limit | No | integer | The acquisition quantity limit is set to 100 by default, with a maximum of 1000 |1 |
 | lastFlowId | No | string | The lastFlowId returned from the previous request is used to obtain the data for the next page | "612476158453291064" |
 
-Request Example
----------------
+## Request Example
 
 ```json
 {
@@ -37,8 +42,7 @@ Request Example
 }
 ```
 
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -65,25 +69,15 @@ Response Example
 }
 ```
 
-Response Body Description
--------------------------
+## Response Data Description
 
-| Parameter | Type | Description |
-| ----------- | -----------|----------- |
-| id | string | flow id |
-| envId | string | cloud phone id |
-| type | integer | Usage type ，1-cloud phone  2-RPA |
-| chargeType | integer | Billing type 1-Points 2-Balance 3-Bonus 4-Time add-on 5-Bonus minutes 6-Monthly rental 7-Parallels  8-Daily cap reached|
-| amount | float | amount |
-| usedTime | integer | Usage duration, minutes|
-| createdTime | integer | flow created time, second-level timestamp |
-| lastFlowId | string | The last sequential ID, used to retrieve data from the next page |
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
+## Error Codes
 
-Response Example
-----------------
-
-Error Codes
------------
-
-Please refer to the [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes)
+See [Cloud Phone Error Codes](../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

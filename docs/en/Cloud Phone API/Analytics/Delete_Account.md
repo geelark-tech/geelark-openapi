@@ -1,25 +1,33 @@
-Request URL
------------
+## API Description
 
-*   `https://openapi.geelark.com/open/v1/analytics/accounts/delete`
-    
+API: Delete Account.
 
-Request Method
---------------
+## Request URL
 
-*   POST
-    
+* `https://openapi.geelark.com/open/v1/analytics/accounts/delete`
 
-Request Parameters
-------------------
+## Request Method
+
+* POST
+
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | channel | Yes | integer | Platform | 0: TikTok, 1: YouTube, 2: Instagram |
 | account | Yes | string | Account name, maximum length 64 characters | See request example |
 
-Request Example
----------------
+## Request Example
 
 ```json
 {
@@ -28,8 +36,7 @@ Request Example
 }
 ```
 
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -38,3 +45,16 @@ Response Example
 	"msg": "success"
 }
 ```
+
+## Response Data Description
+
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

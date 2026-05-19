@@ -1,26 +1,32 @@
-API Description
------------
-Export custom task flow
+## API Description
 
-Request URL
------------
+Create an automation task: Export custom task flow. Returns `taskId` in `data`.
+
+## Request URL
 
 * `https://openapi.geelark.com/open/v1/task/flow/export`
 
-Request Method
---------------
+## Request Method
 
 * POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description |
 | --- | --- | --- | --- |
 | id | Yes |string| custom task flow id |
 
-Request Example
-----------------
+## Request Example
 
 ```json
 {
@@ -28,9 +34,7 @@ Request Example
 }
 ```
 
-
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -50,3 +54,16 @@ For error codes, please refer to [Error Codes](https://open.geelark.com/api/clou
 | Error Code | Description                        |
 | ---------- | ---------------------------------- |
 | 48002 | custom task flow not found |
+
+## Response Data Description
+
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

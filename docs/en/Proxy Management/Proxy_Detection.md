@@ -1,22 +1,26 @@
-API Description
----------------
+## API Description
 
-Proxy Detection API
+API: Proxy Detection.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/proxy/check`
-    
+* `https://openapi.geelark.com/open/v1/proxy/check`
 
-Request Method
---------------
+## Request Method
 
-*   POST
-    
+* POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
@@ -27,8 +31,8 @@ Request Parameters
 | username | No | string | Proxy username | username |
 | password | No | string | Proxy password | pass |
 
-Request Example
----------------
+## Request Example
+
 ```json
 {
 	"proxyQueryChannel": "IP2Location",
@@ -40,23 +44,8 @@ Request Example
 }
 ```
 
-Response Data Description
--------------------------
+## Response Example
 
-| Field | Type | Description |
-| --- | --- | --- |
-| detectStatus | bool | Whether the detection was successful |
-| message | string | Reason for failure (if any) |
-| outboundIP | string | Outbound IP |
-| countryCode | string | Country code of the outbound IP |
-| countryName | string | Country name of the outbound IP |
-| subdivision | string | State/Province of the outbound IP |
-| city | string | City of the outbound IP |
-| timezone | string | Time zone of the outbound IP |
-| isp | string | ISP of the outbound IP |
-
-Response Example
-----------------
 ```json
 {
 	"traceId": "B379AA1BBBB529758ED091C480AA4285",
@@ -76,7 +65,15 @@ Response Example
 }
 ```
 
-Error Codes
------------
+## Response Data Description
 
-Please refer to the [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes)
+| Field | Type | Description |
+| --- | --- | --- |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
+
+## Error Codes
+
+See [Cloud Phone Error Codes](../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.

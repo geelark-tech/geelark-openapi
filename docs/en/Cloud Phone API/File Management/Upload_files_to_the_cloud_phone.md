@@ -1,29 +1,34 @@
-API Description
----------------
+## API Description
 
-Upload files to the cloud phone.  
-Before uploading, please start the cloud phone. The file will be uploaded to the "Downloads" folder of the cloud phone.
+API: Upload files to the cloud phone.
 
-Request URL
------------
+## Request URL
 
-*   `https://openapi.geelark.com/open/v1/phone/uploadFile`
+* `https://openapi.geelark.com/open/v1/phone/uploadFile`
 
-Request Method
---------------
+## Request Method
 
-*   POST
+* POST
 
-Request Parameters
-------------------
+## Authentication
+
+All requests are `POST` with `Content-Type: application/json`.
+
+Required headers:
+
+- `traceId`: Version 4 UUID (uppercase recommended)
+- **Token mode:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Key mode:** `appId`, `traceId`, `ts`, `nonce`, `sign` (see [Request Instructions](../../User%20Guide/Cloud%20Phone/Request_Instructions.md))
+
+## Request Parameters
 
 | Parameter Name | Required | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | id | Yes | string | Cloud phone ID | Refer to request example |
 | fileUrl | Yes | string | File URL | Refer to request example |
 
-Request Example
----------------
+## Request Example
+
 ```json
 {
     "id": "528715748189668352",
@@ -31,8 +36,7 @@ Request Example
 }
 ```
 
-Response Example
-----------------
+## Response Example
 
 ```json
 {
@@ -44,24 +48,16 @@ Response Example
     }
 }
 ```
-Response Data Description
--------------------------
 
-| Parameter Name | Type | Description |
+## Response Data Description
+
+| Field | Type | Description |
 | --- | --- | --- |
-| taskId | string | Task ID |
+| traceId | string | Request identifier |
+| code | integer | `0` = success |
+| msg | string | Status message |
+| data | object | Response payload (see example) |
 
-Error Codes
------------
+## Error Codes
 
-The following are specific error codes for this API. For other error codes, please refer to [Cloud Phone Error Codes](https://open.geelark.com/api/cloud-phone-error-codes).
-
-| Error Code | Description |
-| --- | --- |
-| 42001 | Cloud phone does not exist |
-| 42002 | Cloud phone is not running |
-
-Callback Result and Example
----------------------------
-
-Please refer to Callback Example
+See [Cloud Phone Error Codes](../../Error%20Codes/Cloud_Phone_Error_Codes.md). Interface-specific codes may also appear in the response `msg` / `code` fields.
