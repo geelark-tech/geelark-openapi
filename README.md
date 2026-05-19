@@ -11,7 +11,6 @@ Welcome to the official GeeLark API documentation. This repository contains comp
 | **OpenAPI 3.0 (EN)** | [`docs/en/openapi.yaml`](./docs/en/openapi.yaml) | English descriptions |
 | **OpenAPI 3.0 (ZH)** | [`docs/zh_cn/openapi.yaml`](./docs/zh_cn/openapi.yaml) | Chinese descriptions |
 | **Coverage report** | [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md) | Which paths are in OpenAPI vs Markdown only |
-| **Page template** | [`docs/DOC_TEMPLATE.md`](./docs/DOC_TEMPLATE.md) / [`docs/DOC_TEMPLATE.zh.md`](./docs/DOC_TEMPLATE.zh.md) | EN / ZH page layout |
 
 > **Coverage notice:** `docs/en/openapi.yaml` documents a **subset** of the full API (see coverage report). Automation/RPA and other endpoints may exist only as Markdown under `docs/en/`. For agents and integrations, use Markdown as the source of truth when an endpoint is not listed in OpenAPI.
 
@@ -437,7 +436,6 @@ This regenerates [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md), norma
 | **OpenAPI 3.0（中文）** | [`docs/zh_cn/openapi.yaml`](./docs/zh_cn/openapi.yaml) | 中文描述 |
 | **OpenAPI 3.0（英文）** | [`docs/en/openapi.yaml`](./docs/en/openapi.yaml) | 英文描述 |
 | **覆盖范围报告** | [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md) | OpenAPI 与 Markdown 差异 |
-| **页面模板** | [`docs/DOC_TEMPLATE.zh.md`](./docs/DOC_TEMPLATE.zh.md) | 中文接口页结构 |
 
 > **覆盖说明：** `docs/en/openapi.yaml` / `docs/zh_cn/openapi.yaml` 仅包含**部分**接口（详见覆盖报告）。自动化/RPA 等接口可能只在 Markdown 中提供，未收录进 OpenAPI 时请以 Markdown 为准。
 
