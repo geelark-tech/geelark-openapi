@@ -449,6 +449,8 @@ This regenerates [`docs/OPENAPI_COVERAGE.md`](./docs/OPENAPI_COVERAGE.md), norma
 https://openapi.geelark.cn
 ```
 
+（浏览器本地客户端 API 使用独立基础地址，请参阅 [浏览器接口调用说明](./docs/zh_cn/使用指南/浏览器/接口调用说明.md)。）
+
 ### 认证方式
 
 所有请求均为 **POST** + **JSON**，且必须携带 **`traceId`**（UUID v4）。支持 Token 与 Key 两种校验：
@@ -456,14 +458,14 @@ https://openapi.geelark.cn
 | 方式 | 必需请求头 | 说明 |
 | --- | --- | --- |
 | **Token** | `traceId`、`Authorization: Bearer YOUR_API_TOKEN` | [请求示例](./docs/zh_cn/使用指南/云手机/请求示例.md) |
-| **Key** | `traceId`、`appId`、`ts`、`nonce`、`sign` | [接口调用说明](./docs/en/User%20Guide/Cloud%20Phone/Request_Instructions.md) |
+| **Key** | `traceId`、`appId`、`ts`、`nonce`、`sign` | [接口调用说明](./docs/zh_cn/使用指南/云手机/接口调用说明.md) |
 
 ```
 Authorization: Bearer YOUR_API_TOKEN
 traceId: YOUR_UUID_V4
 ```
 
-限流（按接口）：**200 次/分钟**、**24000 次/小时**；超限可能锁定 2 小时。
+限流（按接口）：**200 次/分钟**、**24000 次/小时**；超限可能锁定 2 小时。详见 [接口调用说明](./docs/zh_cn/使用指南/云手机/接口调用说明.md)。
 
 ### 请求格式
 
